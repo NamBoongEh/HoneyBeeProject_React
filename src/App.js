@@ -7,6 +7,8 @@ import Footer from './components/Footer';
 import Register2 from './components/page/Register2';
 import Register1 from './components/page/Register1';
 import TermsOfService from './components/page/TermsOfService';
+import MyPage from './components/page/MyPage';
+import ReLogin from './components/page/ReLogin';
 
 function App() {
   return (
@@ -18,6 +20,8 @@ function App() {
         <Route exact path={'/register1'} component={Register1} />
         <Route exact path={'/register2'} component={Register2} />
         <Route exact path={'/tos'} component={TermsOfService} />
+        <Route exact path={'/mypage'} component={MyPage} />
+        <Route exact path={'/relogin'} component={ReLogin} />
         <Footer />
       </BrowserRouter>
     </>
