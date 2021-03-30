@@ -1,8 +1,8 @@
 import React from 'react';
-import InputBar from '../search/InputBar';
 import { EmojiSmile } from 'react-bootstrap-icons';
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
+import InputBar from '../search/InputBar';
 
 const Links = styled(Link)`
   color: dimgray;

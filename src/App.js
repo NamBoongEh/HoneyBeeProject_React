@@ -9,6 +9,7 @@ import Register1 from './components/page/Register1';
 import TermsOfService from './components/page/TermsOfService';
 import MyPage from './components/page/MyPage';
 import ReLogin from './components/page/ReLogin';
+import FreeBoard from './components/page/FreeBoard';
 
 function App() {
   return (
@@ -22,6 +23,7 @@ function App() {
         <Route exact path={'/tos'} component={TermsOfService} />
         <Route exact path={'/mypage'} component={MyPage} />
         <Route exact path={'/relogin'} component={ReLogin} />
+        <Route exact path={'/freeboard'} component={FreeBoard} />
         <Footer />
       </BrowserRouter>
     </>
