@@ -12,6 +12,9 @@ import ReLogin from './components/page/ReLogin';
 import FreeBoard from './components/page/FreeBoard';
 import FreeBoardRead from './components/page/FreeBoardRead';
 import FreeBoardWrite from './components/page/FreeBoardWrite';
+import Reply1 from './components/search/Reply1';
+import ReReply1 from './components/search/ReReply1';
+import ReReply2 from './components/search/ReReply2';
 
 function App() {
   return (
@@ -28,6 +31,9 @@ function App() {
         <Route exact path={'/freeboard'} component={FreeBoard} />
         <Route exact path={'/freeboardread'} component={FreeBoardRead} />
         <Route exact path={'/freeboardwrite'} component={FreeBoardWrite} />
+        <Route exact path={'/reply1'} component={Reply1} />
+        <Route exact path={'/rereply1'} component={ReReply1} />
+        <Route exact path={'/rereply2'} component={ReReply2} />
         <Footer />
       </BrowserRouter>
     </>
