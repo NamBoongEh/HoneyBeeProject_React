@@ -10,6 +10,8 @@ import TermsOfService from './components/page/TermsOfService';
 import MyPage from './components/page/MyPage';
 import ReLogin from './components/page/ReLogin';
 import FreeBoard from './components/page/FreeBoard';
+import FreeBoardRead from './components/page/FreeBoardRead';
+import FreeBoardWrite from './components/page/FreeBoardWrite';
 
 function App() {
   return (
@@ -24,6 +26,8 @@ function App() {
         <Route exact path={'/mypage'} component={MyPage} />
         <Route exact path={'/relogin'} component={ReLogin} />
         <Route exact path={'/freeboard'} component={FreeBoard} />
+        <Route exact path={'/freeboardread'} component={FreeBoardRead} />
+        <Route exact path={'/freeboardwrite'} component={FreeBoardWrite} />
         <Footer />
       </BrowserRouter>
     </>
