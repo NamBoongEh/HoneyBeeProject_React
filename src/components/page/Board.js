@@ -1,13 +1,13 @@
 import React from 'react';
 import styled from 'styled-components';
-import { Card } from 'react-bootstrap';
+import PageButton from '../search/PageButton';
 
 const Tag = styled.button`
   border: 4px solid rgb(48, 27, 1);
   border-radius: 30px;
   padding: 1% 1.25%;
   background-color: white;
-  transform: translateY(40%);
+  transform: translateY(30%);
   margin-left: 30px;
 `;
 const Tag2 = styled.button`
@@ -15,7 +15,7 @@ const Tag2 = styled.button`
   border-radius: 30px;
   padding: 1% 2.5%;
   background-color: white;
-  transform: translateY(40%);
+  transform: translateY(30%);
   margin-left: 30px;
 `;
 
@@ -97,7 +97,7 @@ export default function Board(props) {
             검색{' '}
           </Tag2>
           <div
-            style={{ transform: 'translate(54%, -70%)', fontSize: 'larger' }}
+            style={{ transform: 'translate(52%, -100%)', fontSize: 'larger' }}
           >
             <input type={'checkbox'} style={{ zoom: '1.5' }} /> 마감된 모임 포함
           </div>
@@ -108,7 +108,7 @@ export default function Board(props) {
             height: '35px',
             width: '8%',
             fontSize: 'smaller',
-            margin: '2% 0 2%',
+            margin: '2% 0 0.5%',
           }}
         >
           <option>게시물조회</option>
@@ -124,11 +124,167 @@ export default function Board(props) {
               <Date>01-01 ~ 12-31</Date>
             </div>
           </CardBox>
-          <CardBox></CardBox>
-          <CardBox></CardBox>
-          <CardBox></CardBox>
-          <CardBox></CardBox>
+          <CardBox>
+            <Image>개쩌는 이미지</Image>
+            <Name>이름을 길게쓰면 두줄로 나올지 모르겠지만 일단</Name>
+            <div style={{ display: 'flex' }}>
+              <Cost>유료</Cost>
+              <Date>01-01 ~ 12-31</Date>
+            </div>
+          </CardBox>
+          <CardBox>
+            <Image>개쩌는 이미지</Image>
+            <Name>이름을 길게쓰면 두줄로 나올지 모르겠지만 일단</Name>
+            <div style={{ display: 'flex' }}>
+              <Cost>유료</Cost>
+              <Date>01-01 ~ 12-31</Date>
+            </div>
+          </CardBox>
+          <CardBox>
+            <Image>개쩌는 이미지</Image>
+            <Name>이름을 길게쓰면 두줄로 나올지 모르겠지만 일단</Name>
+            <div style={{ display: 'flex' }}>
+              <Cost>유료</Cost>
+              <Date>01-01 ~ 12-31</Date>
+            </div>
+          </CardBox>
+          <CardBox>
+            <Image>개쩌는 이미지</Image>
+            <Name>이름을 길게쓰면 두줄로 나올지 모르겠지만 일단</Name>
+            <div style={{ display: 'flex' }}>
+              <Cost>유료</Cost>
+              <Date>01-01 ~ 12-31</Date>
+            </div>
+          </CardBox>
         </div>
+        <div style={{ display: 'flex' }}>
+          <CardBox>
+            <Image>개쩌는 이미지</Image>
+            <Name>이름을 길게쓰면 두줄로 나올지 모르겠지만 일단</Name>
+            <div style={{ display: 'flex' }}>
+              <Cost>유료</Cost>
+              <Date>01-01 ~ 12-31</Date>
+            </div>
+          </CardBox>
+          <CardBox>
+            <Image>개쩌는 이미지</Image>
+            <Name>이름을 길게쓰면 두줄로 나올지 모르겠지만 일단</Name>
+            <div style={{ display: 'flex' }}>
+              <Cost>유료</Cost>
+              <Date>01-01 ~ 12-31</Date>
+            </div>
+          </CardBox>
+          <CardBox>
+            <Image>개쩌는 이미지</Image>
+            <Name>이름을 길게쓰면 두줄로 나올지 모르겠지만 일단</Name>
+            <div style={{ display: 'flex' }}>
+              <Cost>유료</Cost>
+              <Date>01-01 ~ 12-31</Date>
+            </div>
+          </CardBox>
+          <CardBox>
+            <Image>개쩌는 이미지</Image>
+            <Name>이름을 길게쓰면 두줄로 나올지 모르겠지만 일단</Name>
+            <div style={{ display: 'flex' }}>
+              <Cost>유료</Cost>
+              <Date>01-01 ~ 12-31</Date>
+            </div>
+          </CardBox>
+          <CardBox>
+            <Image>개쩌는 이미지</Image>
+            <Name>이름을 길게쓰면 두줄로 나올지 모르겠지만 일단</Name>
+            <div style={{ display: 'flex' }}>
+              <Cost>유료</Cost>
+              <Date>01-01 ~ 12-31</Date>
+            </div>
+          </CardBox>
+        </div>
+        <div style={{ display: 'flex' }}>
+          <CardBox>
+            <Image>개쩌는 이미지</Image>
+            <Name>이름을 길게쓰면 두줄로 나올지 모르겠지만 일단</Name>
+            <div style={{ display: 'flex' }}>
+              <Cost>유료</Cost>
+              <Date>01-01 ~ 12-31</Date>
+            </div>
+          </CardBox>
+          <CardBox>
+            <Image>개쩌는 이미지</Image>
+            <Name>이름을 길게쓰면 두줄로 나올지 모르겠지만 일단</Name>
+            <div style={{ display: 'flex' }}>
+              <Cost>유료</Cost>
+              <Date>01-01 ~ 12-31</Date>
+            </div>
+          </CardBox>
+          <CardBox>
+            <Image>개쩌는 이미지</Image>
+            <Name>이름을 길게쓰면 두줄로 나올지 모르겠지만 일단</Name>
+            <div style={{ display: 'flex' }}>
+              <Cost>유료</Cost>
+              <Date>01-01 ~ 12-31</Date>
+            </div>
+          </CardBox>
+          <CardBox>
+            <Image>개쩌는 이미지</Image>
+            <Name>이름을 길게쓰면 두줄로 나올지 모르겠지만 일단</Name>
+            <div style={{ display: 'flex' }}>
+              <Cost>유료</Cost>
+              <Date>01-01 ~ 12-31</Date>
+            </div>
+          </CardBox>
+          <CardBox>
+            <Image>개쩌는 이미지</Image>
+            <Name>이름을 길게쓰면 두줄로 나올지 모르겠지만 일단</Name>
+            <div style={{ display: 'flex' }}>
+              <Cost>유료</Cost>
+              <Date>01-01 ~ 12-31</Date>
+            </div>
+          </CardBox>
+        </div>
+        <div style={{ display: 'flex' }}>
+          <CardBox>
+            <Image>개쩌는 이미지</Image>
+            <Name>이름을 길게쓰면 두줄로 나올지 모르겠지만 일단</Name>
+            <div style={{ display: 'flex' }}>
+              <Cost>유료</Cost>
+              <Date>01-01 ~ 12-31</Date>
+            </div>
+          </CardBox>
+          <CardBox>
+            <Image>개쩌는 이미지</Image>
+            <Name>이름을 길게쓰면 두줄로 나올지 모르겠지만 일단</Name>
+            <div style={{ display: 'flex' }}>
+              <Cost>유료</Cost>
+              <Date>01-01 ~ 12-31</Date>
+            </div>
+          </CardBox>
+          <CardBox>
+            <Image>개쩌는 이미지</Image>
+            <Name>이름을 길게쓰면 두줄로 나올지 모르겠지만 일단</Name>
+            <div style={{ display: 'flex' }}>
+              <Cost>유료</Cost>
+              <Date>01-01 ~ 12-31</Date>
+            </div>
+          </CardBox>
+          <CardBox>
+            <Image>개쩌는 이미지</Image>
+            <Name>이름을 길게쓰면 두줄로 나올지 모르겠지만 일단</Name>
+            <div style={{ display: 'flex' }}>
+              <Cost>유료</Cost>
+              <Date>01-01 ~ 12-31</Date>
+            </div>
+          </CardBox>
+          <CardBox>
+            <Image>개쩌는 이미지</Image>
+            <Name>이름을 길게쓰면 두줄로 나올지 모르겠지만 일단</Name>
+            <div style={{ display: 'flex' }}>
+              <Cost>유료</Cost>
+              <Date>01-01 ~ 12-31</Date>
+            </div>
+          </CardBox>
+        </div>
+
+        <PageButton />
       </div>
 
       <div
