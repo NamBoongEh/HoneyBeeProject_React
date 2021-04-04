@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import { Plus, Dash, File } from 'react-bootstrap-icons';
+import { Plus, Dash, Dot } from 'react-bootstrap-icons';
 
 const SelectBox = styled.select`
   height: 40px;
@@ -18,6 +18,20 @@ const InputBox = styled.input`
   background-color: rgba(246, 218, 66, 0.3);
   border: none;
   margin: 1% 0 1% 1%;
+  &:focus {
+    outline: none;
+  }
+`;
+
+const InputBox2 = styled.input`
+  width: 70%;
+  height: 43px;
+  border-radius: 10px;
+  margin-left: 3%;
+  margin-right: 3%;
+  background-color: rgba(246, 218, 66, 0.3);
+  border: none;
+  float: right;
   &:focus {
     outline: none;
   }
@@ -64,10 +78,23 @@ const FileButton = styled.button`
 `;
 
 const Box = styled.div`
-  border: 1px solid black;
-  height: 5%;
+  height: 6%;
   width: 45%;
-  margin: 1% 1% 1% 3%;
+  margin: 1% 1% 1.5% 3%;
+  font-weight: bold;
+  font-size: 25px;
+`;
+
+const ClickButton = styled.button`
+  width: 10%;
+  height: 70px;
+  background-color: rgb(48, 27, 1);
+  color: white;
+  border: none;
+  padding: 8px;
+  font-size: x-large;
+  border-radius: 13px;
+  margin: 5% 30px 10%;
 `;
 
 export default function BoardWrite(props) {
@@ -96,12 +123,106 @@ export default function BoardWrite(props) {
         <FileButton>첨부파일</FileButton>
 
         <h3 style={{ fontWeight: 'bold', margin: '5% 0 2%' }}>모임 상세</h3>
-        <div style={{ border: '1px solid rgb(249,130,15)', height: '1000px' }}>
-          <Box></Box>
-          <Box></Box>
-          <Box></Box>
-          <Box></Box>
-          <Box></Box>
+        <div
+          style={{
+            border: '1px solid rgb(249,130,15)',
+            height: '800px',
+          }}
+        >
+          <Box>
+            <Dot />
+            모임일자
+            <InputBox2
+              style={{
+                width: '32%',
+              }}
+            />
+            <Dash style={{ transform: 'translateX(310px)' }} />
+            <InputBox2
+              style={{
+                width: '32%',
+              }}
+            />
+          </Box>
+          <Box>
+            <Dot />
+            모집임원
+            <InputBox2 />
+          </Box>
+          <Box>
+            <Dot />
+            비용
+            <input
+              type={'checkbox'}
+              style={{ zoom: 1.5, marginLeft: '20%' }}
+            />{' '}
+            무료
+            <input
+              type={'checkbox'}
+              style={{ zoom: 1.5, marginLeft: '5%' }}
+            />{' '}
+            유료
+            <InputBox2
+              style={{
+                width: '37%',
+              }}
+            />
+          </Box>
+          <Box>
+            <Dot />
+            모집기간
+            <InputBox2 />
+          </Box>
+          <Box>
+            <Dot />
+            위치
+            <InputBox2 />
+          </Box>
+          <div
+            style={{ transform: 'translate(800px, -360px)', marginRight: '3%' }}
+          >
+            <Box>
+              <h3 style={{ fontWeight: 'bold' }}>썸네일</h3>
+            </Box>
+            <Box style={{ fontWeight: 'lighter', fontSize: '18px' }}>
+              <FileButton
+                style={{
+                  transform: 'translateY(0px)',
+                  marginRight: '3%',
+                }}
+              >
+                첨부파일
+              </FileButton>
+              글 쓰이면?ㄴㅇ럼ㄷㅈ히ㅏㅓㅗㅂ제대햐ㅗㅂㅈ데ㅐㅑ허
+            </Box>
+            <Box
+              style={{
+                border: '1px solid black',
+                height: '210px',
+                width: '15%',
+                marginRight: '3%',
+              }}
+            >
+              귀여운 미리보기 이미지를 넣어주세요
+            </Box>
+          </div>
+          <Box
+            style={{
+              border: '1px solid black',
+              height: '390px',
+              width: '94%',
+              marginRight: '3%',
+              transform: 'translateY(-350px)',
+            }}
+          >
+            지도
+          </Box>
+        </div>
+        <div style={{ textAlign: 'center' }}>
+          <ClickButton style={{ backgroundColor: 'rgb(246,130,15)' }}>
+            모임등록
+          </ClickButton>
+          <ClickButton>등록취소</ClickButton>
         </div>
       </div>
       <div
