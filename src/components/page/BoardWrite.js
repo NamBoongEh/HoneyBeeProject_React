@@ -37,6 +37,21 @@ const InputBox2 = styled.input`
   }
 `;
 
+const DateBox = styled.input`
+  width: 32%;
+  height: 43px;
+  border-radius: 10px;
+  margin-left: 3%;
+  margin-right: 3%;
+  background-color: rgba(246, 218, 66, 0.3);
+  border: none;
+  float: right;
+  &:focus {
+    outline: none;
+    cursor: pointer;
+  }
+`;
+
 const TextBox = styled.textarea`
   resize: none;
   width: 100%;
@@ -132,21 +147,13 @@ export default function BoardWrite(props) {
           <Box>
             <Dot />
             모임일자
-            <InputBox2
-              style={{
-                width: '32%',
-              }}
-            />
+            <DateBox readOnly />
             <Dash style={{ transform: 'translateX(310px)' }} />
-            <InputBox2
-              style={{
-                width: '32%',
-              }}
-            />
+            <DateBox readOnly />
           </Box>
           <Box>
             <Dot />
-            모집임원
+            모집인원
             <InputBox2 />
           </Box>
           <Box>
@@ -171,7 +178,9 @@ export default function BoardWrite(props) {
           <Box>
             <Dot />
             모집기간
-            <InputBox2 />
+            <DateBox readOnly />
+            <Dash style={{ transform: 'translateX(310px)' }} />
+            <DateBox readOnly />
           </Box>
           <Box>
             <Dot />
