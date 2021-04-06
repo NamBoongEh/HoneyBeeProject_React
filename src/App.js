@@ -17,6 +17,7 @@ import ReReply1 from './components/search/ReReply1';
 import ReReply2 from './components/search/ReReply2';
 import Board from './components/page/Board';
 import BoardWrite from './components/page/BoardWrite';
+import BoardRead from './components/page/BoardRead';
 
 function App() {
   return (
@@ -38,6 +39,7 @@ function App() {
         <Route exact path={'/rereply2'} component={ReReply2} />
         <Route exact path={'/board'} component={Board} />
         <Route exact path={'/boardwrite'} component={BoardWrite} />
+        <Route exact path={'/boardread'} component={BoardRead} />
         <Footer />
       </BrowserRouter>
     </>
