@@ -361,7 +361,7 @@ export default function MyPageEdit(props) {
           />
         </Div5>
 
-        <div style={{ textAlign: 'center' }}>
+        <div style={{ textAlign: 'center', marginBottom: '5%' }}>
           <CheckBtn>회원탈퇴</CheckBtn>
         </div>
       </div>
