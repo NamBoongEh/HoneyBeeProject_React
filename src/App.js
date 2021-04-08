@@ -18,6 +18,7 @@ import ReReply2 from './components/search/ReReply2';
 import Board from './components/page/Board';
 import BoardWrite from './components/page/BoardWrite';
 import BoardRead from './components/page/BoardRead';
+import MyPage from './components/page/MyPage';
 
 function App() {
   return (
@@ -29,6 +30,7 @@ function App() {
         <Route exact path={'/register1'} component={Register1} />
         <Route exact path={'/register2'} component={Register2} />
         <Route exact path={'/tos'} component={TermsOfService} />
+        <Route exact path={'/mypage'} component={MyPage} />
         <Route exact path={'/mypageedit'} component={MyPageEdit} />
         <Route exact path={'/relogin'} component={ReLogin} />
         <Route exact path={'/freeboard'} component={FreeBoard} />
