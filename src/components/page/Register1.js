@@ -1,5 +1,25 @@
-import React from 'react';
+import React, { useState } from 'react';
 import styled from 'styled-components';
+import { Link } from 'react-router-dom';
+import { DashSquareFill, PlusSquareFill } from 'react-bootstrap-icons';
+
+const Plus = styled(PlusSquareFill)`
+  color: lightcoral;
+  zoom: 1.4;
+  margin: 0 1% 1% 0;
+  &:hover {
+    cursor: pointer;
+  }
+`;
+
+const Minus = styled(DashSquareFill)`
+  color: lightskyblue;
+  zoom: 1.4;
+  margin: 0 1% 1% 0;
+  &:hover {
+    cursor: pointer;
+  }
+`;
 
 const InputBar = styled.input`
   width: 45%;
@@ -37,6 +57,17 @@ const DoubleCheck = styled.button`
 `;
 
 export default function Register1() {
+  const [hobby, setHobby] = useState(false);
+  const [area, setArea] = useState(false);
+
+  const addHobby = () => {
+    setHobby(!hobby);
+  };
+
+  const addArea = () => {
+    setArea(!area);
+  };
+
   return (
     <div style={{ backgroundColor: 'rgb(246,218,66)', padding: '60px' }}>
       <div
@@ -83,12 +114,19 @@ export default function Register1() {
               lineHeight: '5rem',
             }}
           >
-            <InputBar placeholder={'아이디를 입력해주세요'} /> @{' '}
+            <InputBar style={{ width: '30%' }} /> @{' '}
+            <InputBar style={{ width: '30%' }} />{' '}
             <select>
-              <option>직접 입력하기</option>
-              <option value="naver.com">naver.com</option>
-              <option value="google.com">google.com</option>
+              <option>이메일 선택</option>
+              <option value="gmail.com">gmail.com</option>
+              <option value="kakao.com">kakao.com</option>
+              <option value="hanmail.net">hanmail.net</option>
               <option value="daum.net">daum.net</option>
+              <option value="hotmail.com">hotmail.com</option>
+              <option value="korea.com">korea.com</option>
+              <option value="naver.com">naver.com</option>
+              <option value="nate.com">nate.com</option>
+              <option>직접 입력하기</option>
             </select>
             <br />
             <DoubleCheck>이메일 중복 체크</DoubleCheck>
@@ -103,12 +141,9 @@ export default function Register1() {
             </DoubleCheck>
             <br />
             <div>
-              <select>
-                <option value="2021">2021</option>
-                <option value="2020">2020</option>
-                <option value="2019">2019</option>
-                <option value="2018">2018</option>
-              </select>{' '}
+              <select id={'year'}>
+                <option>2012</option>
+              </select>
               년도{' '}
               <select>
                 <option value="1">1</option>
@@ -159,7 +194,7 @@ export default function Register1() {
                 lineHeight: '2.5rem',
               }}
             >
-              <HobbyButton>서울/경기</HobbyButton>
+              {area && <HobbyButton>서울/경기</HobbyButton>}
             </div>
           </div>
 
@@ -215,26 +250,20 @@ export default function Register1() {
                     lineHeight: '250%',
                   }}
                 >
+                  <Plus />
+                  <Minus />
                   <select>
                     <option>시,도 선택</option>
+                    <option value={'서울시'}>서울시</option>
+                    <option value={'제주도'}>제주도</option>
                   </select>{' '}
                   <select>
                     <option>구,군 선택</option>
+                    <option value={'광명시'}>광명시</option>
+                    <option value={'구리시'}>구리시</option>
                   </select>
+                  <button onClick={() => addArea()}>추가</button>
                   <br />
-                  <select>
-                    <option>시,도 선택</option>
-                  </select>{' '}
-                  <select>
-                    <option>구,군 선택</option>
-                  </select>
-                  <br />
-                  <select>
-                    <option>시,도 선택</option>
-                  </select>{' '}
-                  <select>
-                    <option>구,군 선택</option>
-                  </select>
                 </div>
               </div>
             </div>
@@ -258,7 +287,8 @@ export default function Register1() {
                   lineHeight: '2.5rem',
                 }}
               >
-                <HobbyButton>게임</HobbyButton>
+                {hobby && <HobbyButton>교육</HobbyButton>}
+                {hobby && <HobbyButton>세미나/컨퍼런스</HobbyButton>}
               </div>
             </div>
             <div style={{ paddingTop: '20px' }} />
@@ -285,40 +315,71 @@ export default function Register1() {
                 <table style={{ width: '100%', height: '110%' }}>
                   <tr>
                     <td>
-                      <input type={'checkbox'} /> 교육
+                      <label for={'education'}>
+                        <input
+                          id={'education'}
+                          type={'checkbox'}
+                          onClick={() => addHobby()}
+                        />{' '}
+                        교육
+                      </label>
                     </td>
                     <td>
-                      <input type={'checkbox'} /> 세미나/컨퍼런스
+                      <label for={'seminar'}>
+                        <input
+                          id={'seminar'}
+                          type={'checkbox'}
+                          onClick={() => addHobby()}
+                        />{' '}
+                        세미나/컨퍼런스
+                      </label>
                     </td>
                     <td>
-                      <input type={'checkbox'} /> 강연
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>
-                      <input type={'checkbox'} /> 취미/소모임
-                    </td>
-                    <td>
-                      <input type={'checkbox'} /> 문화/예술/방송
-                    </td>
-                    <td>
-                      <input type={'checkbox'} /> 공모전
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>
-                      <input type={'checkbox'} /> 전시/박람회
-                    </td>
-                    <td>
-                      <input type={'checkbox'} /> 이벤트/파티
-                    </td>
-                    <td>
-                      <input type={'checkbox'} /> 패션/뷰티
+                      <label for={'lecture'}>
+                        <input id={'lecture'} type={'checkbox'} /> 강연
+                      </label>
                     </td>
                   </tr>
                   <tr>
                     <td>
-                      <input type={'checkbox'} /> 기타
+                      <label for={'hobby'}>
+                        <input id={'hobby'} type={'checkbox'} /> 취미/소모임
+                      </label>
+                    </td>
+                    <td>
+                      <label for={'art'}>
+                        <input id={'art'} type={'checkbox'} /> 문화/예술/방송
+                      </label>
+                    </td>
+                    <td>
+                      <label for={'competition'}>
+                        <input id={'competition'} type={'checkbox'} /> 공모전
+                      </label>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <label for={'exhibition'}>
+                        <input id={'exhibition'} type={'checkbox'} />{' '}
+                        전시/박람회
+                      </label>
+                    </td>
+                    <td>
+                      <label for={'event'}>
+                        <input id={'event'} type={'checkbox'} /> 이벤트/파티
+                      </label>
+                    </td>
+                    <td>
+                      <label for={'beauty'}>
+                        <input id={'beauty'} type={'checkbox'} /> 패션/뷰티
+                      </label>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <label for={'ect'}>
+                        <input id={'ect'} type={'checkbox'} /> 기타
+                      </label>
                     </td>
                   </tr>
                 </table>
@@ -326,31 +387,35 @@ export default function Register1() {
             </div>
           </div>
           <div style={{ paddingTop: '60px' }} />
-          <button
-            style={{
-              backgroundColor: 'orange',
-              color: 'white',
-              border: 'none',
-              fontSize: '18px',
-              padding: '10px 20px 10px 20px',
-              borderRadius: '10px',
-            }}
-          >
-            뒤로가기
-          </button>
-          <button
-            style={{
-              backgroundColor: 'orange',
-              color: 'white',
-              border: 'none',
-              fontSize: '18px',
-              padding: '10px 20px 10px 20px',
-              borderRadius: '10px',
-              float: 'right',
-            }}
-          >
-            다음
-          </button>
+          <Link to="./login">
+            <button
+              style={{
+                backgroundColor: 'orange',
+                color: 'white',
+                border: 'none',
+                fontSize: '18px',
+                padding: '10px 20px 10px 20px',
+                borderRadius: '10px',
+              }}
+            >
+              뒤로가기
+            </button>
+          </Link>
+          <Link to="./Register2">
+            <button
+              style={{
+                backgroundColor: 'orange',
+                color: 'white',
+                border: 'none',
+                fontSize: '18px',
+                padding: '10px 20px 10px 20px',
+                borderRadius: '10px',
+                float: 'right',
+              }}
+            >
+              다음
+            </button>
+          </Link>
         </div>
       </div>
     </div>

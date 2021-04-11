@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import React from 'react';
 import styled from 'styled-components';
 import { Plus, Dash, Dot } from 'react-bootstrap-icons';
@@ -228,10 +229,14 @@ export default function BoardWrite(props) {
           </Box>
         </div>
         <div style={{ textAlign: 'center' }}>
-          <ClickButton style={{ backgroundColor: 'rgb(246,130,15)' }}>
-            모임등록
-          </ClickButton>
-          <ClickButton>등록취소</ClickButton>
+          <Link to={'./Board'}>
+            <ClickButton style={{ backgroundColor: 'rgb(246,130,15)' }}>
+              모임등록
+            </ClickButton>
+          </Link>
+          <Link to={'./Board'}>
+            <ClickButton>등록취소</ClickButton>
+          </Link>
         </div>
       </div>
       <div

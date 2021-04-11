@@ -54,7 +54,9 @@ export default function Register2() {
               paddingBottom: '10px',
             }}
           >
-            <input type={'checkbox'} /> 전체동의
+            <label for={'all'}>
+              <input id={'all'} type={'checkbox'} /> 전체동의
+            </label>
           </div>
         </div>
         <div
@@ -75,14 +77,25 @@ export default function Register2() {
               paddingBottom: '10px',
             }}
           >
-            <input type={'checkbox'} /> (필수) 만 14세 이상입니다. <br />
-            <input type={'checkbox'} /> (필수) 이용약관 동의
+            <label htmlFor={'check1'}>
+              <input id={'check1'} type={'checkbox'} /> (필수) 만 14세
+              이상입니다.
+            </label>
+            <br />
+            <label htmlFor={'check2'}>
+              <input id={'check2'} type={'checkbox'} /> (필수) 이용약관 동의
+            </label>
             <Links to={'tos'}>내용보기</Links>
             <br />
-            <input type={'checkbox'} /> (필수) 개인정보 수집 및 이용 동의
+            <label htmlFor={'check3'}>
+              <input id={'check3'} type={'checkbox'} />
+              (필수) 개인정보 수집 및 이용 동의
+            </label>
             <Links to={'tos'}>내용보기</Links>
             <br />
-            <input type={'checkbox'} /> (선택) 이메일 수신
+            <label htmlFor={'check4'}>
+              <input id={'check4'} type={'checkbox'} /> (선택) 이메일 수신
+            </label>
             <br />
           </div>
           <div style={{ fontSize: '13px', color: 'gray' }}>
@@ -90,33 +103,37 @@ export default function Register2() {
           </div>
         </div>
         <div style={{ textAlign: 'center', paddingTop: '50px' }}>
-          <button
-            style={{
-              backgroundColor: 'orange',
-              color: 'white',
-              border: 'none',
-              fontSize: '18px',
-              padding: '10px 20px 10px 20px',
-              borderRadius: '10px',
-            }}
-          >
-            회원가입 완료
-          </button>
+          <Link to="./Register">
+            <button
+              style={{
+                backgroundColor: 'orange',
+                color: 'white',
+                border: 'none',
+                fontSize: '18px',
+                padding: '10px 20px 10px 20px',
+                borderRadius: '10px',
+              }}
+            >
+              회원가입 완료
+            </button>
+          </Link>
           <br />
         </div>
         <div style={{ paddingTop: '50px' }}>
-          <button
-            style={{
-              backgroundColor: 'orange',
-              color: 'white',
-              border: 'none',
-              fontSize: '18px',
-              padding: '10px 20px 10px 20px',
-              borderRadius: '10px',
-            }}
-          >
-            뒤로가기
-          </button>
+          <Link to="./Register1">
+            <button
+              style={{
+                backgroundColor: 'orange',
+                color: 'white',
+                border: 'none',
+                fontSize: '18px',
+                padding: '10px 20px 10px 20px',
+                borderRadius: '10px',
+              }}
+            >
+              뒤로가기
+            </button>
+          </Link>
         </div>
       </div>
     </div>

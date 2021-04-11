@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import React from 'react';
 import styled from 'styled-components';
 import PageButton from '../search/PageButton';
@@ -36,11 +37,12 @@ const Image = styled.div`
   height: 50%;
   margin: 7% 7%;
 `;
+
 const Name = styled.div`
   border: 1px solid black;
   width: 86%;
   height: 20%;
-  margin: 0px 7% 7%;
+  margin: 0 7% 7%;
 `;
 const Cost = styled.div`
   border: 1px solid black;
@@ -117,12 +119,14 @@ export default function Board(props) {
         </select>
         <div style={{ display: 'flex' }}>
           <CardBox>
-            <Image>개쩌는 이미지</Image>
-            <Name>이름을 길게쓰면 두줄로 나올지 모르겠지만 일단</Name>
-            <div style={{ display: 'flex' }}>
-              <Cost>유료</Cost>
-              <Date>01-01 ~ 12-31</Date>
-            </div>
+            <Link to={'./BoardRead'}>
+              <Image>개쩌는 이미지</Image>
+              <Name>이름을 길게쓰면 두줄로 나올지 모르겠지만 일단</Name>
+              <div style={{ display: 'flex' }}>
+                <Cost>유료</Cost>
+                <Date>01-01 ~ 12-31</Date>
+              </div>
+            </Link>
           </CardBox>
           <CardBox>
             <Image>개쩌는 이미지</Image>

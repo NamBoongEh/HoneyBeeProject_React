@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import { Link } from 'react-router-dom';
 
 const TextBox = styled.textarea`
   resize: none;
@@ -57,10 +58,16 @@ export default function FreeBoardWrite(props) {
         />
         <TextBox rows={'30'} placeholder={'내용을 입력해 주세요.'} />
         <ClickButton style={{ float: 'left' }}>임시저장</ClickButton>
-        <ClickButton style={{ backgroundColor: 'rgb(246,130,15)' }}>
-          저장
-        </ClickButton>
-        <ClickButton>취소</ClickButton>
+
+        <Link to={'./FreeBoard'}>
+          <ClickButton style={{ backgroundColor: 'rgb(246,130,15)' }}>
+            저장
+          </ClickButton>
+        </Link>
+
+        <Link to={'./FreeBoard'}>
+          <ClickButton>취소</ClickButton>
+        </Link>
       </div>
       <div
         className={'col-1'}

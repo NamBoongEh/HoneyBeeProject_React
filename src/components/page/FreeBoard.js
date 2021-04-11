@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import React from 'react';
 import styled from 'styled-components';
 import PageButton from '../search/PageButton';
@@ -94,11 +95,13 @@ export default function FreeBoard(props) {
             <Tr2>
               <Td1>1</Td1>
               <Td2>
-                조장 놀린 썰 푼다람쥐며느리 아니 치킨 개먹고싶네 뿌링클은 절대
-                순살로 먹지마세요 뿌링클집안에 순살은 쓰레기 닭으로 써서 완전
-                품질안좋아요 그래서 나는 동네 치킨 먹지요 동네치킨 개 큼 진짜
-                어디 브라질산 닭 모셔왔냐고 개기쁘다 근데 떡들어있는 닭강정도
-                먹고싶네
+                <Link to={'./FreeBoardRead'}>
+                  조장 놀린 썰 푼다람쥐며느리 아니 치킨 개먹고싶네 뿌링클은 절대
+                  순살로 먹지마세요 뿌링클집안에 순살은 쓰레기 닭으로 써서 완전
+                  품질안좋아요 그래서 나는 동네 치킨 먹지요 동네치킨 개 큼 진짜
+                  어디 브라질산 닭 모셔왔냐고 개기쁘다 근데 떡들어있는 닭강정도
+                  먹고싶네
+                </Link>
               </Td2>
               <Td3>김세훈남소연이향일구리다이다현</Td3>
               <Td4>18:31</Td4>
@@ -226,19 +229,22 @@ export default function FreeBoard(props) {
               검색
             </button>
 
-            <button
-              style={{
-                float: 'right',
-                backgroundColor: 'rgb(48,27,1)',
-                color: 'white',
-                border: 'none',
-                padding: '8px 25px',
-                borderRadius: '13px',
-                marginRight: '0.5%',
-              }}
-            >
-              글쓰기
-            </button>
+            <Link to={'./FreeBoardWrite'}>
+              <button
+                style={{
+                  float: 'right',
+                  backgroundColor: 'rgb(48,27,1)',
+                  color: 'white',
+                  border: 'none',
+                  padding: '8px 25px',
+                  borderRadius: '13px',
+                  marginRight: '0.5%',
+                }}
+              >
+                글쓰기
+              </button>
+            </Link>
+
             <br />
           </div>
 

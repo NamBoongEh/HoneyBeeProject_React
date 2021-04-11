@@ -1,8 +1,8 @@
 import React from 'react';
-import { EmojiSmile } from 'react-bootstrap-icons';
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
 import InputBar from '../search/InputBar';
+import send from '../images/send.jpg';
 
 const Links = styled(Link)`
   color: dimgray;
@@ -11,14 +11,6 @@ const Links = styled(Link)`
     text-decoration: none;
     color: dimgray;
   }
-`;
-
-const StyledLogin = styled(EmojiSmile)`
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-  width: 50%;
-  font-size: 110px;
 `;
 
 export default function Login(props) {
@@ -42,13 +34,24 @@ export default function Login(props) {
             paddingBottom: '50px',
           }}
         >
-          <StyledLogin />
+          <img
+            src={send}
+            alt="welcome"
+            style={{ width: '50%', height: '50%' }}
+          />
           <br />
           달콤한 모임에 꿀빨러 오세요.
         </div>
         <InputBar />
         <div style={{ color: 'dimgray', fontSize: '13px', lineHeight: '30px' }}>
-          <input type={'checkbox'} style={{ marginLeft: '75px' }} /> 아이디 저장
+          <label for={'RememberID'}>
+            <input
+              id={'RememberID'}
+              type={'checkbox'}
+              style={{ marginLeft: '75px' }}
+            />{' '}
+            아이디 저장
+          </label>
           <Links to={'home'} style={{ marginLeft: '100px' }}>
             아이디/비밀번호 찾기
           </Links>

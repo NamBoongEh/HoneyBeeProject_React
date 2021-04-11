@@ -19,6 +19,7 @@ import Board from './components/page/Board';
 import BoardWrite from './components/page/BoardWrite';
 import BoardRead from './components/page/BoardRead';
 import MyPage from './components/page/MyPage';
+import Register from './components/page/Register';
 
 function App() {
   return (
@@ -27,6 +28,7 @@ function App() {
         <Header />
         <Route exact path={'/home'} component={Home} />
         <Route exact path={'/login'} component={Login} />
+        <Route exact path={'/register'} component={Register} />
         <Route exact path={'/register1'} component={Register1} />
         <Route exact path={'/register2'} component={Register2} />
         <Route exact path={'/tos'} component={TermsOfService} />
