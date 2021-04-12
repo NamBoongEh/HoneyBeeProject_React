@@ -156,12 +156,12 @@ export default function MyPageEdit(props) {
           <Div3 className={'col-10'}>
             남붕어@naver.com
             <Toggleon />
+            <Button2>인증하기</Button2>
           </Div3>
           <Div2 className={'col-2'}>휴대전화</Div2>
           <Div3 className={'col-10'}>
             010-0000-0000
             <Toggleoff />
-            <Button2>인증하기</Button2>
           </Div3>
           <Div2 className={'col-2'}>가입일</Div2>
           <Div3 className={'col-10'}>1993-09-16</Div3>

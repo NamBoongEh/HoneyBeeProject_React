@@ -1,6 +1,15 @@
 import React from 'react';
-import { HeartFill, Heart, BellFill, Textarea } from 'react-bootstrap-icons';
+import {
+  HeartFill,
+  Heart,
+  BellFill,
+  Textarea,
+  Reply,
+} from 'react-bootstrap-icons';
 import styled from 'styled-components';
+import Reply1 from '../search/Reply1';
+import ReReply1 from '../search/ReReply1';
+import ReReply2 from '../search/ReReply2';
 
 const FillHeart = styled(HeartFill)`
   float: right;
@@ -85,6 +94,9 @@ export default function FreeBoardRead(props) {
         <FillBell />
         <FillHeart />
         <EmptyHeart />
+        <Reply1 />
+        <ReReply1 />
+        <ReReply2 />
       </div>
       <div
         className={'col-1'}
