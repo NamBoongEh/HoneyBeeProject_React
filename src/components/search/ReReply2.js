@@ -56,7 +56,7 @@ const Report = styled.button`
   color: white;
 `;
 
-export default function rereply2() {
+export default function reReply2() {
   return (
     <>
       <div style={{ display: 'flex' }}>

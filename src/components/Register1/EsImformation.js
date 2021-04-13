@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import styled from 'styled-components';
 
 const InputBar = styled.input`
@@ -25,12 +25,47 @@ const DoubleCheck = styled.button`
 
 export default function EsImformation() {
   const [list, setList] = useState(['']);
-  const month = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12];
+  const yearList = { years: [] };
+  const dayList = { days: [] };
+
+  const IterationYear = () => {
+    for (let i = 1900; i <= 2021; i++) {
+      yearList.years = [...yearList.years, i];
+    }
+    const nameList = yearList.years.map((name) => (
+      <option key={name}>{name}</option>
+    ));
+
+    return <select>{nameList}</select>;
+  };
+
+  const IterationMonth = () => {
+    const month = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12];
+    const monthList = month.map((m) => <option key={m}>{m}</option>);
+
+    return <select>{monthList}</select>;
+  };
+
+  const IterationDay = () => {
+    for (let i = 1; i <= 31; i++) {
+      dayList.days = [...dayList.days, i];
+    }
+    const nameList = dayList.days.map((name) => (
+      <option key={name}>{name}</option>
+    ));
+
+    return <select>{nameList}</select>;
+  };
 
   const onChangeHandler = (e) => {
     console.log(e.target);
     console.log(e.target.value);
-    setList(() => [{ id: e.target.value }]);
+
+    if (
+      e.target.value === ''
+        ? setList(() => [{ value: e.target.value, readOnly: false }])
+        : setList(() => [{ value: e.target.value, readOnly: true }])
+    );
   };
 
   return (
@@ -69,10 +104,14 @@ export default function EsImformation() {
         >
           <InputBar style={{ width: '30%' }} /> @{' '}
           {list.map((c) => (
-            <InputBar style={{ width: '30%' }} placeholder={c.id} readOnly />
+            <InputBar
+              style={{ width: '30%' }}
+              placeholder={c.value}
+              readOnly={c.readOnly}
+            />
           ))}
           <select onChange={(e) => onChangeHandler(e)} name={'email'}>
-            <option value="">이메일 선택</option>
+            <option value="select">이메일 선택</option>
             <option value="gmail.com">gmail.com</option>
             <option value="kakao.com">kakao.com</option>
             <option value="hanmail.net">hanmail.net</option>
@@ -81,7 +120,7 @@ export default function EsImformation() {
             <option value="korea.com">korea.com</option>
             <option value="naver.com">naver.com</option>
             <option value="nate.com">nate.com</option>
-            <option>직접 입력하기</option>
+            <option value="">직접 입력하기</option>
           </select>
           <br />
           <DoubleCheck>이메일 중복 체크</DoubleCheck>
@@ -96,22 +135,10 @@ export default function EsImformation() {
           </DoubleCheck>
           <br />
           <div>
-            <select id={'year'}>
-              <option>2012</option>
-            </select>
-            년도{' '}
-            <select id={'month'}>
-              <option value={month}>{month}</option>
-            </select>
-            월{' '}
-            <select>
-              <option value="1">1</option>
-              <option value="2">2</option>
-              <option value="3">3</option>
-              <option value="4">4</option>
-              <option value="30">30</option>
-            </select>{' '}
-            일{' '}
+            <IterationYear />
+            년도
+            <IterationMonth />월
+            <IterationDay />일
           </div>
         </div>
       </div>

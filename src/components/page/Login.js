@@ -72,7 +72,7 @@ export default function Login(props) {
           </button>
         </div>
         <div style={{ textAlign: 'center', lineHeight: '35px' }}>
-          <Links to={'register1'}>회원가입</Links>
+          <Links to={'register'}>회원가입</Links>
         </div>
       </div>
     </div>

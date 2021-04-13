@@ -1,47 +1,74 @@
-import React from 'react';
+import React, { useState } from 'react';
+import styled from 'styled-components';
 import { Link } from 'react-router-dom';
-import manager from '../images/manager.jpg';
+import Register3 from '../Register1/Register3';
+import Register2 from '../Register1/Register2';
+import EsImformation from '../Register1/EsImformation';
 
-export default function Register(props) {
+const BtnRight = styled.button`
+  background-color: orange;
+  color: white;
+  border: none;
+  font-size: 18px;
+  padding: 10px 20px 10px 20px;
+  border-radius: 10px;
+  float: right;
+`;
+
+const BtnLeft = styled.button`
+  background-color: orange;
+  color: white;
+  border: none;
+  font-size: 18px;
+  padding: 10px 20px 10px 20px;
+  border-radius: 10px;
+`;
+
+export default function Register() {
+  const [show, setShow] = useState(false);
+  const [show2, setShow2] = useState(false);
+
+  const toggleHandler = () => {
+    setShow(!show);
+  };
+
+  const toggleHandler2 = () => {
+    setShow2(!show2);
+  };
+
   return (
     <div style={{ backgroundColor: 'rgb(246,218,66)', padding: '60px' }}>
-      <p
+      <div
         className={'container'}
         style={{
           backgroundColor: 'white',
-          padding: '60px 40px 60px 40px',
-          width: '40%',
+          padding: '40px 40px 60px 40px',
+          height: '50%',
+          width: '50%',
           boxShadow: '0 10px 15px 0 rgba(0, 0, 0, 0.5)',
-          textAlign: 'center',
         }}
       >
-        <img
-          src={manager}
-          alt="welcome"
-          style={{ width: '50%', height: '50%' }}
-        />
-        <p style={{ fontSize: 'x-large', fontWeight: 'bold' }}>
-          회원가입 완료
-          <br />
-          꿀벌이 되신 것을 축하드립니다!
-        </p>
-        <Link to="./Home">
-          <button
-            style={{
-              backgroundColor: 'rgb(250,176,24)',
-              border: 'none',
-              fontSize: '18px',
-              width: '30%',
-              padding: '10px 20px 10px 20px',
-              fontWeight: 'bold',
-              borderRadius: '10px',
-              marginTop: '1rem',
-            }}
-          >
-            홈으로
-          </button>
-        </Link>
-      </p>
+        {!show && <EsImformation />}
+        {!show && (
+          <Link to="./Login">
+            <BtnLeft>취소</BtnLeft>
+          </Link>
+        )}
+        {!show && (
+          <BtnRight style={{}} onClick={() => toggleHandler()}>
+            다음
+          </BtnRight>
+        )}
+        {show && <Register2 /> && !show2 && <Register2 />}
+        {show && <Register2 /> && !show2 && <Register2 /> && (
+          <BtnLeft onClick={() => toggleHandler()}>뒤로가기</BtnLeft>
+        )}
+        {show && <Register2 /> && !show2 && <Register2 /> && (
+          <BtnRight onClick={() => toggleHandler2()}>다음</BtnRight>
+        )}
+        {show2 && <Register3 />}
+        {show2 && <BtnLeft onClick={() => toggleHandler2()}>뒤로가기</BtnLeft>}
+      </div>
     </div>
   );
 }

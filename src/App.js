@@ -4,9 +4,7 @@ import Home from './components/page/Home';
 import Login from './components/page/Login';
 import Header from './components/Header';
 import Footer from './components/Footer';
-import Register2 from './components/page/Register2';
-import Register1 from './components/page/Register1';
-import TermsOfService from './components/page/TermsOfService';
+import Register from './components/page/Register';
 import MyPageEdit from './components/page/MyPageEdit';
 import ReLogin from './components/page/ReLogin';
 import FreeBoard from './components/page/FreeBoard';
@@ -19,7 +17,7 @@ import Board from './components/page/Board';
 import BoardWrite from './components/page/BoardWrite';
 import BoardRead from './components/page/BoardRead';
 import MyPage from './components/page/MyPage';
-import Register from './components/page/Register';
+import RegisterDone from './components/page/RegisterDone';
 
 function App() {
   return (
@@ -28,10 +26,8 @@ function App() {
         <Header />
         <Route exact path={'/home'} component={Home} />
         <Route exact path={'/login'} component={Login} />
+        <Route exact path={'/registerdone'} component={RegisterDone} />
         <Route exact path={'/register'} component={Register} />
-        <Route exact path={'/register1'} component={Register1} />
-        <Route exact path={'/register2'} component={Register2} />
-        <Route exact path={'/tos'} component={TermsOfService} />
         <Route exact path={'/mypage'} component={MyPage} />
         <Route exact path={'/mypageedit'} component={MyPageEdit} />
         <Route exact path={'/relogin'} component={ReLogin} />
@@ -40,7 +36,7 @@ function App() {
         <Route exact path={'/freeboardwrite'} component={FreeBoardWrite} />
         <Route exact path={'/reply1'} component={Reply1} />
         <Route exact path={'/rereply1'} component={ReReply1} />
-        <Route exact path={'/rereply2'} component={ReReply2} />
+        <Route exact path={'/reReply2'} component={ReReply2} />
         <Route exact path={'/board'} component={Board} />
         <Route exact path={'/boardwrite'} component={BoardWrite} />
         <Route exact path={'/boardread'} component={BoardRead} />

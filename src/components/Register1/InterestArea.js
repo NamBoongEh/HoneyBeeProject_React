@@ -35,8 +35,14 @@ const HobbyButton = styled.button`
 export default function InterestArea() {
   const [list, setList] = useState([]);
   const [city, setCity] = useState({ city: '', dist: '' });
+
   const onClickHandler = () => {
-    if (city.city !== '' && city.dist !== '') {
+    if (
+      city.city !== '' &&
+      city.dist !== '' &&
+      city.city !== '시,도 선택' &&
+      city.dist !== '구,군 선택'
+    ) {
       setList((p) => [...p, city]);
     }
     console.log(list);
@@ -46,6 +52,18 @@ export default function InterestArea() {
     console.log(e.target);
     console.log(e.target.value);
     setCity((p) => ({ ...p, [e.target.name]: e.target.value }));
+  };
+
+  // eslint-disable-next-line no-shadow
+  const removeArea = (city, dist) => {
+    console.log('이건 city얌' + city);
+    console.log('이건 dist얌' + dist);
+
+    const nextNames = list.filter(
+      (name) => name.city !== city && name.dist !== dist
+    );
+
+    setList(nextNames);
   };
 
   return (
@@ -69,7 +87,9 @@ export default function InterestArea() {
           }}
         >
           {list.map((c) => (
-            <HobbyButton>{c.city + '/' + c.dist}</HobbyButton>
+            <HobbyButton onClick={() => removeArea(c.city, c.dist)}>
+              {c.city + '/' + c.dist}
+            </HobbyButton>
           ))}
         </div>
       </div>

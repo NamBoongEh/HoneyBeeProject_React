@@ -19,8 +19,8 @@ export default function InterestHobby() {
   const onClickHandler = (e) => {
     console.log(e.target);
     console.log(e.target.id);
-    console.log(e.target.value);
-    if (e.target.value === 'on') {
+    console.log(e.target.checked);
+    if (e.target.checked === true) {
       setHobby((prev) => [...prev, { id: e.target.id }]);
     }
   };
@@ -28,6 +28,12 @@ export default function InterestHobby() {
   useEffect(() => {
     console.log(hobby);
   }, [hobby]);
+
+  const removeHobby = (id) => {
+    const nextNames = hobby.filter((name) => name.id !== id);
+
+    setHobby(nextNames);
+  };
 
   return (
     <div>
@@ -52,7 +58,9 @@ export default function InterestHobby() {
           }}
         >
           {hobby.map((c) => (
-            <HobbyButton>{c.id}</HobbyButton>
+            <HobbyButton key={c.id} onClick={() => removeHobby(c.id)}>
+              {c.id}
+            </HobbyButton>
           ))}
         </div>
       </div>
@@ -101,48 +109,88 @@ export default function InterestHobby() {
               </td>
               <td>
                 <label for={'lecture'}>
-                  <input id={'lecture'} type={'checkbox'} /> 강연
+                  <input
+                    id={'강연'}
+                    type={'checkbox'}
+                    onClick={(e) => onClickHandler(e)}
+                  />{' '}
+                  강연
                 </label>
               </td>
             </tr>
             <tr>
               <td>
                 <label for={'hobby'}>
-                  <input id={'hobby'} type={'checkbox'} /> 취미/소모임
+                  <input
+                    id={'취미/소모임'}
+                    type={'checkbox'}
+                    onClick={(e) => onClickHandler(e)}
+                  />{' '}
+                  취미/소모임
                 </label>
               </td>
               <td>
                 <label for={'art'}>
-                  <input id={'art'} type={'checkbox'} /> 문화/예술/방송
+                  <input
+                    id={'문화/예술/방송'}
+                    type={'checkbox'}
+                    onClick={(e) => onClickHandler(e)}
+                  />{' '}
+                  문화/예술/방송
                 </label>
               </td>
               <td>
                 <label for={'competition'}>
-                  <input id={'competition'} type={'checkbox'} /> 공모전
+                  <input
+                    id={'공모전'}
+                    type={'checkbox'}
+                    onClick={(e) => onClickHandler(e)}
+                  />{' '}
+                  공모전
                 </label>
               </td>
             </tr>
             <tr>
               <td>
                 <label for={'exhibition'}>
-                  <input id={'exhibition'} type={'checkbox'} /> 전시/박람회
+                  <input
+                    id={'전시/박람회'}
+                    type={'checkbox'}
+                    onClick={(e) => onClickHandler(e)}
+                  />{' '}
+                  전시/박람회
                 </label>
               </td>
               <td>
                 <label for={'event'}>
-                  <input id={'event'} type={'checkbox'} /> 이벤트/파티
+                  <input
+                    id={'이벤트/파티'}
+                    type={'checkbox'}
+                    onClick={(e) => onClickHandler(e)}
+                  />{' '}
+                  이벤트/파티
                 </label>
               </td>
               <td>
                 <label for={'beauty'}>
-                  <input id={'beauty'} type={'checkbox'} /> 패션/뷰티
+                  <input
+                    id={'패션/뷰티'}
+                    type={'checkbox'}
+                    onClick={(e) => onClickHandler(e)}
+                  />{' '}
+                  패션/뷰티
                 </label>
               </td>
             </tr>
             <tr>
               <td>
                 <label for={'ect'}>
-                  <input id={'ect'} type={'checkbox'} /> 기타
+                  <input
+                    id={'기타'}
+                    type={'checkbox'}
+                    onClick={(e) => onClickHandler(e)}
+                  />{' '}
+                  기타
                 </label>
               </td>
             </tr>
