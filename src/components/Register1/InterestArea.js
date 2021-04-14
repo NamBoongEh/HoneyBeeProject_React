@@ -36,6 +36,7 @@ export default function InterestArea() {
   const [list, setList] = useState([]);
   const [city, setCity] = useState({ city: '', dist: '' });
 
+  // 관심 지역 '시,도 선택'과 '구,군선택' 클릭 시 위에 노란색 선택한거 뜨는 이벤트 시작
   const onClickHandler = () => {
     if (
       city.city !== '' &&
@@ -43,7 +44,7 @@ export default function InterestArea() {
       city.city !== '시,도 선택' &&
       city.dist !== '구,군 선택'
     ) {
-      setList((p) => [...p, city]);
+      setList((p) => [city]);
     }
     console.log(list);
   };
@@ -53,6 +54,7 @@ export default function InterestArea() {
     console.log(e.target.value);
     setCity((p) => ({ ...p, [e.target.name]: e.target.value }));
   };
+  // 관심 지역 '시,도 선택'과 '구,군선택' 클릭 시 위에 노란색 선택한거 뜨는 이벤트 종료
 
   // eslint-disable-next-line no-shadow
   const removeArea = (city, dist) => {
@@ -60,7 +62,7 @@ export default function InterestArea() {
     console.log('이건 dist얌' + dist);
 
     const nextNames = list.filter(
-      (name) => name.city !== city && name.dist !== dist
+      (name) => name.city + name.dist !== city + dist
     );
 
     setList(nextNames);
@@ -87,7 +89,10 @@ export default function InterestArea() {
           }}
         >
           {list.map((c) => (
-            <HobbyButton onClick={() => removeArea(c.city, c.dist)}>
+            <HobbyButton
+              onClick={() => removeArea(c.city, c.dist)}
+              key={c.city + '/' + c.dist}
+            >
               {c.city + '/' + c.dist}
             </HobbyButton>
           ))}

@@ -24,10 +24,15 @@ const DoubleCheck = styled.button`
 `;
 
 export default function EsImformation() {
-  const [list, setList] = useState(['']);
+  const [email2, setEmail2List] = useState(['']);
+  const [nick, nickList] = useState('');
+  const [email, emailList] = useState('');
   const yearList = { years: [] };
   const dayList = { days: [] };
+  const [nickConfirm, setNickConfirm] = useState('');
+  const [emailConfirm, setEmailConfirm] = useState('');
 
+  // 생년월일 년도,월,일 생성 이벤트 시작
   const IterationYear = () => {
     for (let i = 1900; i <= 2021; i++) {
       yearList.years = [...yearList.years, i];
@@ -56,17 +61,45 @@ export default function EsImformation() {
 
     return <select>{nameList}</select>;
   };
+  // 생년월일 년도,월,일 생성 이벤트 끝
 
-  const onChangeHandler = (e) => {
-    console.log(e.target);
-    console.log(e.target.value);
+  // 이메일 선택 이벤트 시작
+  const emailChangeHandler2 = (e) => {
+    e.target.value === ''
+      ? setEmail2List(() => [{ value: e.target.value, readOnly: false }])
+      : setEmail2List(() => [{ value: e.target.value, readOnly: true }]);
+  };
+  // 이메일 선택 이벤트 끝
 
-    if (
-      e.target.value === ''
-        ? setList(() => [{ value: e.target.value, readOnly: false }])
-        : setList(() => [{ value: e.target.value, readOnly: true }])
+  // 이메일 중복 이벤트 시작
+  const emailChangeHandler1 = (e) => {
+    emailList(e.target.value);
+  };
+
+  const emailCheck = () => {
+    console.log(email);
+    console.log(email2[0].value);
+    setEmailConfirm(
+      email === 'aaa' && email2[0].value === 'naver.com'
+        ? email + '@' + email2[0].value + '는 사용 할 수 있습니다.'
+        : email + '@' + email2[0].value + '는 사용 할 수 없습니다.'
     );
   };
+  // 이메일 중복 이벤트 끝
+
+  // 닉네임 중복확인 이벤트 시작
+  const nickCheckHandler = (e) => {
+    nickList(e.target.value);
+  };
+
+  const nickCheck = () => {
+    setNickConfirm(
+      nick === '남붕어'
+        ? nick + '은 사용할 수 있습니다.'
+        : nick + '은 사용할 수 없습니다.'
+    );
+  };
+  // 닉네임 중복 이벤트 끝
 
   return (
     <div>
@@ -83,7 +116,9 @@ export default function EsImformation() {
             lineHeight: '5rem',
           }}
         >
-          아이디(이메일)
+          아이디
+          <br />
+          이메일
           <br />
           <br />
           비밀번호
@@ -102,16 +137,22 @@ export default function EsImformation() {
             lineHeight: '5rem',
           }}
         >
-          <InputBar style={{ width: '30%' }} /> @{' '}
-          {list.map((c) => (
+          <InputBar />
+          <br />
+          <InputBar
+            style={{ width: '30%' }}
+            onChange={(e) => emailChangeHandler1(e)}
+          />{' '}
+          @{' '}
+          {email2.map((c) => (
             <InputBar
               style={{ width: '30%' }}
               placeholder={c.value}
               readOnly={c.readOnly}
             />
           ))}
-          <select onChange={(e) => onChangeHandler(e)} name={'email'}>
-            <option value="select">이메일 선택</option>
+          <select onChange={(e) => emailChangeHandler2(e)} name={'email'}>
+            <option value="이메일 선택">이메일 선택</option>
             <option value="gmail.com">gmail.com</option>
             <option value="kakao.com">kakao.com</option>
             <option value="hanmail.net">hanmail.net</option>
@@ -123,17 +164,26 @@ export default function EsImformation() {
             <option value="">직접 입력하기</option>
           </select>
           <br />
-          <DoubleCheck>이메일 중복 체크</DoubleCheck>
+          <div>{emailConfirm}</div>
+          <DoubleCheck onClick={() => emailCheck()}>
+            이메일 중복 체크
+          </DoubleCheck>
           <br />
           <InputBar placeholder={'비밀번호를 입력해주세요'} />
           <br />
           <InputBar placeholder={'이름을 입력해주세요'} />
           <br />
-          <InputBar placeholder={'닉네임을 입력해주세요'} />
-          <DoubleCheck style={{ width: '20%', marginLeft: '5%' }}>
+          <InputBar
+            onChange={(e) => nickCheckHandler(e)}
+            placeholder={'닉네임을 입력해주세요'}
+          />
+          <DoubleCheck
+            style={{ width: '20%', marginLeft: '5%' }}
+            onClick={() => nickCheck()}
+          >
             중복확인
           </DoubleCheck>
-          <br />
+          <div>{nickConfirm}</div>
           <div>
             <IterationYear />
             년도

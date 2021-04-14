@@ -16,24 +16,27 @@ const HobbyButton = styled.button`
 export default function InterestHobby() {
   const [hobby, setHobby] = useState([]);
 
+  // 모임 선택 이벤트 시작
   const onClickHandler = (e) => {
-    console.log(e.target);
-    console.log(e.target.id);
-    console.log(e.target.checked);
     if (e.target.checked === true) {
       setHobby((prev) => [...prev, { id: e.target.id }]);
+    } else {
+      removeHobby(e.target.id);
     }
   };
 
   useEffect(() => {
     console.log(hobby);
   }, [hobby]);
+  // 모임 선택 이벤트 종료
 
+  // 선택 모임 지우는 이벤트 시작
   const removeHobby = (id) => {
     const nextNames = hobby.filter((name) => name.id !== id);
 
     setHobby(nextNames);
   };
+  // 선택 모임 지우는 이벤트 종료
 
   return (
     <div>
