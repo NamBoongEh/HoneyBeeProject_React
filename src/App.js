@@ -18,12 +18,13 @@ import BoardWrite from './components/page/BoardWrite';
 import BoardRead from './components/page/BoardRead';
 import MyPage from './components/page/MyPage';
 import RegisterDone from './components/page/RegisterDone';
+import Admin from './components/page/Admin';
 
 function App() {
   return (
     <>
       <BrowserRouter>
-        <Header />
+        {/*       <Header /> */}
         <Route exact path={'/home'} component={Home} />
         <Route exact path={'/login'} component={Login} />
         <Route exact path={'/registerdone'} component={RegisterDone} />
@@ -40,7 +41,8 @@ function App() {
         <Route exact path={'/board'} component={Board} />
         <Route exact path={'/boardwrite'} component={BoardWrite} />
         <Route exact path={'/boardread'} component={BoardRead} />
-        <Footer />
+        <Route exact path={'/admin'} component={Admin} />
+        {/*       <Footer /> */}
       </BrowserRouter>
     </>
   );
