@@ -22,7 +22,17 @@ export default function AdminBoardMiddle(props) {
     <>
       <div className={props.className} style={{ backgroundColor: 'yellow' }}>
         <AdminMiniBar name={'홈페이지 통계자료'} />
-        <AdminMiniBar name={'사내게시판'} />
+        <div
+          style={{
+            overflow: 'auto',
+            height: '300px',
+            marginBottom: '5%',
+            backgroundColor: 'white',
+          }}
+        >
+          여기에 통계자료가 들어간다
+        </div>
+        <AdminMiniBar name={'허니비 홈페이지 게시판'} />
         <div
           style={{
             overflow: 'auto',

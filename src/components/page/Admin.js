@@ -1,9 +1,9 @@
 import React from 'react';
-import AdminHeader from './Admin/AdminHeader';
-import AdminMenu from './Admin/AdminMenu';
-import AdminBoardLeft from './Admin/AdminBoardLeft';
-import AdminBoardRight from './Admin/AdminBoardRight';
-import AdminBoardMiddle from './Admin/AdminBoardMiddle';
+import AdminHeader from '../Admin/AdminHeader';
+import AdminMenu from '../Admin/AdminMenu';
+import AdminBoardLeft from '../Admin/AdminBoardLeft';
+import AdminBoardRight from '../Admin/AdminBoardRight';
+import AdminBoardMiddle from '../Admin/AdminBoardMiddle';
 
 export default function Admin(props) {
   return (
