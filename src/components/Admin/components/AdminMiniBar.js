@@ -35,9 +35,10 @@ export default function AdminMiniBar(props) {
         <div className={'col-10'}>
           {props.name}
           {props.id === 'AdminBoard' && <Arrow />}
+          {props.id === 'Calendar' && <> [ 2021년 4월 ]</>}
         </div>
         <div className={'col-2'}>
-          {props.id !== 'null' && (
+          {(props.id === 'AdminBoard' || props.id === 'AdminStatistData') && (
             <NavLink to={props.id}>
               <More>More</More>
             </NavLink>

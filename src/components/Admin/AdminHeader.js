@@ -49,7 +49,7 @@ export default function AdminHeader(props) {
     <div className={props.className} style={{ display: 'flex' }}>
       {/* 로고 (무조건 어드민 홈으로 이동 )시작 */}
       <div className={'col-3'}>
-        <NavLink to={'/AdminHome'}>
+        <NavLink to={'/admin'}>
           <Logo src={logo} alt={'Honey Bee'} />
         </NavLink>
       </div>

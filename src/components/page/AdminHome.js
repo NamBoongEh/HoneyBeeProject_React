@@ -9,8 +9,8 @@ export default function AdminHome(props) {
   return (
     <>
       <AdminHeader className={'container-fluid'} />
-      <AdminMenu className={'col-1 '} />
       <div className={'container-fluid'} style={{ display: 'flex' }}>
+        <AdminMenu className={'col-1 '} />
         <AdminBoardLeft className={'col-4'} />
         <AdminBoardMiddle className={'col-4'} />
         <AdminBoardRight className={'col-3'} />

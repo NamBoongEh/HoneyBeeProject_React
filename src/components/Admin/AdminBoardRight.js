@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import AdminMiniBar from './components/AdminMiniBar';
 import TodoList from './TodoList';
 import InfoArea from './components/InfoArea';
+import Calendar from './components/Calendar';
 
 const AdminBoardRight = (props) => {
   const [todos, setTodos] = useState([
@@ -26,16 +27,8 @@ const AdminBoardRight = (props) => {
     <>
       <div className={'container-fluid'} style={{ backgroundColor: 'pink' }}>
         <InfoArea />
-        <AdminMiniBar name={'달력'} id={'null'} />
-        <div
-          className={'container-fluid'}
-          style={{
-            backgroundColor: 'white',
-            border: '1px solid black',
-          }}
-        >
-          표
-        </div>
+        <AdminMiniBar name={'달력'} id={'Calendar'} />
+        <Calendar />
         <AdminMiniBar name={'할 일'} id={'null'} />
         <div
           style={{
