@@ -5,15 +5,15 @@ import AdminBoardLeft from '../Admin/AdminBoardLeft';
 import AdminBoardRight from '../Admin/AdminBoardRight';
 import AdminBoardMiddle from '../Admin/AdminBoardMiddle';
 
-export default function Admin(props) {
+export default function AdminHome(props) {
   return (
     <>
-      <AdminHeader className={'row'} />
-      {/* <AdminMenu /> */}
-      <div className={'row'} style={{ display: 'flex' }}>
+      <AdminHeader className={'container-fluid'} />
+      <AdminMenu className={'col-1 '} />
+      <div className={'container-fluid'} style={{ display: 'flex' }}>
         <AdminBoardLeft className={'col-4'} />
         <AdminBoardMiddle className={'col-4'} />
-        <AdminBoardRight className={'col-4'} />
+        <AdminBoardRight className={'col-3'} />
       </div>
     </>
   );

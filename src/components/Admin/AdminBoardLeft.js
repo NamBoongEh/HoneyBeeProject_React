@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import AdminMiniBar from './AdminMiniBar';
+import AdminMiniBar from './components/AdminMiniBar';
 
 const Line2 = styled.hr`
   margin: 1% 0;
@@ -10,8 +10,8 @@ const Line2 = styled.hr`
 export default function AdminBoardLeft(props) {
   return (
     <>
-      <div className={props.className} style={{ backgroundColor: 'aqua' }}>
-        <AdminMiniBar name={'홈페이지 통계자료'} />
+      <div className={'container-fluid'} style={{ backgroundColor: 'aqua' }}>
+        <AdminMiniBar name={'홈페이지 통계자료'} id={'AdminStatistData'} />
         <div
           style={{
             overflow: 'auto',
@@ -22,7 +22,7 @@ export default function AdminBoardLeft(props) {
         >
           여기에 통계자료가 들어간다
         </div>
-        <AdminMiniBar name={'사내게시판'} />
+        <AdminMiniBar name={'사내게시판'} id={'AdminBoard'} />
         <div
           style={{
             overflow: 'auto',

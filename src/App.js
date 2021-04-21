@@ -18,7 +18,10 @@ import BoardWrite from './components/page/BoardWrite';
 import BoardRead from './components/page/BoardRead';
 import MyPage from './components/page/MyPage';
 import RegisterDone from './components/page/RegisterDone';
-import Admin from './components/page/Admin';
+import AdminHome from './components/page/AdminHome';
+import AdminLogin from './components/page/AdminLogin';
+import AdminStatistData from './components/page/AdminStatistData';
+import AdminBoard from './components/page/AdminBoard';
 
 function App() {
   return (
@@ -41,8 +44,13 @@ function App() {
         <Route exact path={'/board'} component={Board} />
         <Route exact path={'/boardwrite'} component={BoardWrite} />
         <Route exact path={'/boardread'} component={BoardRead} />
-        <Route exact path={'/admin'} component={Admin} />
         {/*       <Footer /> */}
+
+        {/* 여기부턴 어드민 영역 */}
+        <Route exact path={'/admin'} component={AdminHome} />
+        <Route exact path={'/adminlogin'} component={AdminLogin} />
+        <Route exact path={'/adminstatistdata'} component={AdminStatistData} />
+        <Route exact path={'/adminboard'} component={AdminBoard} />
       </BrowserRouter>
     </>
   );
