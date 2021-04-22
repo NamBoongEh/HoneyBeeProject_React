@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import AdminMiniBar from './components/AdminMiniBar';
-import TodoList from './TodoList';
 import InfoArea from './components/InfoArea';
 import Calendar from './components/Calendar';
+import TodosContainer from '../../containers/TodosContainer';
 
 const AdminBoardRight = (props) => {
   const [todos, setTodos] = useState([
@@ -38,7 +38,7 @@ const AdminBoardRight = (props) => {
             backgroundColor: 'white',
           }}
         >
-          <TodoList todos={{ todos }} />
+          <TodosContainer />
         </div>
       </div>
     </>

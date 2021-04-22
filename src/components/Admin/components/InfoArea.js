@@ -19,6 +19,7 @@ const Department = styled.div`
 `;
 
 const MailBox = styled(NavLink)`
+  width: 75px;
   display: flex;
   color: black;
   &:hover {

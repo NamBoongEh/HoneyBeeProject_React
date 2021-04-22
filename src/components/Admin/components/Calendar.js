@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import Modal from 'react-modal';
 import styled from 'styled-components';
 import TodoModal from './TodoModal';
 
@@ -34,24 +33,11 @@ const DateBox2 = styled.div`
   }
 `;
 
-export default function Calendar(props) {
-  const [modalState, setModalState] = useState(false);
-
-  const closeModal = () => {
-    setModalState(false);
-  };
+const Calendar = () => {
+  const [show, setShow] = useState(false);
 
   return (
     <>
-      <Modal
-        isOpen={modalState}
-        shouldCloseOnOverlayClick={false}
-        onRequestClose={() => setModalState(false)}
-      >
-        <TodoModal />
-        <button onClick={() => closeModal()}>닫기</button>
-      </Modal>
-
       <div
         className={'container-fluid'}
         style={{
@@ -61,7 +47,7 @@ export default function Calendar(props) {
         }}
       >
         <div style={{ display: 'flex' }}>
-          <DateBox1 onClick={() => setModalState(true)}>1</DateBox1>
+          <DateBox>1</DateBox>
           <DateBox>1</DateBox>
           <DateBox>1</DateBox>
           <DateBox>1</DateBox>
@@ -108,4 +94,6 @@ export default function Calendar(props) {
       </div>
     </>
   );
-}
+};
+
+export default Calendar;
