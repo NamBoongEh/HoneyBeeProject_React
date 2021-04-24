@@ -1,9 +1,7 @@
-import React from 'react';
+import React, { useState } from 'react';
 import styled from 'styled-components';
 import AdminMiniBar from './subcomponents/AdminMiniBar';
-import QnA1 from './subcomponents/QnA1';
-import QnA2 from './subcomponents/QnA2';
-import QnAContainer from '../containers/QnAContainer';
+import AdminQnA from '../Admin/AdminQnA';
 
 export default function AdminBoardMiddle(props) {
   return (
@@ -21,7 +19,7 @@ export default function AdminBoardMiddle(props) {
           여기에 통계자료가 들어간다
         </div>
 
-        <AdminMiniBar name={'고객센터'} id={'QnA'} />
+        <AdminQnA name={'문의게시판'} />
       </div>
     </>
   );

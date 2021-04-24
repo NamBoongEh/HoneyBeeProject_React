@@ -1,8 +1,6 @@
 import React from 'react';
-import styled from 'styled-components';
 import AdminMiniBar from './subcomponents/AdminMiniBar';
-import MeetBoard from './subcomponents/MeetBoard';
-import FreeBoard from './subcomponents/FreeBoard';
+import AdminHoneyBeeBoard from './AdminHoneyBeeBoard';
 
 export default function AdminBoardLeft(props) {
   return (
@@ -19,10 +17,7 @@ export default function AdminBoardLeft(props) {
         >
           여기에 통계자료가 들어간다
         </div>
-        <AdminMiniBar name={'허니비 홈페이지 게시판'} id={'AdminBoard'} />
-
-        <MeetBoard />
-        <FreeBoard />
+        <AdminHoneyBeeBoard name={'허니비 홈페이지'} />
       </div>
     </>
   );
