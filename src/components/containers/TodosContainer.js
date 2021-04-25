@@ -1,24 +1,21 @@
+/* eslint-disable no-shadow */
 import React from 'react';
 import { connect } from 'react-redux';
 import { changeInput, insert, toggle, remove } from '../modules/todos';
-import MeetBoard from '../components/Admin/subcomponents/MeetBoard';
+import Todos from '../Admin/Todos';
 
-const MeetBoardContainer = ({
+const TodoListContainer = ({
   input,
-  meetBoard,
-  // eslint-disable-next-line no-shadow
+  todos,
   changeInput,
-  // eslint-disable-next-line no-shadow
   insert,
-  // eslint-disable-next-line no-shadow
   toggle,
-  // eslint-disable-next-line no-shadow
   remove,
 }) => {
   return (
-    <MeetBoard
+    <Todos
       input={input}
-      meetBoard={meetBoard}
+      todos={todos}
       onChangeInput={changeInput}
       onInsert={insert}
       onToggle={toggle}
@@ -28,9 +25,9 @@ const MeetBoardContainer = ({
 };
 
 export default connect(
-  ({ meetBoard }) => ({
-    input: meetBoard.input,
-    meetBoard: meetBoard.meetBoard,
+  ({ todos }) => ({
+    input: todos.input,
+    todos: todos.todos,
   }),
   {
     changeInput,
@@ -38,4 +35,4 @@ export default connect(
     toggle,
     remove,
   }
-)(MeetBoardContainer);
+)(TodoListContainer);

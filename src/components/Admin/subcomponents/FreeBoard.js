@@ -1,30 +1,51 @@
 import React from 'react';
 import styled from 'styled-components';
 
-const Line2 = styled.hr`
-  margin: 1% 0;
-  background: black;
+const ItemBox = styled.div`
+  border-top: 1px solid black;
+  padding: 10px 3px;
 `;
 
-export default function FreeBoard(props) {
+const FreeBoardItem = ({ freeBoard }) => {
   return (
-    <>
-      <div
+    <ItemBox>
+      <span
+        className={'col-3'}
         style={{
-          overflow: 'auto',
-          height: '299px',
-          marginBottom: '4%',
-          backgroundColor: 'white',
+          display: 'inline-block',
         }}
       >
-        <div className={'col-2'} style={{ display: 'inline-block' }}>
-          03-19
-        </div>
-        <div className={'col-10'} style={{ display: 'inline-block' }}>
-          자유게시판
-        </div>
-        <Line2 />
-      </div>
-    </>
+        {freeBoard.date}
+      </span>
+      <span
+        className={'col-9'}
+        style={{
+          display: 'inline-block',
+        }}
+      >
+        {freeBoard.text}
+      </span>
+    </ItemBox>
   );
-}
+};
+
+const FreeBoard = ({ freeBoard }) => {
+  return (
+    <div
+      style={{
+        overflow: 'auto',
+        height: '299px',
+        marginBottom: '4%',
+        backgroundColor: 'white',
+      }}
+    >
+      <div>
+        {freeBoard.map((prop) => (
+          <FreeBoardItem freeBoard={prop} key={prop.id} />
+        ))}
+      </div>
+    </div>
+  );
+};
+
+export default FreeBoard;

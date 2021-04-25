@@ -1,106 +1,47 @@
 import React from 'react';
 import styled from 'styled-components';
 
-const Line2 = styled.hr`
-  margin: 1% 0;
-  background: black;
-`;
-
 const ItemBox = styled.div`
   border-top: 1px solid black;
   padding: 10px 3px;
 `;
 
-const Remove = styled.button`
-  color: white;
-  background: saddlebrown;
-  border: 0;
-  border-radius: 5px;
-  padding: 1px 5px;
-`;
-
-const TodoInsertBox = styled.input`
-  width: 85%;
-  background: black;
-  outline: none;
-  border: none;
-  padding: 0.5rem;
-  line-height: 1.5;
-  color: white;
-  &::placeholder {
-    color: white;
-  }
-`;
-
-const TodoInsertBtn = styled.button`
-  width: 15%;
-  background: red;
-  border: none;
-  outline: none;
-  padding: 0.5rem 1rem;
-  align-items: center;
-  text-align: center;
-  margin-bottom: 15px;
-`;
-
-const MeetBoardItem = ({ meetboard, onToggle, onRemove }) => {
+const MeetBoardItem = ({ meetBoard }) => {
   return (
     <ItemBox>
-      <input
-        className={'col-1'}
-        type="checkbox"
-        onClick={() => onToggle(meetboard.id)}
-        checked={meetboard.done}
-        readOnly={true}
-        style={{ height: '17px' }}
-      />
       <span
-        className={'col-10'}
+        className={'col-3'}
         style={{
-          textDecoration: meetboard.done ? 'line-through' : 'none',
           display: 'inline-block',
         }}
       >
-        {meetboard.text}
+        {meetBoard.date}
       </span>
-      <Remove className={'col-1'} onClick={() => onRemove(meetboard.id)}>
-        삭제
-      </Remove>
+      <span
+        className={'col-9'}
+        style={{
+          display: 'inline-block',
+        }}
+      >
+        {meetBoard.text}
+      </span>
     </ItemBox>
   );
 };
 
-const MeetBoard = ({
-  input,
-  meetboards,
-  onChangeInput,
-  onInsert,
-  onToggle,
-  onRemove,
-}) => {
-  const onSubmit = (e) => {
-    e.preventDefault();
-    onInsert(input);
-    onChangeInput('');
-  };
-  const onChange = (e) => onChangeInput(e.target.value);
-
+const MeetBoard = ({ meetBoard }) => {
   return (
-    <div>
-      {
-        <form onSubmit={onSubmit}>
-          <TodoInsertBox value={input} onChange={onChange} />
-          <TodoInsertBtn type="submit">등록</TodoInsertBtn>
-        </form>
-      }
+    <div
+      style={{
+        overflow: 'auto',
+        height: '299px',
+        marginBottom: '4%',
+        backgroundColor: 'white',
+      }}
+    >
       <div>
-        {meetboards.map((prop) => (
-          <MeetBoardItem
-            todo={prop}
-            key={prop.id}
-            onToggle={onToggle}
-            onRemove={onRemove}
-          />
+        {meetBoard.map((prop) => (
+          <MeetBoardItem meetBoard={prop} key={prop.id} />
         ))}
       </div>
     </div>

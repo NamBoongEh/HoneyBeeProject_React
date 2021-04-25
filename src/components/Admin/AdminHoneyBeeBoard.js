@@ -2,9 +2,8 @@ import React, { useState } from 'react';
 import styled from 'styled-components';
 import { NavLink } from 'react-router-dom';
 import { CaretDown, CaretDownFill, CaretUp } from 'react-bootstrap-icons';
-import MeetBoard from './subcomponents/MeetBoard';
-import FreeBoard from './subcomponents/FreeBoard';
 import MeetBoardContainer from '../../containers/MeetBoardContainer';
+import FreeBoardContainer from '../../containers/FreeBoardContainer';
 
 const Bar = styled.div`
   background-color: brown;
@@ -97,7 +96,7 @@ export default function AdminHoneyBeeBoard(props) {
           </SubMenu>
         </Bar>
       )}
-      {page === 'MeetBoard' ? <MeetBoardContainer /> : <FreeBoard />}
+      {page === 'MeetBoard' ? <MeetBoardContainer /> : <FreeBoardContainer />}
     </>
   );
 }

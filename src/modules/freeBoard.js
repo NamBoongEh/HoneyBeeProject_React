@@ -1,9 +1,9 @@
 import { createAction, handleActions } from 'redux-actions';
 
-const CHANGE_INPUT = 'meetBoard/CHANGE_INPUT';
-const INSERT = 'meetBoard/INSERT';
-const TOGGLE = 'meetBoard/TOGGLE';
-const REMOVE = 'meetBoard/REMOVE';
+const CHANGE_INPUT = 'freeBoard/CHANGE_INPUT';
+const INSERT = 'freeBoard/INSERT';
+const TOGGLE = 'freeBoard/TOGGLE';
+const REMOVE = 'freeBoard/REMOVE';
 
 export const changeInput = createAction(CHANGE_INPUT, (input) => input);
 
@@ -22,105 +22,106 @@ export const remove = createAction(REMOVE, (id) => id);
 
 const initialState = {
   input: '',
-  meetBoard: [
+  freeBoard: [
     {
       id: 1,
       date: '2021-04-01',
-      text: '허니비 모임 게시판 테스트1',
+      text: '자게는 지옥이다',
     },
     {
       id: 2,
       date: '2021-04-01',
-      text: '허니비 모임 게시판 테스트2',
+      text: '자게는 지옥이다',
     },
     {
       id: 3,
       date: '2021-04-01',
-      text: '허니비 모임 게시판 테스트2',
+      text: '자게는 지옥이다',
     },
     {
       id: 3,
       date: '2021-04-01',
-      text: '허니비 모임 게시판 테스트2',
+      text: '자게는 지옥이다',
     },
     {
       id: 4,
       date: '2021-04-01',
-      text: '허니비 모임 게시판 테스트2',
+      text: '자게는 지옥이다',
     },
     {
       id: 5,
       date: '2021-04-01',
-      text: '허니비 모임 게시판 테스트2',
+      text: '자게는 지옥이다',
     },
     {
       id: 6,
       date: '2021-04-01',
-      text: '허니비 모임 게시판 테스트2',
+      text: '자게는 지옥이다',
     },
     {
       id: 7,
       date: '2021-04-01',
-      text: '허니비 모임 게시판 테스트2',
+      text: '자게는 지옥이다',
     },
     {
       id: 8,
-      text: '허니비 모임 게시판 테스트2',
+      date: '2021-04-01',
+      text: '자게는 지옥이다',
     },
     {
       id: 9,
       date: '2021-04-01',
-      text: '허니비 모임 게시판 테스트2',
+      text: '자게는 지옥이다',
     },
     {
       id: 10,
       date: '2021-04-01',
-      text: '허니비 모임 게시판 테스트2',
+      text: '자게는 지옥이다',
     },
     {
       id: 11,
       date: '2021-04-01',
-      text: '허니비 모임 게시판 테스트2',
+      text: '자게는 지옥이다',
     },
     {
       id: 12,
       date: '2021-04-01',
-      text: '허니비 모임 게시판 테스트2',
+      text: '자게는 지옥이다',
     },
     {
       id: 13,
       date: '2021-04-01',
-      text: '허니비 모임 게시판 테스트2',
+      text: '자게는 지옥이다',
     },
     {
       id: 14,
       date: '2021-04-01',
-      text: '허니비 모임 게시판 테스트2',
+      text: '자게는 지옥이다',
     },
   ],
 };
 
-const meetBoard = handleActions(
+const freeBoard = handleActions(
   {
     [CHANGE_INPUT]: (state, { payload: input }) => ({ ...state, input }),
     [INSERT]: (state, { payload: todo }) => ({
       ...state,
-      meetBoard: state.meetBoard.concat(todo),
+      freeBoard: state.freeBoard.concat(todo),
     }),
     // eslint-disable-next-line no-shadow
     [TOGGLE]: (state, { payload: id }) => ({
       ...state,
-      meetBoard: state.meetBoard.map((todo) =>
+      freeBoard: state.freeBoard.map((todo) =>
         todo.id === id ? { ...todo, done: !todo.done } : todo
       ),
     }),
     // eslint-disable-next-line no-shadow
     [REMOVE]: (state, { payload: id }) => ({
       ...state,
-      meetBoard: state.meetBoard.filter((todo) => todo.id !== id),
+      freeBoard: state.freeBoard.filter((todo) => todo.id !== id),
     }),
   },
   initialState
 );
 
-export default meetBoard;
+export default freeBoard;

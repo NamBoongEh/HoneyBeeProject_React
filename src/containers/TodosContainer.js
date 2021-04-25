@@ -1,11 +1,11 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { changeInput, insert, toggle, remove } from '../modules/todos';
-import MeetBoard from '../components/Admin/subcomponents/MeetBoard';
+import Todos from '../components/Admin/Todos';
 
-const MeetBoardContainer = ({
+const TodosContainer = ({
   input,
-  meetBoard,
+  todos,
   // eslint-disable-next-line no-shadow
   changeInput,
   // eslint-disable-next-line no-shadow
@@ -16,9 +16,9 @@ const MeetBoardContainer = ({
   remove,
 }) => {
   return (
-    <MeetBoard
+    <Todos
       input={input}
-      meetBoard={meetBoard}
+      todos={todos}
       onChangeInput={changeInput}
       onInsert={insert}
       onToggle={toggle}
@@ -28,9 +28,9 @@ const MeetBoardContainer = ({
 };
 
 export default connect(
-  ({ meetBoard }) => ({
-    input: meetBoard.input,
-    meetBoard: meetBoard.meetBoard,
+  ({ todos }) => ({
+    input: todos.input,
+    todos: todos.todos,
   }),
   {
     changeInput,
@@ -38,4 +38,4 @@ export default connect(
     toggle,
     remove,
   }
-)(MeetBoardContainer);
+)(TodosContainer);

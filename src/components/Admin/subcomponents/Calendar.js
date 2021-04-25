@@ -1,6 +1,60 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
 
+const FullScreen = styled.div`
+  position: fixed;
+  z-index: 30;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+`;
+
+const TextModal = styled.div`
+  width: 520px;
+  height: 170px;
+  background: white;
+  padding: 1.5rem;
+  border-radius: 4px;
+  border: 8px solid brown;
+  justify-content: center;
+  text-align: center;
+  position: absolute;
+  top: 30%;
+`;
+
+const TextBox = styled.textarea`
+  resize: none;
+  width: 450px;
+  margin-bottom: 2%;
+  &:focus {
+    outline: none;
+  }
+`;
+
+const Cancle = styled.button`
+  background: #dddddd;
+  border: none;
+  border-radius: 5px;
+  font-size: x-large;
+  padding: 3px 0px;
+  width: 130px;
+  margin: 0 2%;
+`;
+
+const Ok = styled.button`
+  background: orange;
+  border: none;
+  border-radius: 5px;
+  font-size: x-large;
+  padding: 3px 0px;
+  width: 130px;
+  margin: 1% 2%;
+`;
+
 const DateBox = styled.div`
   width: 100%;
   height: 50px;
@@ -32,7 +86,13 @@ const DateBox2 = styled.div`
   }
 `;
 
-const Calendar = ({ calendar, showInput }) => {
+const Calendar = ({ props }) => {
+  const [show, setShow] = useState(false);
+
+  const onShow = () => {
+    setShow(!show);
+  };
+
   return (
     <>
       <div
@@ -48,7 +108,7 @@ const Calendar = ({ calendar, showInput }) => {
           <DateBox />
           <DateBox />
           <DateBox />
-          <DateBox>1</DateBox>
+          <DateBox onClick={onShow}>1</DateBox>
           <DateBox>2</DateBox>
           <DateBox2>3</DateBox2>
         </div>
@@ -89,6 +149,16 @@ const Calendar = ({ calendar, showInput }) => {
           <DateBox></DateBox>
         </div>
       </div>
+      {show && (
+        <FullScreen>
+          <TextModal>
+            <TextBox rows={'2'} />
+            <br />
+            <Cancle onClick={onShow}>Cancel</Cancle>
+            <Ok onClick={onShow}>OK</Ok>
+          </TextModal>
+        </FullScreen>
+      )}
     </>
   );
 };
