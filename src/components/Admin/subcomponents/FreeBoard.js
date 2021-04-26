@@ -1,11 +1,12 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import styled from 'styled-components';
 
 const ItemBox = styled.div`
-  border-top: 1px solid black;
+  border-bottom: 1px solid black;
   padding: 10px 3px;
 `;
 
+// 자유게시판 글 하나의 컴포넌트
 const FreeBoardItem = ({ freeBoard }) => {
   return (
     <ItemBox>
@@ -29,6 +30,9 @@ const FreeBoardItem = ({ freeBoard }) => {
   );
 };
 
+// 목록처럼 쭉 나열되게 뿌려주는 역할
+// **문제점 : 현재 새로운 초기 데이터를 넣으면 새로고침해야지만 업데이트 내용이 보인다.
+// **문제점 : 새로운 글이 맨 아래에 보인다.
 const FreeBoard = ({ freeBoard }) => {
   return (
     <div

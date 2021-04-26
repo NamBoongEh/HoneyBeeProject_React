@@ -34,7 +34,7 @@ const LogOut = styled.button`
 const NewAlaram = styled.button`
   border-radius: 15px;
   margin: 0 5px;
-  background-color: brown;
+  background-color: crimson;
   color: white;
   border: none;
   padding: 2px 8px;
@@ -120,6 +120,8 @@ const AdminHeader = ({ props }) => {
       >
         <Alaram />
         <NewAlaram onClick={onShow}>새알림</NewAlaram>
+        {/* 모달 시작 */}
+        {/* 모달 폼 수정 필요 */}
         {show && (
           <FullScreen>
             <TextModal>
@@ -130,6 +132,7 @@ const AdminHeader = ({ props }) => {
             </TextModal>
           </FullScreen>
         )}
+        {/* 모달 종료 */}
         <Name>남붕어</Name>
         님, 어서오세요.
         <NavLink to={'/AdminLogin'}>

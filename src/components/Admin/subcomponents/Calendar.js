@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useCallback, useState } from 'react';
 import styled from 'styled-components';
 
 const FullScreen = styled.div`
@@ -13,7 +13,7 @@ const FullScreen = styled.div`
   text-align: center;
 `;
 
-const TextModal = styled.div`
+const TextModal = styled.form`
   width: 520px;
   height: 170px;
   background: white;
@@ -26,7 +26,7 @@ const TextModal = styled.div`
   top: 30%;
 `;
 
-const TextBox = styled.textarea`
+const TextBox = styled.input`
   resize: none;
   width: 450px;
   margin-bottom: 2%;
@@ -86,7 +86,24 @@ const DateBox2 = styled.div`
   }
 `;
 
-const Calendar = ({ props }) => {
+const Calendar = ({
+  input,
+  todos,
+  onChangeInput,
+  onInsert,
+  onToggle,
+  onRemove,
+}) => {
+  const onSubmit = useCallback(
+    (e) => {
+      e.preventDefault();
+      onInsert(input);
+      onChangeInput('');
+    },
+    [onInsert, input]
+  );
+  const onChange = (e) => onChangeInput(e.target.value);
+
   const [show, setShow] = useState(false);
 
   const onShow = () => {
@@ -151,11 +168,11 @@ const Calendar = ({ props }) => {
       </div>
       {show && (
         <FullScreen>
-          <TextModal>
-            <TextBox rows={'2'} />
+          <TextModal onSubmit={onSubmit}>
+            <TextBox value={input} onChange={onChange} />
             <br />
-            <Cancle onClick={onShow}>Cancel</Cancle>
-            <Ok onClick={onShow}>OK</Ok>
+            <Cancle onClick={onShow}>닫기</Cancle>
+            <Ok type="submit">등록</Ok>
           </TextModal>
         </FullScreen>
       )}

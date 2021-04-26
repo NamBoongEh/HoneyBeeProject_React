@@ -8,7 +8,7 @@ const Column = styled.div`
   color: black;
   padding: 1% 0;
   &:hover {
-    background: brown;
+    background: black;
     color: white;
     cursor: pointer;
   }
@@ -20,7 +20,7 @@ const SubColumn = styled.div`
   color: black;
   padding-left: 30px;
   &:hover {
-    background: brown;
+    background: black;
     color: white;
     cursor: pointer;
   }
@@ -29,6 +29,14 @@ const SubColumn = styled.div`
 const Navlink = styled(NavLink)`
   &:hover {
     text-decoration-line: none;
+  }
+`;
+
+const Bar = styled.div`
+  width: 100px;
+  transition: width 1s;
+  &:hover {
+    width: 1500px;
   }
 `;
 
@@ -45,12 +53,14 @@ export default function AdminMenu(props) {
   };
   // 메뉴 클릭 시 서브 메뉴 보여주는 이벤트 종료
 
+  // zindex를 상위 컴포넌트에서 받아왔지만 소용없다.
   return (
     <>
-      <div>
+      <Bar style={{ zIndex: props.zIndex }}>
         <Navlink to={'/AdminCustom'}>
           <Column>회원관리</Column>
         </Navlink>
+        {/* 큰 페이지 이동 아래 서브 페이지 이동이 있다. 게시판 관리 서브 페이지 이동 이벤트 시작 */}
         <Column onClick={() => toggleHandler()}>게시판 관리</Column>
         {!show && (
           <>
@@ -60,6 +70,8 @@ export default function AdminMenu(props) {
             <SubColumn>자유게시판 관리</SubColumn>
           </>
         )}
+        {/* 게시판 관리 서브 페이지 이동 이벤트 종료 */}
+        {/* 고객센터 관리 서브 페이지 이동 이벤트 시작 */}
         <Column onClick={() => toggleHandler2()}>고객센터</Column>
         {!show2 && (
           <>
@@ -71,6 +83,7 @@ export default function AdminMenu(props) {
             </Navlink>
           </>
         )}
+        {/* 고객센터 관리 서브 페이지 이동 이벤트 종료 */}
         <Navlink to={'/AdminCustom'}>
           <Column>통계분석</Column>
         </Navlink>
@@ -80,7 +93,7 @@ export default function AdminMenu(props) {
         <Navlink to={'/AdminCustom'}>
           <Column>관리자 권한 설정</Column>
         </Navlink>
-      </div>
+      </Bar>
     </>
   );
 }

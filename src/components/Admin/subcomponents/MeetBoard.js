@@ -2,10 +2,12 @@ import React from 'react';
 import styled from 'styled-components';
 
 const ItemBox = styled.div`
-  border-top: 1px solid black;
+  border-bottom: 1px solid black;
   padding: 10px 3px;
 `;
 
+// FreeBoard 컴포넌트와 동일하다.
+// 모임게시판 글만 보여줘야하며, 똑같은 문제점으로 새로고침을 해야지만 새 글이 보인다.
 const MeetBoardItem = ({ meetBoard }) => {
   return (
     <ItemBox>

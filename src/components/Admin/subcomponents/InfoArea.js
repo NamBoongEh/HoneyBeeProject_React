@@ -4,7 +4,7 @@ import { Envelope } from 'react-bootstrap-icons';
 import { NavLink } from 'react-router-dom';
 
 const Box = styled.div`
-  background-color: #eeeeee;
+  background-color: aliceblue;
   padding: 2% 3%;
   line-height: 1.8rem;
 `;
@@ -38,10 +38,11 @@ const MailName = styled.div`
   font-size: 15px;
 `;
 
+// **해야할 것 : 현재 이름, 부서 하드코딩 되어있음.
 export default function InfoArea(props) {
   return (
     <>
-      <Box className={'container-fluid'}>
+      <Box>
         <Name>
           남붕어 대리 <br />
         </Name>

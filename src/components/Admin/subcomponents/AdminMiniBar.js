@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import { NavLink } from 'react-router-dom';
 
 const Bar = styled.div`
-  background-color: brown;
+  background-color: dodgerblue;
   display: flex;
   color: white;
   padding: 5px 0;
@@ -13,10 +13,11 @@ const More = styled.button`
   border-radius: 30px;
   padding: 2px 10px;
   color: white;
-  background-color: brown;
+  background-color: dodgerblue;
   border: 2px solid white;
 `;
 
+// 적용되는 곳 : 홈페이지 통계자료, 달력, 할일 메뉴바
 export default function AdminMiniBar(props) {
   return (
     <>

@@ -5,14 +5,17 @@ import AdminHoneyBeeBoard from './AdminHoneyBeeBoard';
 export default function AdminBoardLeft(props) {
   return (
     <>
-      <div className={'container-fluid'} style={{ backgroundColor: 'aqua' }}>
+      <div
+        className={props.className}
+        style={{ zIndex: props.zIndex, padding: '0 1px 0 0' }}
+      >
         <AdminMiniBar name={'홈페이지 통계자료'} id={'AdminStatistData'} />
         <div
           style={{
             overflow: 'auto',
             height: '300px',
-            marginBottom: '5%',
-            backgroundColor: 'white',
+            marginBottom: '7%',
+            backgroundColor: '#eeeeee',
           }}
         >
           여기에 통계자료가 들어간다

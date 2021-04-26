@@ -26,11 +26,13 @@ const initialState = {
     {
       id: 1,
       text: '죽고싶다',
+      date: '4/11',
       done: false,
     },
     {
       id: 2,
       text: '퐁당앱깔기 ',
+      date: '4/12',
       done: true,
     },
   ],

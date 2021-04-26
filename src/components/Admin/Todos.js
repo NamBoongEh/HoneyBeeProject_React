@@ -2,92 +2,59 @@ import React from 'react';
 import styled from 'styled-components';
 
 const ItemBox = styled.div`
-  border-top: 1px solid black;
+  border-bottom: 1px solid black;
   padding: 10px 3px;
+  &:nth-child(even) {
+    background-color: lightcyan;
+  }
 `;
 
 const Remove = styled.button`
   color: white;
-  background: saddlebrown;
+  background: crimson;
   border: 0;
   border-radius: 5px;
   padding: 1px 5px;
 `;
 
-const TodoInsertBox = styled.input`
-  width: 85%;
-  background: black;
-  outline: none;
-  border: none;
-  padding: 0.5rem;
-  line-height: 1.5;
-  color: white;
-  &::placeholder {
-    color: white;
-  }
-`;
-
-const TodoInsertBtn = styled.button`
-  width: 15%;
-  background: red;
-  border: none;
-  outline: none;
-  padding: 0.5rem 1rem;
-  align-items: center;
-  text-align: center;
-  margin-bottom: 15px;
-`;
-
+// 할 일에 들어가는 1개의 할 일 요소
 const TodoItem = ({ todo, onToggle, onRemove }) => {
   return (
     <ItemBox>
       <input
-        className={'col-1'}
         type="checkbox"
         onClick={() => onToggle(todo.id)}
         checked={todo.done}
         readOnly={true}
-        style={{ height: '17px' }}
+        style={{ margin: '0 10px', height: '17px' }}
       />
       <span
-        className={'col-10'}
+        style={{
+          display: 'inline-block',
+          width: '10%',
+          textDecoration: todo.done ? 'line-through' : 'none',
+        }}
+      >
+        {todo.date}
+      </span>
+      <span
         style={{
           textDecoration: todo.done ? 'line-through' : 'none',
           display: 'inline-block',
+          width: '70%',
         }}
       >
         {todo.text}
       </span>
-      <Remove className={'col-1'} onClick={() => onRemove(todo.id)}>
-        삭제
-      </Remove>
+      <Remove onClick={() => onRemove(todo.id)}>삭제</Remove>
     </ItemBox>
   );
 };
 
-const Todos = ({
-  input,
-  todos,
-  onChangeInput,
-  onInsert,
-  onToggle,
-  onRemove,
-}) => {
-  const onSubmit = (e) => {
-    e.preventDefault();
-    onInsert(input);
-    onChangeInput('');
-  };
-  const onChange = (e) => onChangeInput(e.target.value);
-
+// 할 일 요소들을 모아 박스로 만든 것 map으로 다시 뿌려준다
+const Todos = ({ todos, onToggle, onRemove }) => {
   return (
     <div>
-      {
-        <form onSubmit={onSubmit}>
-          <TodoInsertBox value={input} onChange={onChange} />
-          <TodoInsertBtn type="submit">등록</TodoInsertBtn>
-        </form>
-      }
       <div>
         {todos.map((todo) => (
           <TodoItem

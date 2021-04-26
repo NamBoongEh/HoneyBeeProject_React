@@ -7,16 +7,20 @@ const REMOVE = 'freeBoard/REMOVE';
 
 export const changeInput = createAction(CHANGE_INPUT, (input) => input);
 
-let id = 15;
+let id = 16;
 
+// 새로운 값 입력
 export const insert = createAction(INSERT, (text) => ({
   id: id++,
   text,
   done: false,
 }));
 
+// 할 일 모듈 그대로 가져옴. 추후 필요없다면 삭제해도 괜찮음.
 // eslint-disable-next-line no-shadow
 export const toggle = createAction(TOGGLE, (id) => id);
+
+// 기존의 값 삭제
 // eslint-disable-next-line no-shadow
 export const remove = createAction(REMOVE, (id) => id);
 
@@ -97,6 +101,11 @@ const initialState = {
       id: 14,
       date: '2021-04-01',
       text: '자게는 지옥이다',
+    },
+    {
+      id: 15,
+      date: '2021-04-11',
+      text: 'text',
     },
   ],
 };
