@@ -15,11 +15,11 @@ const FullScreen = styled.div`
 
 const TextModal = styled.form`
   width: 520px;
-  height: 170px;
+  height: 150px;
   background: white;
   padding: 1.5rem;
   border-radius: 4px;
-  border: 8px solid brown;
+  border: 8px solid darkblue;
   justify-content: center;
   text-align: center;
   position: absolute;
@@ -46,7 +46,7 @@ const Cancle = styled.button`
 `;
 
 const Ok = styled.button`
-  background: orange;
+  background: deepskyblue;
   border: none;
   border-radius: 5px;
   font-size: x-large;
@@ -121,49 +121,49 @@ const Calendar = ({
         }}
       >
         <div style={{ display: 'flex' }}>
-          <DateBox />
+          <DateBox1 />
           <DateBox />
           <DateBox />
           <DateBox />
           <DateBox onClick={onShow}>1</DateBox>
-          <DateBox>2</DateBox>
-          <DateBox2>3</DateBox2>
+          <DateBox onClick={onShow}>2</DateBox>
+          <DateBox2 onClick={onShow}>3</DateBox2>
         </div>
         <div style={{ display: 'flex' }}>
-          <DateBox1>4</DateBox1>
-          <DateBox>5</DateBox>
-          <DateBox>6</DateBox>
-          <DateBox>7</DateBox>
-          <DateBox>8</DateBox>
-          <DateBox>9</DateBox>
-          <DateBox2>10</DateBox2>
+          <DateBox1 onClick={onShow}>4</DateBox1>
+          <DateBox onClick={onShow}>5</DateBox>
+          <DateBox onClick={onShow}>6</DateBox>
+          <DateBox onClick={onShow}>7</DateBox>
+          <DateBox onClick={onShow}>8</DateBox>
+          <DateBox onClick={onShow}>9</DateBox>
+          <DateBox2 onClick={onShow}>10</DateBox2>
         </div>
         <div style={{ display: 'flex' }}>
-          <DateBox1>11</DateBox1>
-          <DateBox>12</DateBox>
-          <DateBox>13</DateBox>
-          <DateBox>14</DateBox>
-          <DateBox>15</DateBox>
-          <DateBox>16</DateBox>
-          <DateBox2>17</DateBox2>
+          <DateBox1 onClick={onShow}>11</DateBox1>
+          <DateBox onClick={onShow}>12</DateBox>
+          <DateBox onClick={onShow}>13</DateBox>
+          <DateBox onClick={onShow}>14</DateBox>
+          <DateBox onClick={onShow}>15</DateBox>
+          <DateBox onClick={onShow}>16</DateBox>
+          <DateBox2 onClick={onShow}>17</DateBox2>
         </div>
         <div style={{ display: 'flex' }}>
-          <DateBox1>18</DateBox1>
-          <DateBox>19</DateBox>
-          <DateBox>20</DateBox>
-          <DateBox>21</DateBox>
-          <DateBox>22</DateBox>
-          <DateBox>23</DateBox>
-          <DateBox2>24</DateBox2>
+          <DateBox1 onClick={onShow}>18</DateBox1>
+          <DateBox onClick={onShow}>19</DateBox>
+          <DateBox onClick={onShow}>20</DateBox>
+          <DateBox onClick={onShow}>21</DateBox>
+          <DateBox onClick={onShow}>22</DateBox>
+          <DateBox onClick={onShow}>23</DateBox>
+          <DateBox2 onClick={onShow}>24</DateBox2>
         </div>
         <div style={{ display: 'flex' }}>
-          <DateBox1>25</DateBox1>
-          <DateBox>26</DateBox>
-          <DateBox>27</DateBox>
-          <DateBox>28</DateBox>
-          <DateBox>29</DateBox>
-          <DateBox>30</DateBox>
-          <DateBox></DateBox>
+          <DateBox1 onClick={onShow}>25</DateBox1>
+          <DateBox onClick={onShow}>26</DateBox>
+          <DateBox onClick={onShow}>27</DateBox>
+          <DateBox onClick={onShow}>28</DateBox>
+          <DateBox onClick={onShow}>29</DateBox>
+          <DateBox onClick={onShow}>30</DateBox>
+          <DateBox2 onClick={onShow}>31</DateBox2>
         </div>
       </div>
       {show && (

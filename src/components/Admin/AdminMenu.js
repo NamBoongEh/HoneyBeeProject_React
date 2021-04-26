@@ -11,6 +11,7 @@ const Column = styled.div`
     background: black;
     color: white;
     cursor: pointer;
+    toggleHandler()
   }
 `;
 const SubColumn = styled.div`
@@ -40,28 +41,36 @@ const Bar = styled.div`
   }
 `;
 
-export default function AdminMenu(props) {
+const AdminMenu = (props) => {
   // 메뉴 클릭 시 서브 메뉴 보여주는 이벤트 시작
   const [show, setShow] = useState(true);
   const [show2, setShow2] = useState(true);
 
   const toggleHandler = (e) => {
-    setShow(!show);
+    setShow(e);
   };
   const toggleHandler2 = (e) => {
-    setShow2(!show2);
+    setShow2(e);
+  };
+  const closeHandler = () => {
+    setShow(true);
+    setShow2(true);
   };
   // 메뉴 클릭 시 서브 메뉴 보여주는 이벤트 종료
 
   // zindex를 상위 컴포넌트에서 받아왔지만 소용없다.
   return (
     <>
-      <Bar style={{ zIndex: props.zIndex }}>
+      <Bar
+        id={'bar'}
+        style={{ zIndex: props.zIndex }}
+        onMouseLeave={closeHandler}
+      >
         <Navlink to={'/AdminCustom'}>
           <Column>회원관리</Column>
         </Navlink>
         {/* 큰 페이지 이동 아래 서브 페이지 이동이 있다. 게시판 관리 서브 페이지 이동 이벤트 시작 */}
-        <Column onClick={() => toggleHandler()}>게시판 관리</Column>
+        <Column onMouseEnter={() => toggleHandler(false)}>게시판 관리</Column>
         {!show && (
           <>
             <Navlink to={'/AdminCustom'}>
@@ -72,7 +81,7 @@ export default function AdminMenu(props) {
         )}
         {/* 게시판 관리 서브 페이지 이동 이벤트 종료 */}
         {/* 고객센터 관리 서브 페이지 이동 이벤트 시작 */}
-        <Column onClick={() => toggleHandler2()}>고객센터</Column>
+        <Column onMouseEnter={() => toggleHandler2(false)}>고객센터</Column>
         {!show2 && (
           <>
             <Navlink to={'/AdminCustom'}>
@@ -96,4 +105,6 @@ export default function AdminMenu(props) {
       </Bar>
     </>
   );
-}
+};
+
+export default AdminMenu;
