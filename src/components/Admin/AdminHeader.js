@@ -55,43 +55,21 @@ const FullScreen = styled.div`
 `;
 
 const TextModal = styled.div`
-  width: 520px;
+  width: 250px;
   height: 170px;
   background: white;
-  padding: 1.5rem;
+  padding: 0.5rem;
   border-radius: 4px;
-  border: 8px solid brown;
-  justify-content: center;
-  text-align: center;
-`;
-
-const TextBox = styled.textarea`
-  resize: none;
-  width: 450px;
-  margin-bottom: 2%;
-  &:focus {
-    outline: none;
-  }
+  border: 3px solid darkblue;
 `;
 
 const Cancle = styled.button`
   background: #dddddd;
   border: none;
   border-radius: 5px;
-  font-size: x-large;
+  font-size: smaller;
   padding: 3px 0px;
-  width: 130px;
-  margin: 0 2%;
-`;
-
-const Ok = styled.button`
-  background: orange;
-  border: none;
-  border-radius: 5px;
-  font-size: x-large;
-  padding: 3px 0px;
-  width: 130px;
-  margin: 1% 2%;
+  width: 35px;
 `;
 
 const AdminHeader = ({ props }) => {
@@ -125,10 +103,7 @@ const AdminHeader = ({ props }) => {
         {show && (
           <FullScreen>
             <TextModal>
-              <TextBox rows={'2'} />
-              <br />
-              <Cancle onClick={onShow}>Cancel</Cancle>
-              <Ok onClick={onShow}>OK</Ok>
+              <Cancle onClick={onShow}>닫기</Cancle>
             </TextModal>
           </FullScreen>
         )}

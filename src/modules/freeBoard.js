@@ -20,7 +20,6 @@ export const insert = createAction(INSERT, (text) => ({
 // eslint-disable-next-line no-shadow
 export const toggle = createAction(TOGGLE, (id) => id);
 
-// 기존의 값 삭제
 // eslint-disable-next-line no-shadow
 export const remove = createAction(REMOVE, (id) => id);
 
