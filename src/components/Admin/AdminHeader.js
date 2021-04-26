@@ -96,10 +96,11 @@ const AdminHeader = ({ props }) => {
         className={'col-3'}
         style={{ display: 'flex', justifyContent: 'flex-end' }}
       >
+        {/* 새알림 기능 일단은 넣을 내용이 없어서 보류
         <Alaram />
         <NewAlaram onClick={onShow}>새알림</NewAlaram>
         {/* 모달 시작 */}
-        {/* 모달 폼 수정 필요 */}
+        {/* 모달 폼 수정 필요 (모달 안에 내용을 뭘 보여줘야할지 고민중)*/}
         {show && (
           <FullScreen>
             <TextModal>
