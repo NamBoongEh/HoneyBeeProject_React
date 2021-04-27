@@ -1,9 +1,9 @@
 import React from 'react';
-import AdminHeader from '../Admin/AdminHeader';
-import AdminMenu from '../Admin/AdminMenu';
-import AdminBoardLeft from '../Admin/AdminBoardLeft';
-import AdminBoardRight from '../Admin/AdminBoardRight';
-import AdminBoardMiddle from '../Admin/AdminBoardMiddle';
+import AdminHeader from '../../Admin/AdminHeader';
+import AdminMenu from '../../Admin/AdminMenu';
+import AdminBoardLeft from '../../Admin/AdminBoardLeft';
+import AdminBoardRight from '../../Admin/AdminBoardRight';
+import AdminBoardMiddle from '../../Admin/AdminBoardMiddle';
 
 // 개빡치게 메뉴가 계속 위로 올라오지않는다. 하....
 export default function AdminHome(props) {

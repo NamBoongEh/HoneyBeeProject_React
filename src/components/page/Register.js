@@ -50,7 +50,7 @@ export default function Register() {
       >
         {!show && <EsImformation />}
         {!show && (
-          <Link to="./Login">
+          <Link to="./LoginPage">
             <BtnLeft>취소</BtnLeft>
           </Link>
         )}

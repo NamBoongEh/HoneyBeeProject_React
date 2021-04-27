@@ -18,10 +18,14 @@ import BoardWrite from './components/page/BoardWrite';
 import BoardRead from './components/page/BoardRead';
 import MyPage from './components/page/MyPage';
 import RegisterDone from './components/page/RegisterDone';
-import AdminHome from './components/page/AdminHome';
-import AdminLogin from './components/page/AdminLogin';
-import AdminStatistData from './components/page/AdminStatistData';
-import AdminBoard from './components/page/AdminBoard';
+import AdminHome from './components/page/Admin/AdminHome';
+import AdminLoginPage from './components/page/Admin/AdminLoginPage.js';
+import AdminStatistData from './components/page/Admin/AdminStatistData';
+import AdminBoard from './components/page/Admin/AdminBoard';
+import AdminRegisterPage from './components/page/Admin/AdminRegisterPage';
+import AdminPostListPage from './components/page/Admin/AdminPostListPage';
+import AdminWritePage from './components/page/Admin/AdminWritePage';
+import AdminPostPage from './components/page/Admin/AdminPostPage';
 
 function App() {
   return (
@@ -37,6 +41,7 @@ function App() {
         <Route exact path={'/relogin'} component={ReLogin} />
         <Route exact path={'/freeboard'} component={FreeBoard} />
         <Route exact path={'/freeboardread'} component={FreeBoardRead} />
+        {/* 포스트 자유게시판에 글쓰는 라우트 */}
         <Route exact path={'/freeboardwrite'} component={FreeBoardWrite} />
         <Route exact path={'/reply1'} component={Reply1} />
         <Route exact path={'/rereply1'} component={ReReply1} />
@@ -48,7 +53,19 @@ function App() {
 
         {/* 여기부턴 어드민 영역 */}
         <Route exact path={'/admin'} component={AdminHome} />
-        <Route exact path={'/adminlogin'} component={AdminLogin} />
+        <Route exact path={'/adminlogin'} component={AdminLoginPage} />
+        <Route exact path={'/adminregister'} component={AdminRegisterPage} />
+        <Route
+          path={['/admin@:username', '/']}
+          component={AdminPostListPage}
+          exact
+        />
+        <Route exact path={'/adminwrite'} component={AdminWritePage} />
+        <Route
+          exact
+          path={'/admin@:username/:postId'}
+          component={AdminPostPage}
+        />
         <Route exact path={'/adminstatistdata'} component={AdminStatistData} />
         <Route exact path={'/adminboard'} component={AdminBoard} />
       </BrowserRouter>

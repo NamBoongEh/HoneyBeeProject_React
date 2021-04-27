@@ -111,7 +111,7 @@ const AdminHeader = ({ props }) => {
         {/* 모달 종료 */}
         <Name>남붕어</Name>
         님, 어서오세요.
-        <NavLink to={'/AdminLogin'}>
+        <NavLink to={'/adminlogin'}>
           <LogOut>로그아웃</LogOut>
         </NavLink>
       </Right>
