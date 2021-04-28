@@ -28,7 +28,7 @@ const Check = styled.div`
 
 export default function Header(props) {
   return (
-    <>
+    <div style={{ width: '100%' }}>
       <HeaderLink>
         <Links to={'login'}>로그인</Links>
         <Links to={'register'}>회원가입</Links>
@@ -44,6 +44,6 @@ export default function Header(props) {
           <Check />
         </div>
       </div>
-    </>
+    </div>
   );
 }

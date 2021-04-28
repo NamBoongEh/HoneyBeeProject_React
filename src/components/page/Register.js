@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
-import Register3 from '../Register1/Register3';
-import Register2 from '../Register1/Register2';
-import EsImformation from '../Register1/EsImformation';
+import Register3 from '../Register/Register3';
+import Register2 from '../Register/Register2';
+import EsImformation from '../Register/EsImformation';
 
 const BtnRight = styled.button`
   background-color: orange;
@@ -44,13 +44,15 @@ export default function Register() {
           backgroundColor: 'white',
           padding: '40px 40px 60px 40px',
           height: '50%',
-          width: '50%',
+          width: '800px',
+          minWidth: '800px',
           boxShadow: '0 10px 15px 0 rgba(0, 0, 0, 0.5)',
+          border: '10px solid black',
         }}
       >
         {!show && <EsImformation />}
         {!show && (
-          <Link to="./LoginPage">
+          <Link to="./login">
             <BtnLeft>취소</BtnLeft>
           </Link>
         )}

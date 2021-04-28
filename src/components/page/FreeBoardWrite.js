@@ -32,11 +32,19 @@ const ClickButton = styled.button`
   margin: 10px 10px 8%;
 `;
 
+const Line = styled.hr`
+  border-color: lightgray;
+  border-width: 3px;
+  width: 100%;
+  margin-top: 20px;
+  padding-bottom: 20px;
+`;
+
 export default function FreeBoardWrite(props) {
   return (
     <div className="row">
       <div
-        className={'col-md-1'}
+        className={'col-1'}
         style={{ width: '100%', backgroundColor: 'rgb(246,218,66)' }}
       />
       <div
@@ -47,15 +55,7 @@ export default function FreeBoardWrite(props) {
         }}
       >
         <InputBox placeholder={'제목을 입력해 주세요.'} />
-        <hr
-          style={{
-            borderColor: 'lightgray',
-            borderWidth: '3px',
-            width: '100%',
-            marginTop: '20px',
-            paddingBottom: '20px',
-          }}
-        />
+        <Line />
         <TextBox rows={'30'} placeholder={'내용을 입력해 주세요.'} />
         <ClickButton style={{ float: 'left' }}>임시저장</ClickButton>
 

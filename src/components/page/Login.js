@@ -46,7 +46,7 @@ const Box = styled.div`
   background-color: white;
   padding: 60px 40px 60px 40px;
   height: 50%;
-  width: 30%;
+  width: 530px;
   box-shadow: 0 10px 15px 0 rgba(0, 0, 0, 0.5);
   text-align: center;
 `;
@@ -56,11 +56,13 @@ const LoginPage = ({ type, form, onChange, onSubmit }) => {
     <div style={{ backgroundColor: 'rgb(246,218,66)', padding: '60px' }}>
       <Box className={'container'}>
         <Text>
-          <img
-            src={send}
-            alt="welcome"
-            style={{ width: '50%', height: '50%' }}
-          />
+          <a href={'/home'}>
+            <img
+              src={send}
+              alt="welcome"
+              style={{ width: '50%', height: '50%' }}
+            />
+          </a>
           <br />
           로그인하고 달콤한 모임에 꿀빨러 오세요.
         </Text>
@@ -68,13 +70,13 @@ const LoginPage = ({ type, form, onChange, onSubmit }) => {
           <StyledInput
             autoComplete="username"
             name="username"
-            placeholder={'아이디를 입력해주세요'}
+            placeholder={'ID'}
             onChange={onChange}
           />
           <StyledInput
             autoComplete="new-password"
             name="password"
-            placeholder={'비밀번호를 입력해주세요'}
+            placeholder={'PW'}
             type="password"
             onChange={onChange}
           />

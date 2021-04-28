@@ -32,7 +32,7 @@ function App() {
     <>
       <BrowserRouter>
         {/*       <Header /> */}
-        <Route exact path={'/home'} component={Home} />
+        <Route exact path={'/'} component={Home} />
         <Route exact path={'/login'} component={Login} />
         <Route exact path={'/registerdone'} component={RegisterDone} />
         <Route exact path={'/register'} component={Register} />
@@ -56,7 +56,7 @@ function App() {
         <Route exact path={'/adminlogin'} component={AdminLoginPage} />
         <Route exact path={'/adminregister'} component={AdminRegisterPage} />
         <Route
-          path={['/admin@:username', '/']}
+          path={['/admin@:username']}
           component={AdminPostListPage}
           exact
         />
