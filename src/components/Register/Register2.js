@@ -1,6 +1,6 @@
 import React from 'react';
-import InterestArea from './/InterestArea';
-import InterestHobby from './/InterestHobby';
+import InterestArea from './InterestArea';
+import InterestHobby from './InterestHobby';
 
 export default function Register() {
   return (

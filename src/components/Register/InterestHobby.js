@@ -1,16 +1,29 @@
 import React, { useEffect, useState } from 'react';
 import styled from 'styled-components';
 
+const Table = styled.table`
+  width: 100%;
+  height: 100%;
+  line-height: 2.5rem;
+  padding-top: 10px;
+`;
+
 const HobbyButton = styled.button`
-  width: 15%;
+  width: 30%;
   border-radius: 25px;
   border: none;
   background-color: lemonchiffon;
   text-align: center;
-  font-size: smaller;
+  line-height: 2.5rem;
+  margin-right: 5px;
   &:focus {
     outline: none;
   }
+`;
+
+const LeftBox = styled.div`
+  font-size: x-large;
+  font-weight: bold;
 `;
 
 export default function InterestHobby() {
@@ -41,25 +54,9 @@ export default function InterestHobby() {
   return (
     <div>
       <div className="row">
-        <div
-          className={'col-3'}
-          style={{
-            fontSize: 'x-large',
-            fontWeight: 'bold',
-            marginTop: '2rem',
-          }}
-        >
-          관심 주제
-        </div>
+        <LeftBox className={'col-3'}>관심 모임</LeftBox>
 
-        <div
-          className={'col-9'}
-          style={{
-            fontSize: 'larger',
-            lineHeight: '2.5rem',
-            marginTop: '2rem',
-          }}
-        >
+        <div className={'col-9'}>
           {hobby.map((c) => (
             <HobbyButton key={c.id} onClick={() => removeHobby(c.id)}>
               {c.id}
@@ -67,28 +64,10 @@ export default function InterestHobby() {
           ))}
         </div>
       </div>
-      <div style={{ paddingTop: '20px' }} />
-      <div className="row">
-        <div
-          className={'col-3'}
-          style={{
-            fontSize: 'x-large',
-            textAlign: 'right',
-            lineHeight: '65px',
-            fontWeight: 'bold',
-          }}
-        >
-          모임
-        </div>
-
-        <div
-          className={'col-9'}
-          style={{
-            lineHeight: '2.5rem',
-            paddingTop: '10px',
-          }}
-        >
-          <table style={{ width: '100%', height: '110%' }}>
+      <div className="row" style={{ marginTop: '20px' }}>
+        <div className={'col-3'} />
+        <div className={'col-9'}>
+          <Table>
             <tr>
               <td>
                 <label for={'education'}>
@@ -96,7 +75,7 @@ export default function InterestHobby() {
                     id={'교육'}
                     type={'checkbox'}
                     onClick={(e) => onClickHandler(e)}
-                  />{' '}
+                  />
                   교육
                 </label>
               </td>
@@ -197,7 +176,7 @@ export default function InterestHobby() {
                 </label>
               </td>
             </tr>
-          </table>
+          </Table>
         </div>
       </div>
       <div style={{ paddingTop: '60px' }} />

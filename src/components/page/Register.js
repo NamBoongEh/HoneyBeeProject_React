@@ -13,15 +13,17 @@ const BtnRight = styled.button`
   padding: 10px 20px 10px 20px;
   border-radius: 10px;
   float: right;
+  margin-top: 3%;
 `;
 
 const BtnLeft = styled.button`
-  background-color: orange;
+  background-color: maroon;
   color: white;
   border: none;
   font-size: 18px;
   padding: 10px 20px 10px 20px;
   border-radius: 10px;
+  margin-top: 3%;
 `;
 
 export default function Register() {

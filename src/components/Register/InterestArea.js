@@ -2,6 +2,28 @@ import React, { useState } from 'react';
 import styled from 'styled-components';
 import { DashSquareFill, PlusSquareFill } from 'react-bootstrap-icons';
 
+const SelectBar = styled.select`
+  height: 30px;
+  border-radius: 5px;
+  border: none;
+  padding-left: 5px;
+  background-color: #eeeeee;
+  margin: 10px 5px;
+  &:focus {
+    outline: none;
+  }
+`;
+
+const More = styled.button`
+  border: none;
+  border-radius: 5px;
+  background-color: black;
+  color: white;
+  width: 14%;
+  height: 31px;
+  margin-left: 10px;
+`;
+
 const Plus = styled(PlusSquareFill)`
   color: lightcoral;
   zoom: 1.4;
@@ -21,15 +43,36 @@ const Minus = styled(DashSquareFill)`
 `;
 
 const HobbyButton = styled.button`
-  width: 15%;
+  width: 30%;
   border-radius: 25px;
   border: none;
   background-color: lemonchiffon;
   text-align: center;
-  font-size: smaller;
+  line-height: 2.5rem;
+  margin-right: 5px;
   &:focus {
     outline: none;
   }
+`;
+
+const LeftBox = styled.div`
+  font-size: x-large;
+  font-weight: bold;
+`;
+
+const ContainerTitle = styled.div`
+  background-color: #dddddd;
+  width: 145%;
+  font-size: 17px;
+  font-weight: bold;
+  padding: 4px 0 4px 15px;
+`;
+
+const ContainerContent = styled.div`
+  border: 1px solid #dddddd;
+  width: 145%;
+  float: left;
+  padding: 20px;
 `;
 
 export default function InterestArea() {
@@ -58,9 +101,6 @@ export default function InterestArea() {
 
   // eslint-disable-next-line no-shadow
   const removeArea = (city, dist) => {
-    console.log('이건 city얌' + city);
-    console.log('이건 dist얌' + dist);
-
     const nextNames = list.filter(
       (name) => name.city + name.dist !== city + dist
     );
@@ -69,31 +109,16 @@ export default function InterestArea() {
   };
 
   return (
-    <div style={{ paddingTop: '50px' }}>
-      <div className="row">
-        <div
-          className={'col-3'}
-          style={{
-            fontSize: 'x-large',
-            fontWeight: 'bold',
-          }}
-        >
-          관심 지역
-        </div>
-
-        <div
-          className={'col-9'}
-          style={{
-            fontSize: 'larger',
-            lineHeight: '2.5rem',
-          }}
-        >
+    <div style={{ margin: '50px 0' }}>
+      <div className="row" style={{ marginTop: '20px' }}>
+        <LeftBox className={'col-3'}>관심 지역</LeftBox>
+        <div className={'col-9'}>
           {list.map((c) => (
             <HobbyButton
               onClick={() => removeArea(c.city, c.dist)}
-              key={c.city + '/' + c.dist}
+              key={c.city + ' / ' + c.dist}
             >
-              {c.city + '/' + c.dist}
+              {c.city + ' / ' + c.dist}
             </HobbyButton>
           ))}
         </div>
@@ -101,71 +126,25 @@ export default function InterestArea() {
 
       <div style={{ paddingTop: '20px' }}>
         <div className="row">
-          <div
-            className={'col-3'}
-            style={{
-              fontSize: 'x-large',
-              textAlign: 'right',
-              lineHeight: '50px',
-              fontWeight: 'bold',
-            }}
-          >
-            지역
-          </div>
-
-          <div
-            className={'col-9'}
-            style={{
-              fontSize: 'larger',
-              lineHeight: '2.5rem',
-              paddingTop: '10px',
-            }}
-          >
-            <div
-              className={'container'}
-              style={{
-                backgroundColor: '#DDDDDD',
-                width: '90%',
-                float: 'left',
-                verticalAlign: 'middle',
-              }}
-            >
-              <div
-                style={{
-                  fontSize: '17px',
-                  fontWeight: 'bold',
-                }}
-              >
-                관심 지역 선택
-              </div>
-            </div>
-            <div
-              className={'container'}
-              style={{
-                borderWidth: '1px',
-                borderColor: '#DDDDDD',
-                borderStyle: 'solid',
-                width: '90%',
-                float: 'left',
-                paddingTop: '20px',
-                lineHeight: '250%',
-              }}
-            >
+          <div className={'col-3'} />
+          <div>
+            <ContainerTitle>관심 지역 선택</ContainerTitle>
+            <ContainerContent className={'container'}>
               <Plus />
               <Minus />
-              <select onChange={(e) => onChangeHandler(e)} name={'city'}>
+              <SelectBar onChange={(e) => onChangeHandler(e)} name={'city'}>
                 <option>시,도 선택</option>
                 <option>서울시</option>
                 <option>제주도</option>
-              </select>{' '}
-              <select onChange={(e) => onChangeHandler(e)} name={'dist'}>
+              </SelectBar>
+              <SelectBar onChange={(e) => onChangeHandler(e)} name={'dist'}>
                 <option>구,군 선택</option>
                 <option>광명시</option>
                 <option>구리시</option>
-              </select>
-              <button onClick={() => onClickHandler()}>추가</button>
+              </SelectBar>
+              <More onClick={() => onClickHandler()}>추가</More>
               <br />
-            </div>
+            </ContainerContent>
           </div>
         </div>
       </div>

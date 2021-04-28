@@ -6,7 +6,7 @@ const InputBar = styled.input`
   height: 45px;
   border-radius: 10px;
   border: none;
-  padding-left: 30px;
+  padding-left: 18px;
   background-color: #eeeeee;
   margin: 20px 0;
   font-size: medium;
@@ -133,7 +133,7 @@ export default function EsImformation() {
       setEmailConfirm('E-mail를 입력해주세요');
     else if (email === 'nam' && email2[0].value === 'naver.com')
       setEmailConfirm(email + '@' + email2[0].value + '은 사용할 수 있습니다');
-    if (email !== '' || email2[0].value !== '')
+    else if (email !== '' && email2[0].value !== '')
       setEmailConfirm(email + '@' + email2[0].value + '은 사용할 수 없습니다');
   };
   // 이메일 중복 이벤트 끝
@@ -144,11 +144,9 @@ export default function EsImformation() {
   };
 
   const nickCheck = () => {
-    setNickConfirm(
-      nick === '남붕어'
-        ? nick + '은 사용할 수 있습니다.'
-        : nick + '은 사용할 수 없습니다.'
-    );
+    if (nick === '') setNickConfirm('닉네임을 입력해주세요');
+    else if (nick === '남붕어') setNickConfirm(nick + '은 사용할 수 있습니다');
+    else setNickConfirm(nick + '은 사용할 수 없습니다');
   };
   // 닉네임 중복 이벤트 끝
 
@@ -209,6 +207,7 @@ export default function EsImformation() {
       <CheckResult>{nickConfirm}</CheckResult>
       {/* 생년월일 */}
       <div>
+        <Text>생년월일</Text>
         <IterationYear />
         <Text>년도</Text>
         <IterationMonth />

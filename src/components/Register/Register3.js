@@ -6,12 +6,39 @@ import { X } from 'react-bootstrap-icons';
 
 Modal.setAppElement('#root');
 
+const Done = styled.button`
+  background-color: orange;
+  color: white;
+  border: none;
+  font-size: 18px;
+  padding: 10px 20px;
+  border-radius: 10px;
+  margin-bottom: 30px;
+`;
+
+const ContainerTitle = styled.div`
+  background-color: #dddddd;
+  width: 100%;
+  font-size: 20px;
+  font-weight: bold;
+  padding: 8px 0 8px 20px;
+`;
+
+const ContainerContent = styled.div`
+  border: 1px solid #dddddd;
+  width: 100%;
+  line-height: 280%;
+  font-size: 16px;
+  font-weight: bold;
+  padding: 10px 0 8px 10px;
+`;
+
 const Links = styled(Link)`
-  float: right;
+  text-align-last: right;
   font-size: smaller;
-  color: slategray;
+  color: orange;
   text-decoration: underline;
-  margin-right: 10px;
+  margin-left: 10px;
   line-height: 50px;
   &:hover {
     color: slategray;
@@ -25,6 +52,19 @@ const ButtonX = styled(X)`
   &:hover {
     cursor: pointer;
   }
+`;
+
+const SubModalTitle = styled.div`
+  color: #4b89dc;
+  font-weight: bold;
+  line-height: 280%;
+`;
+
+const SubTitle = styled.div`
+  font-size: 20px;
+  font-weight: bold;
+  color: #4b89dc;
+  margin: 30px 0;
 `;
 
 export default function Register3() {
@@ -42,7 +82,6 @@ export default function Register3() {
         onRequestClose={() => setModalState(false)}
         style={{
           left: '50%',
-
           overlay: {
             backgroundColor: 'rgba(0,0,0,0.3)',
           },
@@ -53,7 +92,7 @@ export default function Register3() {
             width: '50%',
             boxShadow: '0 10px 15px 0 rgba(0, 0, 0, 0.3)',
             borderWidth: '10px',
-            borderColor: '#4B89DC',
+            borderColor: 'black',
             borderStyle: 'solid',
             lineHeight: '200%',
           },
@@ -63,72 +102,20 @@ export default function Register3() {
           이용약관 동의
           <ButtonX onClick={(e) => closeModal(e)} />
         </div>
-        <div
-          style={{
-            color: '#4b89dc',
-            fontWeight: 'bold',
-            lineHeight: '280%',
-          }}
-        >
-          이용약관
-          <br />
-        </div>
+        <SubModalTitle>이용약관</SubModalTitle>
         안녕하세요
         <br />
         여기에 글을 쓸겁니다. 이걸 서명하면 당신은 노예가 되는겁니다.
-        <br />
       </Modal>
 
       <h3 style={{ fontWeight: 'bold' }}>회원가입</h3>
-      <h4
-        style={{
-          fontWeight: 'bold',
-          color: '#4B89DC',
-          paddingTop: '70px',
-          marginLeft: '70px',
-        }}
-      >
-        이용약관 / 개인정보 수집 및 이용 동의
-      </h4>
-      <div
-        className={'container'}
-        style={{
-          backgroundColor: '#DDDDDD',
-          width: '85%',
-          marginTop: '20px',
-        }}
-      >
-        <div
-          style={{
-            fontSize: '20px',
-            fontWeight: 'bold',
-            paddingTop: '10px',
-            paddingBottom: '10px',
-          }}
-        >
-          <label for={'all'}>
-            <input id={'all'} type={'checkbox'} /> 전체동의
-          </label>
-        </div>
-      </div>
-      <div
-        className={'container'}
-        style={{
-          borderWidth: '1px',
-          borderColor: '#DDDDDD',
-          borderStyle: 'solid',
-          width: '85%',
-          lineHeight: '300%',
-        }}
-      >
-        <div
-          style={{
-            fontSize: '16px',
-            fontWeight: 'bold',
-            paddingTop: '10px',
-            paddingBottom: '10px',
-          }}
-        >
+      <SubTitle>이용약관 / 개인정보 수집 및 이용 동의</SubTitle>
+
+      <ContainerTitle className={'container'}>
+        <input id={'all'} type={'checkbox'} /> 전체동의
+      </ContainerTitle>
+      <ContainerContent className={'container'}>
+        <div>
           <input type={'checkbox'} /> (필수) 만 14세 이상입니다.
           <br />
           <input id={'check2'} type={'checkbox'} /> (필수) 이용약관 동의
@@ -148,25 +135,13 @@ export default function Register3() {
         <div style={{ fontSize: '13px', color: 'gray' }}>
           단, 모임 참여와 관련된 정보는 수신동의 여부 관계없이 발송됩니다.
         </div>
-      </div>
+      </ContainerContent>
       <div style={{ textAlign: 'center', paddingTop: '50px' }}>
         <Link to="./RegisterDone">
-          <button
-            style={{
-              backgroundColor: 'orange',
-              color: 'white',
-              border: 'none',
-              fontSize: '18px',
-              padding: '10px 20px 10px 20px',
-              borderRadius: '10px',
-            }}
-          >
-            회원가입 완료
-          </button>
+          <Done>회원가입 완료</Done>
         </Link>
         <br />
       </div>
-      <div style={{ paddingTop: '50px' }} />
     </div>
   );
 }
