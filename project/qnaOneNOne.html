@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100&family=Poppins:wght@100;200;300;900&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.min.css"
+    />
+    <link rel="stylesheet" href="withouthome.css" />
+    <link rel="stylesheet" href="qnaOneNOne.css" />
+    <title>Document</title>
+  </head>
+  <script>
+    // 개인정보 수집 동의 체크박스 이벤트
+    function check(name) {
+      const id = document.getElementById(name);
+
+      id.checked == false ? (id.checked = true) : (id.checked = false);
+    }
+
+    //필수정보 유효성 검사
+    function must() {
+      const name = document.getElementById("inputName");
+      const phone = document.getElementById("inputPhone");
+      const email = document.getElementById("inputEmail");
+      const title = document.getElementById("inputTitle");
+      const content = document.getElementById("inputContent");
+
+      //비었는지 확인, 비었다면 언더바 색 변화 애니메이션 적용
+      if (name.value == "") {
+        name.style.animation = "colorChange 0.8s ease-in-out";
+        name.style.animationIterationCount = "2";
+      }
+      if (phone.value == "") {
+        phone.style.animation = "colorChange 0.8s ease-in-out";
+        phone.style.animationIterationCount = "2";
+      }
+      if (email.value == "") {
+        email.style.animation = "colorChange 0.8s ease-in-out";
+        email.style.animationIterationCount = "2";
+      }
+      if (title.value == "") {
+        title.style.animation = "colorChange 0.8s ease-in-out";
+        title.style.animationIterationCount = "2";
+      }
+      if (content.value == "") {
+        content.style.animation = "colorChange 0.8s ease-in-out";
+        content.style.animationIterationCount = "2";
+      }
+    }
+  </script>
+
+  <body>
+    <!-- 헤더 -->
+    <div class="header">
+      <a href="/" class="logo" id="logo">Honey Bee</a>
+      <div class="links">
+        <a
+          ><i
+            class="fas fa-align-justify"
+            style="margin-right: 5px; font-size: medium"
+          ></i
+          >Meet</a
+        >
+        <a>Board</a>
+        <a>QnA</a>
+        <a>Notice</a>
+      </div>
+      <div class="icons">
+        <a href="/" style="text-align: center">
+          <i class="fas fa-sign-in-alt"></i><br />
+          <div style="font-size: 12px">Login</div>
+        </a>
+        <a href="/" style="text-align: center">
+          <i class="fas fa-user"></i><br />
+          <div style="font-size: 11px">MyPage</div>
+        </a>
+        <a href="/" style="text-align: center">
+          <i class="fas fa-comment"></i><br />
+          <div style="font-size: 11px">CS</div>
+        </a>
+      </div>
+      <!-- 헤더 끝 -->
+    </div>
+
+    <div style="margin: 0 200px">
+      <div style="width: 100%; display: flex">
+        <div class="banner">
+          <div class="title"><kor>자주묻는질문</kor> FAQ</div>
+          <div class="subTitle">
+            <kor>허니비에서의 새로운 소식을 만나보세요!</kor>
+          </div>
+        </div>
+        <div
+          class="banner"
+          style="
+            background-image: url(/image/qna.jpg);
+            object-fit: cover;
+            background-size: 100% 115%;
+          "
+        ></div>
+      </div>
+
+      <div class="subNav">
+        <div class="subNavTitle"><kor>신고/문의하기</kor></div>
+        <div class="subNavSubTitle">REPORT</div>
+      </div>
+
+      <div class="must"><kor>*필수 입력사항</kor></div>
+
+      <div class="box">
+        <div class="index">
+          <div id="titleName"><kor>이름*</kor></div>
+          <div class="contentName">
+            <input id="inputName" />
+          </div>
+        </div>
+
+        <div class="index">
+          <div id="titlePhone"><kor>연락처*</kor></div>
+          <div class="contentPhone">
+            <input id="inputPhone" />
+          </div>
+        </div>
+
+        <div class="index">
+          <div id="titleEmail"><kor>이메일*</kor></div>
+          <div class="contentEmail">
+            <input id="inputEmail" />
+          </div>
+        </div>
+
+        <div class="index">
+          <div id="titleTitle"><kor>제목*</kor></div>
+          <div class="contentTitle">
+            <input id="inputTitle" />
+          </div>
+        </div>
+
+        <div class="index">
+          <div id="titleContent"><kor>요청사항*</kor></div>
+          <div class="contentContent">
+            <textarea rows="3" id="inputContent"></textarea>
+          </div>
+        </div>
+      </div>
+
+      <div class="check">
+        <input type="checkbox" id="checkBox" unchecked />
+        <span onclick="check('checkBox')">
+          <kor>개인정보 수집 및 이용에 동의합니다.</kor>
+        </span>
+      </div>
+
+      <div class="check">
+        <button class="btn" onclick="must()"><kor>문의/신고하기</kor></button>
+      </div>
+
+      <div style="display: block">
+        <!-- 페이징바디시작 -->
+        <div class="page">
+          <ul class="pagination modal">
+            <li style="margin: 0; list-style: none">
+              <a href="#" class="prev">◀</a>
+            </li>
+            <li><a href="#" class="num" style="margin-right: 2%">1</a></li>
+            <li><a href="#" class="num" style="margin-right: 2%">2</a></li>
+            <li><a href="#" class="num" style="margin-right: 2%">3</a></li>
+            <li><a href="#" class="num" style="margin-right: 2%">4</a></li>
+            <li><a href="#" class="num" style="margin-right: 2%">5</a></li>
+            <li><a href="#" class="num" style="margin-right: 2%">6</a></li>
+            <li><a href="#" class="num" style="margin-right: 2%">7</a></li>
+            <li><a href="#" class="num" style="margin-right: 2%">8</a></li>
+            <li><a href="#" class="num" style="margin-right: 2%">9</a></li>
+            <li><a href="#" class="num" style="margin-right: 2%">10</a></li>
+            <li><a href="#" class="next" style="margin-left: 15%">▶</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <!-- 푸터 -->
+    <div class="footer">
+      <div>Copyright 2021. HoneyBee All rights reserved.</div>
+    </div>
+  </body>
+</html>

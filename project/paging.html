@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100&family=Poppins:wght@100;200;300;900&display=swap"
+        rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.min.css" />
+    <link rel="stylesheet" type="text/css" href="/project/withouthome.css">
+    <style>
+        .page {
+            /* div영역안에서의 center */
+            width: 100%;
+        }
+
+        .pagination {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            padding: 0;
+            margin-top: 20px;
+        }
+
+        .pagination li {
+            display: inline;
+            text-align: center;
+
+        }
+
+        /* 숫자들에 대한 스타일 지정 */
+        .pagination a {
+            float: left;
+            display: block;
+            font-size: 14px;
+            text-decoration: none;
+            padding: 5px 12px;
+            line-height: 1.5;
+        }
+
+        .pagination a.active {
+            cursor: default;
+            color: #ffffff;
+        }
+
+        .pagination a:active {
+            outline: none;
+        }
+
+        .modal .num {
+            margin-left: 5px;
+            padding: 0;
+            width: 30px;
+            line-height: 30px;
+            -moz-border-radius: 100%;
+            -webkit-border-radius: 100%;
+            border-radius: 100%;
+        }
+
+        .modal .num:hover {
+            background-color: rgb(255, 211, 0);
+            color: white
+        }
+
+        .modal .num.active,
+        .modal .num:active {
+            background-color: rgb(255, 211, 0);
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="content">
+        <!-- 페이징바디시작 -->
+        <div class="page">
+            <ul class="pagination modal">
+                <li style=" margin:0;list-style:none;"><a href="#" class="prev">◀</a></li>
+                <li><a href="#" class="num" style="margin-right:2%">1</a></li>
+                <li><a href="#" class="num" style="margin-right:2%">2</a></li>
+                <li><a href="#" class="num" style="margin-right:2%">3</a></li>
+                <li><a href="#" class="num" style="margin-right:2%">4</a></li>
+                <li><a href="#" class="num" style="margin-right:2%">5</a></li>
+                <li><a href="#" class="num" style="margin-right:2%">6</a></li>
+                <li><a href="#" class="num" style="margin-right:2%">7</a></li>
+                <li><a href="#" class="num" style="margin-right:2%">8</a></li>
+                <li><a href="#" class="num" style="margin-right:2%">9</a></li>
+                <li><a href="#" class="num" style="margin-right:2%">10</a></li>
+                <li><a href="#" class="next" style="margin-left:15%">▶</a></li>
+            </ul>
+        </div>
+    </div>
+    <!-- 페이징바디끝 -->
+</body>
+
+</html>

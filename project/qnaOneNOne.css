@@ -1,0 +1,238 @@
+/* 배너 스타일*/
+.banner {
+  width: 50%;
+  height: 392.2px;
+  padding: 3% 0 0 5%;
+  margin-bottom: 93px;
+  background-color: #d5f1ff;
+}
+
+/* 서브 네비 스타일 */
+.subNav {
+  display: flex;
+  width: 100%;
+  margin-bottom: 93px;
+  padding-bottom: 3px;
+}
+
+.qnaOften,
+.qnaList {
+  width: 10%;
+  font-size: 25px;
+  font-weight: 500;
+  padding-bottom: 0.5%;
+  border-bottom: 4px solid rgb(225, 221, 0);
+  text-align: center;
+}
+.qnaOften:hover,
+.qnaList:hover {
+  cursor: pointer;
+  font-weight: 600;
+  border-bottom: 4px solid #dddddd;
+}
+
+.title,
+.subTitle {
+  margin: 6rem 0 1rem;
+  font-family: "Noto Sans KR", sans-serif;
+  font-size: 35px;
+  font-weight: 600;
+}
+.subTitle {
+  font-size: 1vw;
+  font-weight: 380;
+  margin: 0;
+}
+
+/* 서브 타이틀 */
+.subNavTitle {
+  font-size: 35px;
+  font-weight: 600;
+}
+
+.subNavSubTitle {
+  font-size: 25px;
+  font-weight: 500;
+}
+
+/* 서브 네비 스타일 */
+.subNav {
+  display: block;
+  width: 100%;
+  margin-bottom: 93px;
+  text-align: center;
+  line-height: 3.5rem;
+}
+
+/* 양식 틀 스타일 */
+.box {
+  align-content: center;
+  display: block;
+  border: none;
+  border-top: 3px solid rgb(225, 221, 0);
+  border-bottom: 3px solid rgb(225, 221, 0);
+  width: 80%;
+  padding: 5% 0;
+  margin: 0 0 2.5% 10%;
+}
+
+.must {
+  text-align: right;
+  width: 80%;
+  margin-left: 10%;
+  padding-bottom: 0.5%;
+}
+
+.index {
+  display: flex;
+  height: 6.5rem;
+}
+
+#titleName,
+#titlePhone,
+#titleEmail,
+#titleTitle,
+#titleContent {
+  width: 10%;
+  font-size: 25px;
+  font-weight: 500;
+  padding-top: 2.5%;
+  text-align: left;
+  margin-left: 15%;
+  padding-left: 1%;
+}
+
+.contentName,
+.contentPhone,
+.contentEmail,
+.contentTitle,
+.contentContent {
+  width: 60%;
+  text-align: center;
+}
+
+#inputContent {
+  resize: none;
+  width: 65%;
+  font-size: 18px;
+  border: none;
+  border-bottom: 3px solid #dddddd;
+  padding-top: 1.7rem;
+}
+#inputContent:focus {
+  outline: none;
+  border-bottom: 3px solid rgb(225, 221, 0);
+  transition: 1s ease-out;
+}
+/* 스크롤바 제거 */
+#inputContent::-webkit-scrollbar {
+  display: none;
+}
+
+input {
+  border: none;
+  width: 65%;
+  height: 2rem;
+  border-bottom: 3px solid #dddddd;
+  font-size: 18px;
+  padding-top: 1.7rem;
+}
+input:focus {
+  outline: none;
+  border-bottom: 3px solid rgb(225, 221, 0);
+  transition: 1s ease-out;
+}
+
+/* 체크박스 스타일링 */
+.check {
+  width: 80%;
+  margin: 0 0 2% 10%;
+  text-align: center;
+}
+
+#checkBox {
+  width: 15px;
+  vertical-align: middle;
+  margin-right: 0.5%;
+}
+
+/* 버튼 스타일링 */
+.btn {
+  background-color: #eeeeee;
+  padding: 0.8% 1%;
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
+  font-family: "Noto Sans KR", sans-serif;
+}
+.btn:hover {
+  background-color: rgb(255, 211, 0);
+}
+
+@keyframes colorChange {
+  from {
+    border-bottom: 3px solid #dddddd;
+  }
+  to {
+    border-bottom: 3px solid lightcoral;
+  }
+}
+
+/* 페이징 디자인 */
+.page {
+  /* div영역안에서의 center */
+  width: 100%;
+}
+
+.pagination {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  padding: 0;
+  margin-top: 20px;
+}
+
+.pagination li {
+  display: inline;
+  text-align: center;
+}
+
+/* 숫자들에 대한 스타일 지정 */
+.pagination a {
+  float: left;
+  display: block;
+  font-size: 14px;
+  text-decoration: none;
+  padding: 5px 12px;
+  line-height: 1.5;
+}
+
+.pagination a.active {
+  cursor: default;
+  color: #ffffff;
+}
+
+.pagination a:active {
+  outline: none;
+}
+
+.modal .num {
+  margin-left: 5px;
+  padding: 0;
+  width: 30px;
+  line-height: 30px;
+  -moz-border-radius: 100%;
+  -webkit-border-radius: 100%;
+  border-radius: 100%;
+}
+
+.modal .num:hover {
+  background-color: rgb(255, 211, 0);
+  color: white;
+}
+
+.modal .num.active,
+.modal .num:active {
+  background-color: rgb(255, 211, 0);
+  cursor: pointer;
+}

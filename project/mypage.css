@@ -1,0 +1,224 @@
+/* 서브 네비 */
+.subNavTitle {
+  display: flex;
+  background-color: #eeeeee;
+}
+
+.subNavContent {
+  text-align: center;
+  cursor: pointer;
+  font-size: 15px;
+  font-weight: 500;
+  margin: 0 1%;
+  padding: 0.5% 0.8%;
+}
+.subNavContent:hover {
+  color: white;
+  background-color: #bbbbbb;
+}
+
+/* 본문 큰 박스 */
+.box {
+  display: flex;
+  width: 100%;
+  height: 300%;
+}
+
+/* 0번 박스 이름 변경하기 이벤트 박스 */
+.changeNameBox {
+  width: 80%;
+  height: 95%;
+  background-color: #eeeeee;
+  border-radius: 5px;
+  vertical-align: middle;
+  margin-left: 5%;
+}
+
+.fa-caret-down {
+  color: #eeeeee;
+  zoom: 2.5;
+  margin-left: 8%;
+  transform: translateY(-50%);
+}
+
+/* 1번 박스 이미지, 개인정보 내용 */
+/* 이미지 박스 */
+.picBox {
+  width: 30%;
+  text-align: center;
+}
+
+.pic {
+  border: 1px solid black;
+  width: 100%;
+  height: 306px;
+}
+
+#box1button1 {
+  background-color: rgb(255, 211, 0);
+  width: 48.5%;
+  padding: 1.5% 0;
+  margin-top: 5%;
+  border-radius: 2px;
+  border: none;
+  cursor: pointer;
+  font-size: 20px;
+}
+
+/* 개인정보 박스 */
+/* 개인정보 이름 타이틀  */
+.nameBox {
+  width: 60%;
+  padding: 0 5%;
+  margin-left: 3%;
+}
+
+.fa-address-card {
+  zoom: 1.7;
+  padding-top: 1.5%;
+}
+
+#name {
+  font-size: 25px;
+  font-weight: 600;
+}
+
+#box1button2 {
+  background-color: rgb(255, 211, 0);
+  padding: 1% 10%;
+  height: 70%;
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
+}
+
+.nameBox > hr {
+  border: 1px solid #dddddd;
+  margin: 2% 0 10%;
+}
+
+/* 개인정보 내용 */
+#nameContent {
+  width: 100%;
+  display: flex;
+  font-size: 25px;
+}
+
+.nameBoxTitle {
+  width: 23%;
+  padding: 2% 0 2% 5%;
+  margin-right: 5%;
+  font-weight: 600;
+}
+
+.nameBoxContent {
+  width: 100%;
+  padding: 2% 0;
+  display: flex;
+}
+
+/* 회원정보 */
+#on,
+#off,
+#on2,
+#off2 {
+  margin-left: 3%;
+}
+
+#onEmail,
+#offEmail,
+#onPhone,
+#offPhone {
+  font-size: 20px;
+  font-family: Noto Sans KR;
+}
+
+.fa-toggle-on,
+.fa-toggle-off {
+  color: limegreen;
+  font-size: 1.8vw;
+}
+
+.box2 {
+  width: 100%;
+  height: 300%;
+  display: flex;
+}
+
+input {
+  font-size: 15px;
+  outline: none;
+  border: 1px solid #dddddd;
+  padding: 2% 5%;
+  outline: none;
+}
+
+.subTitle {
+  font-size: 25px;
+  font-weight: 600;
+  width: 100%;
+  margin: 3rem 0 2rem;
+}
+
+.containerTitle,
+.containerTitle2 {
+  font-size: 15px;
+  font-weight: 600;
+  width: 10%;
+  padding: 2% 0 2% 2%;
+  border-bottom: 3px solid #eeeeee;
+}
+.containerTitle2 {
+  padding: 2% 0 2% 2%;
+  border: none;
+  line-height: 2rem;
+}
+
+.containerContent {
+  font-size: 15px;
+  width: 90%;
+  padding: 2% 0 2% 2%;
+  border-bottom: 3px solid #eeeeee;
+}
+
+.containerContent2 {
+  padding: 2% 0 2% 2%;
+}
+
+.containerContent > select {
+  font-size: 15px;
+  padding: 0 2%;
+  margin-right: 1%;
+  border: none;
+  background-color: #eeeeee;
+  border-radius: 2px;
+}
+.containerContent2 > select {
+  font-size: 15px;
+  padding: 0 1%;
+  margin-right: 1%;
+  border: none;
+  background-color: #eeeeee;
+  border-radius: 2px;
+}
+
+select:focus {
+  outline: none;
+}
+
+#box2button1 {
+  font-size: 15px;
+  background-color: rgb(255, 211, 0);
+  padding: 1% 3%;
+  margin-top: 3%;
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
+}
+
+/* 아이콘 */
+.fa-circle {
+  font-size: 6px;
+  margin-right: 1%;
+  padding-bottom: 0.5%;
+}

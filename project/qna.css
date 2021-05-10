@@ -1,0 +1,173 @@
+/* 배너 스타일*/
+.banner {
+  width: 50%;
+  height: 392.2px;
+  padding: 3% 0 0 5%;
+  font-family: "Noto Sans KR", sans-serif;
+  background-color: #d5f1ff;
+}
+
+/* 서브 네비 스타일 */
+.subNav {
+  display: flex;
+  width: 100%;
+  padding-bottom: 3px;
+  margin: 4rem 0 6rem;
+  /* 글꼴 스타일 변경법 */
+  font-family: "Noto Sans KR";
+  font-family: "Poppins";
+}
+
+.empty {
+  width: 37.5%;
+  padding-bottom: 0.5%;
+  border-bottom: 4px solid rgb(225, 221, 0);
+}
+
+.qnaOften,
+.qnaList {
+  width: 15%;
+  font-size: 25px;
+  font-weight: 500;
+  padding-bottom: 0.5%;
+  border-bottom: 4px solid rgb(225, 221, 0);
+  text-align: center;
+}
+.qnaOften:hover,
+.qnaList:hover {
+  cursor: pointer;
+  font-weight: 600;
+  border-bottom: 4px solid #dddddd;
+}
+.qnaOften {
+  padding-right: 1%;
+}
+
+.title,
+.subTitle {
+  margin: 6rem 0 1rem;
+  font-size: 35px;
+  font-weight: 600;
+}
+.subTitle {
+  font-size: 1vw;
+  font-weight: 380;
+  margin: 0;
+}
+
+/* qna 박스 */
+.qnaBoxList {
+  display: block;
+  padding-left: 8%;
+}
+
+.question,
+.answer {
+  width: 84%;
+  height: 100%;
+  border-left: 4px solid rgb(225, 221, 0);
+  padding: 1% 2%;
+}
+
+.question {
+  border-top: 1px solid #dddddd;
+  font-weight: 600;
+}
+.answer {
+  animation: fadeIn 0.3s ease-in-out;
+  padding-left: 4.5%;
+}
+
+/* 답변 나타나는 이벤트 */
+@keyframes fadeIn {
+  from {
+    transform: translateY(-50%);
+    display: hidden;
+    opacity: 0.3;
+  }
+  to {
+    transform: translateY(0%);
+    display: none;
+    opacity: 1;
+  }
+}
+
+.question:hover {
+  cursor: pointer;
+}
+
+.fa-question-circle {
+  color: orangered;
+  font-size: 25px;
+  vertical-align: middle;
+  margin-right: 1%;
+}
+
+.fa-chevron-down,
+.fa-chevron-up {
+  float: right;
+  font-size: 20px;
+  display: block;
+}
+.fa-chevron-up {
+  display: none;
+}
+
+/* 페이징 디자인 */
+.page {
+  /* div영역안에서의 center */
+  width: 100%;
+}
+
+.pagination {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  padding: 0;
+  margin-top: 20px;
+}
+
+.pagination li {
+  display: inline;
+  text-align: center;
+}
+
+/* 숫자들에 대한 스타일 지정 */
+.pagination a {
+  float: left;
+  display: block;
+  font-size: 14px;
+  text-decoration: none;
+  padding: 5px 12px;
+  line-height: 1.5;
+}
+
+.pagination a.active {
+  cursor: default;
+  color: #ffffff;
+}
+
+.pagination a:active {
+  outline: none;
+}
+
+.modal .num {
+  margin-left: 5px;
+  padding: 0;
+  width: 30px;
+  line-height: 30px;
+  -moz-border-radius: 100%;
+  -webkit-border-radius: 100%;
+  border-radius: 100%;
+}
+
+.modal .num:hover {
+  background-color: rgb(255, 211, 0);
+  color: white;
+}
+
+.modal .num.active,
+.modal .num:active {
+  background-color: rgb(255, 211, 0);
+  cursor: pointer;
+}

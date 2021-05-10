@@ -1,0 +1,562 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Font Awesome 아이콘 불러오기 -->
+    <script src="https://use.fontawesome.com/releases/v5.2.0/js/all.js"></script>
+
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100&family=Poppins:wght@100;200;300;900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" type="text/css" href="withouthome.css" />
+    <link rel="stylesheet" type="text/css" href="mypageheader.css" />
+    <link rel="stylesheet" type="text/css" href="mypage.css" />
+  </head>
+  <script>
+    //닉네임 변경 이벤트
+    // 1. 변경 박스 보였다 안보였다 이벤트
+    function setShow() {
+      const id = document.getElementById("nameBoxEvent");
+
+      console.log(id.hidden);
+
+      id.hidden ? (id.hidden = false) : (id.hidden = true);
+    }
+
+    // 2. 닉네임 변경 이벤트
+    function setChange() {
+      const id = document.getElementById("newId").value;
+      document.getElementById("pastId").innerText = id + " 님";
+      document.getElementById("pastId").style.fontFamily = "Noto Sans KR";
+
+      setShow();
+    }
+
+    // 개인정보 공개/비공개 스위칭
+    function toggleChange(name) {
+      const id = document.getElementById(name);
+
+      if (id.id == "on") {
+        id.hidden = true;
+        document.getElementById("off").hidden = false;
+        document.getElementById("offEmail").hidden = false;
+      } else {
+        id.hidden = true;
+        document.getElementById("on").hidden = false;
+        document.getElementById("onEmail").hidden = false;
+      }
+    }
+
+    function toggleChange2(name) {
+      const id = document.getElementById(name);
+      if (id.id == "on2") {
+        id.hidden = true;
+        document.getElementById("off2").hidden = false;
+        document.getElementById("offPhone").hidden = false;
+      } else {
+        id.hidden = true;
+        document.getElementById("on2").hidden = false;
+        document.getElementById("onPhone").hidden = false;
+      }
+    }
+  </script>
+
+  <body>
+    <!-- 헤더 -->
+    <div class="header">
+      <a href="/" class="logo" id="logo">Honey Bee</a>
+      <div class="links">
+        <a
+          ><i
+            class="fas fa-align-justify"
+            style="margin-right: 5px; font-size: medium"
+          ></i
+          >Meet</a
+        >
+        <a>Board</a>
+        <a>QnA</a>
+        <a>Notice</a>
+      </div>
+      <div class="icons">
+        <a href="/" style="text-align: center">
+          <i class="fas fa-sign-in-alt"></i><br />
+          <div style="font-size: 12px">Login</div>
+        </a>
+        <a href="/" style="text-align: center">
+          <i class="fas fa-user"></i><br />
+          <div style="font-size: 11px">MyPage</div>
+        </a>
+        <a href="/" style="text-align: center">
+          <i class="fas fa-comment"></i><br />
+          <div style="font-size: 11px">CS</div>
+        </a>
+      </div>
+      <!-- 헤더 끝 -->
+    </div>
+
+    <div class="header2">
+      <!-- content -->
+      <div class="content">
+        <div class="myPageHeader" style="width: auto; margin: 0 200px;">
+          <div class="forAlign">
+            <a class="myPage" href="#"><span class="line">MyPage</span></a>
+          </div>
+
+          <div class="test">
+            <a class="myInfoModify" href="#" style="padding-right: 10px"
+              ><span class="line">회원정보수정</span></a
+            >
+            <a class="myActivity" href="#" style="padding-right: 10px"
+              ><span class="line">나의활동</span></a
+            >
+            <a class="message" href="#" style="padding-right: 10px"
+              ><span class="line">쪽지함</span></a
+            >
+            <a class="gatherList" href="#" style="padding-right: 10px"
+              ><span class="line">모임개설목록</span></a
+            >
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 닉네임 변경하기 이벤트 박스 -->
+    <div style="padding: 0 200px; margin: 0 10%">
+      <div class="box" style="height: 200px">
+        <div class="picBox"></div>
+        <div
+          id="nameBoxEvent"
+          class="nameBox"
+          style="margin: 0; padding-top: 10%"
+          hidden
+        >
+          <div class="changeNameBox">
+            <!-- 닉네임 글자수 제한 -->
+            <input
+              id="newId"
+              value="남붕어"
+              maxlength="8"
+              style="
+                margin: 5% 0 5% 3%;
+                width: 60%;
+                border: none;
+                font-family: 'Noto Sans KR';
+              "
+            />
+            <button
+              style="
+                background-color: rgb(255, 211, 0);
+                width: 20%;
+                padding: 1.9% 0;
+                border-radius: 2px;
+                border: none;
+                margin-left: 2%;
+              "
+              onclick="setChange()"
+            >
+              <kor>저장</kor>
+            </button>
+          </div>
+          <i class="fas fa-caret-down"></i>
+        </div>
+      </div>
+
+      <!-- 이미지, 기본 정보 박스 -->
+      <div class="box">
+        <div class="picBox">
+          <div
+            class="pic"
+            style="
+              background-image: url(/image/img_home-phoenix-sunset-desktop@1x.jpg);
+              background-size: cover;
+              border-radius: 2px;
+            "
+          ></div>
+          <button id="box1button1"><kor>썸네일 변경</kor></button>
+          <button id="box1button1" style="background-color: #eeeeee">
+            <kor>삭제</kor>
+          </button>
+        </div>
+        <div class="nameBox">
+          <div id="name" style="display: flex">
+            <i class="far fa-address-card" style="margin-right: 3%"></i>
+            <div id="pastId" style="margin-right: 3%; font-size: 35px">
+              <kor> 남붕어 님</kor>
+            </div>
+            <div style="padding-top: 1%; width: 15%">
+              <button id="box1button2" onclick="setShow()">
+                <kor>변경하기</kor>
+              </button>
+            </div>
+          </div>
+          <hr />
+
+          <div id="nameContent">
+            <div class="nameBoxTitle"><kor>이메일</kor></div>
+            <div
+              class="nameBoxContent"
+              id="email"
+              style="letter-spacing: 0.5px; display: flex"
+            >
+              nam@naver.com
+              <div id="on">
+                <i class="fas fa-toggle-on" onclick="toggleChange('on')"> </i>
+                <span id="onEmail">공개</span>
+              </div>
+
+              <div id="off" hidden>
+                <i class="fas fa-toggle-off" onclick="toggleChange('off')"></i>
+                <span id="offEmail">비공개</span>
+              </div>
+
+              <div style="padding-bottom: 1%; width: 20%">
+                <button
+                  id="box1button2"
+                  style="height: 70%; padding: 2% 7%; margin-left: 15%"
+                >
+                  <kor>인증하기</kor>
+                </button>
+              </div>
+            </div>
+          </div>
+          <div id="nameContent">
+            <div class="nameBoxTitle"><kor>휴대전화</kor></div>
+            <div
+              class="nameBoxContent"
+              style="letter-spacing: 1px; display: flex"
+            >
+              010-1234-5678
+
+              <div id="on2">
+                <i class="fas fa-toggle-on" onclick="toggleChange2('on2')"></i>
+                <span id="onPhone">공개</span>
+              </div>
+
+              <div id="off2" hidden>
+                <i
+                  class="fas fa-toggle-off"
+                  onclick="toggleChange2('off2')"
+                ></i>
+                <span id="offPhone">비공개</span>
+              </div>
+            </div>
+          </div>
+          <div id="nameContent">
+            <div class="nameBoxTitle"><kor>가입일</kor></div>
+            <div class="nameBoxContent" style="letter-spacing: 1px">
+              1993-09-16
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 회원정보 박스 -->
+      <div class="subTitle"><kor>회원정보</kor></div>
+      <div class="box2">
+        <div class="containerTitle"><kor>성별</kor></div>
+        <div class="containerContent" style="display: flex">
+          <div style="margin-right: 2.8%">
+            <input type="radio" id="man" name="radioSex" />
+            <label for="man"><kor>남</kor></label>
+          </div>
+          <div>
+            <input type="radio" id="woman" name="radioSex" />
+            <label for="woman"><kor>여</kor></label>
+          </div>
+        </div>
+      </div>
+
+      <div class="box2">
+        <div class="containerTitle"><kor>생년월일</kor></div>
+        <div class="containerContent">
+          <select>
+            <option>2021</option>
+          </select>
+          <select>
+            <option>1</option>
+            <option>2</option>
+            <option>3</option>
+            <option>4</option>
+            <option>5</option>
+            <option>6</option>
+            <option>7</option>
+            <option>8</option>
+            <option>9</option>
+            <option>10</option>
+            <option>11</option>
+            <option>12</option>
+          </select>
+          <select>
+            <option>31</option>
+          </select>
+        </div>
+      </div>
+      <div class="box2">
+        <div class="containerTitle"><kor>관심지역</kor></div>
+        <div class="containerContent">
+          <select style="font-family: 'Noto Sans KR'; width: 18%">
+            <option>서울특별시</option>
+            <option>경기도</option>
+            <option>충청북도</option>
+            <option>충청남도</option>
+            <option>경상북도</option>
+            <option>경상남도</option>
+            <option>전라북도</option>
+            <option>전라남도</option>
+            <option>강원도</option>
+            <option>제주특별자치도</option>
+            <option>인천광역시</option>
+            <option>대전광역시</option>
+            <option>대구광역시</option>
+            <option>부산광역시</option>
+            <option>울산광역시</option>
+            <option>광주광역시</option>
+            <option>세종특별자치시</option>
+            <option>기타(해외 등)</option>
+          </select>
+
+          <select style="font-family: 'Noto Sans KR'; width: 18%">
+            <option>세부 지역</option>
+          </select>
+        </div>
+      </div>
+      <div class="box2">
+        <div class="containerTitle" style="border: none">
+          <kor>관심분야</kor>
+        </div>
+        <div class="containerContent" style="border: none">
+          <select style="font-family: 'Noto Sans KR'; width: 18%">
+            <option>전체</option>
+            <option>스포츠</option>
+            <option>스터디/자기계발</option>
+            <option>독서/토론</option>
+            <option>게임</option>
+            <option>여행</option>
+            <option>문화/예술</option>
+            <option>봉사활동</option>
+            <option>패션/뷰티</option>
+            <option>반려동물</option>
+            <option>원데이클래스</option>
+          </select>
+        </div>
+      </div>
+
+      <div
+        style="
+          border-bottom: 3px solid #eeeeee;
+          padding-bottom: 2%;
+          margin-bottom: 4%;
+          text-align: center;
+        "
+      >
+        <button id="box2button1" style="padding: 1% 7%"><kor>적용</kor></button>
+      </div>
+
+      <!-- 비밀번호 변경 박스 -->
+      <div class="box2">
+        <div class="containerTitle2"><kor>비밀번호 변경</kor></div>
+        <div
+          class="containerContent2"
+          style="
+            line-height: 1.7rem;
+            background-color: #eeeeee;
+            border-radius: 5px;
+            width: 100%;
+            padding: 1.5% 2%;
+            margin-left: 3%;
+          "
+        >
+          <kor>
+            <i class="fas fa-circle"></i>
+            개인정보보호를 위해 최소 3개월 이내에는 정기적으로 비밀번호를 변경해
+            주시는 것이 좋습니다.<br />
+            <i class="fas fa-circle"></i>
+            비밀번호는 쉬운번호나 타 사이트와 같을 경우 도용되기 쉽습니다.<br />
+            <i class="fas fa-circle"></i>
+            주민번호, 생일, 전화번호 등 개인정보와 연관된 문자나 숫자는 보안상
+            위험이 높으므로 사용을 자제해 주세요.<br />
+          </kor>
+        </div>
+      </div>
+
+      <div class="box2">
+        <div class="containerTitle2"></div>
+        <div class="containerContent2" style="line-height: 2.2rem">
+          <kor> 현재 비밀번호 입력 </kor>
+          <div>
+            <input
+              type="password"
+              placeholder="기존 비밀번호를 입력해 주세요"
+              style="width: 150%; font-size: 15px; font-family: 'Noto Sans KR'"
+            />
+          </div>
+        </div>
+      </div>
+
+      <div class="box2">
+        <div class="containerTitle2"></div>
+        <div class="containerContent2" style="line-height: 2.2rem">
+          <kor> 새로운 비밀번호 입력 </kor>
+          <div>
+            <input
+              type="password"
+              placeholder="새로운 비밀번호를 입력해 주세요"
+              style="width: 150%; font-size: 15px; font-family: 'Noto Sans KR'"
+            />
+          </div>
+        </div>
+      </div>
+
+      <div class="box2">
+        <div class="containerTitle2"></div>
+        <div class="containerContent2" style="line-height: 2.2rem">
+          <kor> 새로운 비밀번호 입력 확인 </kor>
+          <div>
+            <input
+              type="password"
+              placeholder="새로운 비밀번호를 한 번 더 입력해 주세요"
+              style="width: 150%; font-size: 15px; font-family: 'Noto Sans KR'"
+            />
+          </div>
+        </div>
+      </div>
+
+      <div
+        style="
+          border-bottom: 3px solid #eeeeee;
+          padding-bottom: 2%;
+          margin-bottom: 4%;
+          text-align: center;
+        "
+      >
+        <button id="box2button1"><kor>비밀번호 변경완료</kor></button>
+      </div>
+
+      <!-- 탈퇴 사유 박스 -->
+      <div class="box2">
+        <div class="containerTitle2"></div>
+        <div
+          class="containerContent2"
+          style="
+            line-height: 1.7rem;
+            padding-right: 2%;
+            border-radius: 5px;
+            width: 60%;
+            padding-top: 1.5%;
+            padding-bottom: 0;
+          "
+        >
+          <kor>
+            <i class="fas fa-circle"></i>
+            탈퇴 사유를 선택해 주시기 바랍니다.<br />
+            <i class="fas fa-circle"></i>
+            허니비의 더 나은 서비스를 위하여 선택 부탁드립니다.
+          </kor>
+        </div>
+      </div>
+
+      <div class="box2">
+        <div class="containerTitle2"></div>
+        <div
+          class="containerContent2"
+          style="
+            display: block;
+            width: 40%;
+            line-height: 2rem;
+            padding-left: 4%;
+          "
+        >
+          <div>
+            <input type="radio" id="first" name="reason" />
+            <label for="first">
+              <kor>사용빈도가 낮아서</kor>
+            </label>
+          </div>
+          <div>
+            <input type="radio" id="second" name="reason" />
+            <label for="second">
+              <kor>개인정보 유출이 우려되어서</kor>
+            </label>
+          </div>
+          <div>
+            <input type="radio" id="third" name="reason" />
+            <label for="third">
+              <kor>사이트 이용시 장애가 많아서</kor>
+            </label>
+          </div>
+          <div>
+            <input type="radio" id="fourth" name="reason" />
+            <label for="fourth">
+              <kor>서비스의 질에 대한 불만이 있어서</kor>
+            </label>
+          </div>
+          <div>
+            <input type="radio" id="fifth" name="reason" />
+            <label for="fifth">
+              <kor>사이트 이용시 고객응대가 나빠서</kor>
+            </label>
+          </div>
+          <input type="radio" id="sixth" name="reason" />
+          <label for="sixth">
+            <kor> 기타 </kor>
+            <input
+              placeholder="내용을 입력해주세요."
+              style="font-family: 'Noto Sans KR'"
+              id="customAnswer"
+            />
+          </label>
+        </div>
+      </div>
+
+      <div class="box2">
+        <div class="containerTitle2"></div>
+        <div class="containerContent2" style="line-height: 2.2rem">
+          <div style="width: 110%">
+            <i class="fas fa-circle"></i>
+            <kor> 탈퇴할 이메일 아이디를 확인해 주시기 바랍니다. </kor>
+          </div>
+          <div>
+            <input
+              id="reEmail"
+              value="nam@naver.com"
+              style="border: none; cursor: default; letter-spacing: 0.5px"
+              readonly
+            />
+          </div>
+        </div>
+      </div>
+
+      <div class="box2">
+        <div class="containerTitle2"></div>
+        <div class="containerContent2" style="line-height: 2.2rem">
+          <div style="width: 110%">
+            <i class="fas fa-circle"></i>
+            <kor> 본인인증을 위해 비밀번호를 입력해 주시기 바랍니다. </kor>
+          </div>
+          <div style="margin-left: 4%">
+            <input
+              placeholder="비밀번호를 입력해주세요."
+              style="font-family: 'Noto Sans KR'; width: 75%"
+              type="password"
+            />
+          </div>
+        </div>
+      </div>
+
+      <div style="padding-bottom: 2%; margin-bottom: 4%; text-align: center">
+        <button id="box2button1" style="padding: 1% 7%"><kor>적용</kor></button>
+      </div>
+    </div>
+
+    <!-- 푸터 -->
+    <footer>
+      <div class="footer">
+        <div>Copyright 2021. HoneyBee All rights reserved.</div>
+      </div>
+    </footer>
+  </body>
+</html>

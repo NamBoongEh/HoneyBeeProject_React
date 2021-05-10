@@ -1,0 +1,181 @@
+ /* 배너 스타일*/
+    .banner {
+      width: 50%;
+      height: 392.2px;
+      padding: 3% 0 0 5%;
+      background-color: #eeeeee;
+    }
+
+    .title,
+    .subTitle {
+      margin: 6rem 0 1rem;
+      font-family: "Noto Sans KR", sans-serif;
+      font-size: 35px;
+      font-weight: 600;
+    }
+    .subTitle {
+      font-size: 1vw;
+      font-weight: 380;
+      margin: 0;
+    }
+
+        /* 서브 네비 스타일 */
+    .subNav {
+      display: flex;
+      width: 100%;
+      padding-bottom: 3px;
+      margin: 4rem 0 6rem;
+    }
+
+    .qnaOften {
+      width: 15%;
+      font-size: 25px;
+      font-weight: 500;
+      padding-bottom: 0.5%;
+      border-bottom: 4px solid white;
+      color: white;
+      text-align: center;
+    }
+
+    /* 표 제목 스타일 */
+    .tableBoxTitle {
+      width: 100%;
+      display: flex;
+      border: none;
+      border-top: 3px solid rgb(225, 221, 0);
+      border-bottom: 1px solid rgb(225, 221, 0);
+    }
+
+    .tableType,
+    .tableTitle,
+    .tableDate,
+    .tableCount {
+      text-align: center;
+      width: 10%;
+      font-size: 15px;
+      padding: 1rem;
+      font-weight: 600;
+    }
+    .tableTitle {
+      width: 60%;
+    }
+    .tableDate {
+      width: 20%;
+    }
+
+    /* 표 콘텐츠 스타일1(색 없는 것) */
+    .tableBoxContent {
+      width: 100%;
+      display: flex;
+      border: none;
+      border-bottom: 1px solid #dddddd;
+    }
+
+    .contentType,
+    .contentTitle,
+    .contentDate,
+    .contentCount {
+      text-align: center;
+      width: 10%;
+      font-size: 15px;
+      padding: 1rem;
+    }
+    .contentTitle {
+      width: 60%;
+    }
+    .contentTitle:hover {
+      cursor: pointer;
+      font-weight: 600;
+    }
+    .contentDate {
+      width: 20%;
+    }
+
+    /* 표 콘텐츠 스타일2(색 있는 것) */
+    .tableBoxContent2 {
+      width: 100%;
+      display: flex;
+      border: none;
+      border-bottom: 1px solid #dddddd;
+      background-color: #eeeeee;
+    }
+
+    .contentType2,
+    .contentTitle2,
+    .contentDate2,
+    .contentCount2 {
+      text-align: center;
+      width: 10%;
+      font-size: 15px;
+      padding: 1rem;
+    }
+    .contentTitle2 {
+      width: 60%;
+    }
+    .contentTitle2:hover {
+      cursor: pointer;
+      font-weight: 600;
+    }
+    .contentDate2 {
+      width: 20%;
+    }
+
+    /* 페이징 디자인 */
+     .page {
+            /* div영역안에서의 center */
+            width: 100%;
+        }
+
+        .pagination {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            padding: 0;
+            margin-top: 20px;
+        }
+
+        .pagination li {
+            display: inline;
+            text-align: center;
+
+        }
+
+        /* 숫자들에 대한 스타일 지정 */
+        .pagination a {
+            float: left;
+            display: block;
+            font-size: 14px;
+            text-decoration: none;
+            padding: 5px 12px;
+            line-height: 1.5;
+        }
+
+        .pagination a.active {
+            cursor: default;
+            color: #ffffff;
+        }
+
+        .pagination a:active {
+            outline: none;
+        }
+
+        .modal .num {
+            margin-left: 5px;
+            padding: 0;
+            width: 30px;
+            line-height: 30px;
+            -moz-border-radius: 100%;
+            -webkit-border-radius: 100%;
+            border-radius: 100%;
+        }
+
+        .modal .num:hover {
+            background-color: rgb(255, 211, 0);
+            color: white
+        }
+
+        .modal .num.active,
+        .modal .num:active {
+            background-color: rgb(255, 211, 0);
+            cursor: pointer;
+        }

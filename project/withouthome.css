@@ -1,0 +1,210 @@
+* {
+  margin: 0;
+  padding: 0;
+  font-family: "Poppins";
+}
+
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+font,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td {
+  margin: 0;
+  padding: 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: 700;
+  font-size: inherit;
+}
+
+a {
+  text-decoration: inherit;
+  color: inherit;
+}
+
+li {
+  list-style: none;
+}
+
+img {
+  vertical-align: middle;
+}
+
+a img {
+  border: none;
+}
+
+address,
+em,
+i {
+  font-style: normal;
+}
+
+a:focus {
+  outline: none;
+}
+
+button:focus {
+  outline: none;
+}
+
+/* 초기 전체 마진 */
+body {
+  cursor: default;
+  font-family: "Noto Sans KR", sans-serif;
+}
+
+.header,
+.header2 {
+  height: 150px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 0px 10px 30px 10px;
+  background-color: white;
+  position: sticky;
+  top: 0;
+  z-index: 99;
+}
+.header2 {
+  width: 100%;
+  display: inline-block;
+  top: 180px;
+  height: auto;
+  padding: 0;
+}
+
+.header > .icons {
+  display: flex;
+  font-size: 20px;
+  align-items: center;
+  margin-right: 160px;
+  cursor: pointer;
+}
+
+.header > .links {
+  display: flex;
+  font-size: 20px;
+  align-items: center;
+  margin-right: 10px;
+  cursor: pointer;
+}
+
+.header > .links :hover {
+  color: rgb(255, 210, 0);
+  transition: 0.3s ease-in-out;
+}
+
+.header > .icons :hover {
+  color: rgb(255, 210, 0);
+  transition: 0.3s ease-in-out;
+}
+
+.logo {
+  font-family: "Poppins";
+  font-weight: 900;
+  font-size: 40px;
+  color: rgb(255, 210, 0);
+  text-decoration: none;
+  margin-left: 190px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.links > * {
+  margin-right: 20px;
+  letter-spacing: 1px;
+  font-weight: 300;
+}
+
+.icons > * {
+  margin-right: 28px;
+  text-decoration: none;
+  color: black;
+}
+
+/* banner */
+.footer {
+  display: flex;
+  justify-content: center;
+  padding-top: 20px;
+  height: 10rem;
+  width: 100%;
+  background-color: rgb(247, 247, 247);
+  font-weight: 500;
+  letter-spacing: 2px;
+  margin-top: 5%;
+}
+
+/* 한글 폰트 입히는 법 */
+kor {
+  font-family: "Noto Sans KR";
+}
+
+/* 스크롤바 제거 */
+body::-webkit-scrollbar {
+  display: none;
+}
