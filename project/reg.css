@@ -1,0 +1,188 @@
+/* 배너 스타일*/
+.banner {
+  width: 100%;
+  text-align: center;
+  border-bottom: 1px solid #bbbbbb;
+}
+
+/*제목, 부제목 */
+.title,
+.subTitle {
+  margin: 6rem 0 3rem;
+  font-size: 35px;
+  font-weight: 600;
+}
+.subTitle {
+  text-align: right;
+  font-size: 20px;
+  font-weight: 500;
+  margin-bottom: 0.1rem;
+  padding-right: 2%;
+}
+
+/* 컨테이너 */
+.containerTitle {
+  width: 100%;
+  padding-left: 10%;
+  font-size: 35px;
+  font-family: 'Noto Sans KR';
+  font-weight: 600;
+  margin: 5rem 0 1rem;
+}
+
+.containerContent,
+.containerContent3 {
+  width: 80%;
+  margin-left: 10%;
+  display: flex;
+}
+.containerContent2 {
+  width: 100%;
+  margin-bottom: 0.5rem;
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: 0.25rem;
+}
+.containerContent3 {
+  height: 30rem;
+}
+
+/* input, select 디자인 */
+input,
+option,
+select {
+  border-radius: 3px;
+  border: 1px solid #bbbbbb;
+  outline: none;
+  width: 95%;
+  padding: 0.3rem 0.1rem 0.3rem 0;
+  margin-left: 2.5%;
+  font-family: 'Noto Sans KR';
+  font-size: 20px;
+}
+input:focus,
+select:focus {
+  border: 1px solid rgb(255, 211, 0);
+  transition: 0.5s ease-out;
+}
+
+box,
+box2 {
+  text-align: center;
+}
+box2 {
+  display: flex;
+}
+
+/* 컨텐츠 박스 중 내용을 담는 박스는 밑을 더 띄운다*/
+contentBox,
+contentContentBox100,
+contentBox100 {
+  width: 100%;
+  display: flex;
+  font-family: 'Noto Sans KR';
+  font-size: 20px;
+  font-weight: 600;
+}
+contentContentBox100,
+contentBox100 {
+  display: inline-block;
+  padding-bottom: 0.5rem;
+  text-align: left;
+}
+contentContentBox100 {
+  padding-bottom: 2rem;
+}
+
+contentBox25,
+contentContentBox33,
+contentBox33,
+contentContentBox34,
+contentBox34,
+contentContentBox50,
+contentBox50,
+contentBox70 {
+  width: 33%;
+  padding-bottom: 0.5rem;
+  font-family: 'Noto Sans KR';
+  font-size: 20px;
+  font-weight: 600;
+  text-align: left;
+}
+contentBox25 {
+  width: 25%;
+}
+contentContentBox34,
+contentBox34 {
+  width: 34%;
+}
+contentContentBox50,
+contentBox50 {
+  width: 50%;
+}
+contentBox75 {
+  width: 75%;
+}
+contentContentBox33,
+contentContentBox34,
+contentContentBox50 {
+  padding-bottom: 2rem;
+}
+
+.thumbnail,
+.map {
+  width: 60%;
+  object-fit: cover;
+  background-size: 100% 100%;
+  border-radius: 3px;
+}
+
+.thumbnail {
+  width: 100%;
+  height: 93.2%;
+}
+
+/* 모임내용 */
+textarea {
+  resize: none;
+  width: 100%;
+  outline: none;
+  font-family: 'Noto Sans KR';
+  font-size: 15px;
+  border: 1px solid #dddddd;
+}
+textarea::-webkit-scrollbar {
+  display: none;
+}
+textarea:focus {
+  border: 1px solid rgb(255, 211, 0);
+}
+
+/* 선 */
+hr {
+  border: 1px solid #bbbbbb;
+  margin: 5rem 0;
+}
+
+/* 1번 박스 버튼 */
+.uploadBtn {
+  background-color: #dddddd;
+  height: 3%;
+  padding: 0.5% 3%;
+  border-radius: 3px;
+  cursor: pointer;
+  font-size: 18px;
+  border: none;
+  align-content: flex-end;
+}
+
+/* 개설하기 버튼 */
+#doneBtn {
+  background-color: rgb(255, 211, 0);
+  padding: 0.5% 3%;
+  border-radius: 3px;
+  cursor: pointer;
+  border: none;
+  font-family: 'Noto Sans KR';
+  font-size: 20px;
+}

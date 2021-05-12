@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100&family=Poppins:wght@100;200;300;900&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.min.css"
+    />
+    <link rel="stylesheet" href="withouthome.css" />
+    <link rel="stylesheet" href="reg.css" />
+    <title>Document</title>
+  </head>
+
+  <body>
+    <!-- 헤더 -->
+    <div class="header">
+      <a href="/" class="logo" id="logo">Honey Bee</a>
+      <div class="links">
+        <a
+          ><i
+            class="fas fa-align-justify"
+            style="margin-right: 5px; font-size: medium"
+          ></i
+          >Meet</a
+        >
+        <a>Board</a>
+        <a>QnA</a>
+        <a>Notice</a>
+      </div>
+      <div class="icons">
+        <a href="/" style="text-align: center">
+          <i class="fas fa-sign-in-alt"></i><br />
+          <div style="font-size: 12px">Login</div>
+        </a>
+        <a href="/" style="text-align: center">
+          <i class="fas fa-user"></i><br />
+          <div style="font-size: 11px">MyPage</div>
+        </a>
+        <a href="/" style="text-align: center">
+          <i class="fas fa-comment"></i><br />
+          <div style="font-size: 11px">CS</div>
+        </a>
+      </div>
+      <!-- 헤더 끝 -->
+    </div>
+
+    <div style="margin: 0 200px">
+      <div style="width: 100%; display: flex">
+        <div class="banner">
+          <div class="title"><kor>꿀 단지 만들기</kor></div>
+          <div class="subTitle"><kor>*필수 입력사항</kor></div>
+        </div>
+      </div>
+
+      <!-- 1번째 박스 시작-->
+      <div class="containerTitle">모임 이미지</div>
+
+      <div class="containerContent">
+        <!--왼쪽 모임 이미지-->
+        <box style="width: 43%">
+          <div class="containerContent2">
+            <button class="uploadBtn">올리기</button>
+          </div>
+          <div
+            class="thumbnail"
+            style="background-image: url(/image/sports.jfif)"
+          ></div>
+        </box>
+
+        <!--오른쪽 카테고리-->
+        <box style="width: 55%; margin-left: 2%">
+          <!-- 카테고리, 모집인원-->
+          <contentBox>
+            <contentBox50 style="padding-left: 2%">카테고리</contentBox50>
+            <contentBox50 style="padding-left: 2%">모집인원</contentBox50>
+          </contentBox>
+          <contentBox>
+            <contentContentBox50>
+              <select>
+                <option>카테고리 선택</option>
+                <option>카테고리 선택</option>
+                <option>카테고리 선택</option>
+                <option>카테고리 선택</option>
+                <option>카테고리 선택</option>
+                <option>카테고리 선택</option>
+              </select>
+            </contentContentBox50>
+            <contentContentBox50>
+              <input />
+            </contentContentBox50>
+          </contentBox>
+
+          <!-- 모임명 -->
+          <contentBox100 style="padding-left: 2%">모임명</contentBox100>
+          <contentContentBox100>
+            <input style="width: 97.5%; margin-left: 1.25%" />
+          </contentContentBox100>
+
+          <!-- 모임 요약 내용 -->
+          <contentBox100 style="padding-left: 2%">모임 요약 내용</contentBox100>
+          <contentContentBox100>
+            <input style="width: 97.5%; margin-left: 1.25%" />
+          </contentContentBox100>
+
+          <!-- 모임 모집 시작~종료 -->
+          <box2>
+            <contentBox33 style="width: 45%; padding-left: 2%"
+              >모임 모집 시작</contentBox33
+            >
+            <contentBox34 style="width: 10%"></contentBox34>
+            <contentBox33 style="width: 45%; padding-left: 2%"
+              >모임 모집 종료</contentBox33
+            >
+          </box2>
+
+          <box2>
+            <contentContentBox33 style="width: 45%"
+              ><input
+            /></contentContentBox33>
+            <contentContentBox34 style="width: 10%; text-align: center"
+              >~</contentContentBox34
+            >
+            <contentContentBox33 style="width: 45%"
+              ><input
+            /></contentContentBox33>
+          </box2>
+
+          <!-- 모임 시작~종료 -->
+          <box2>
+            <contentBox33 style="width: 45%; padding-left: 2%"
+              >모임 시작</contentBox33
+            >
+            <contentBox34 style="width: 10%"></contentBox34>
+            <contentBox33 style="width: 45%; padding-left: 2%"
+              >모임 종료</contentBox33
+            >
+          </box2>
+
+          <box2>
+            <contentContentBox33 style="width: 45%"
+              ><input
+            /></contentContentBox33>
+            <contentContentBox34 style="width: 10%; text-align: center"
+              >~</contentContentBox34
+            >
+            <contentContentBox33 style="width: 45%"
+              ><input
+            /></contentContentBox33>
+          </box2>
+
+          <!-- 비용, 온오프, 링크 -->
+          <box2>
+            <contentBox33 style="padding-left: 2%">비용</contentBox33>
+            <contentBox34 style="padding-left: 2%">온/오프라인</contentBox34>
+            <contentBox33 style="padding-left: 2%">링크</contentBox33>
+          </box2>
+          <box2>
+            <contentBox33>
+              <select>
+                <option>비용 선택</option>
+              </select>
+            </contentBox33>
+            <contentBox34>
+              <select>
+                <option>선택</option>
+              </select>
+            </contentBox34>
+            <contentBox33>
+              <input />
+            </contentBox33>
+          </box2>
+        </box>
+      </div>
+      <!-- 1번째 박스 끝-->
+
+      <!-- 2번째 박스 시작-->
+      <div class="containerTitle">모임 장소</div>
+      <div class="containerContent3">
+        <!--왼쪽 모임 장소-->
+        <div class="map" style="background-image: url(/image/map.PNG)"></div>
+
+        <!--오른쪽 카테고리-->
+        <box style="width: 40%">
+          <contentBox style="margin: 30% 0 10%">
+            <contentBox25 style="padding-left: 5%;">도로명주소</contentBox25>
+            <contentBox75>
+              <input />
+            </contentBox75>
+          </contentBox>
+          <contentBox>
+            <contentBox25 style="padding-left: 5%; ">상세주소</contentBox25>
+            <contentBox75>
+              <input />
+            </contentBox75>
+          </contentBox>
+        </box>
+      </div>
+      <!-- 2번째 박스 끝-->
+
+      <!-- 3번째 박스 시작-->
+      <div class="containerTitle">모임 내용</div>
+      <div class="containerContent">
+        <textarea rows="14"></textarea>
+      </div>
+      <!-- 3번째 박스 끝-->
+
+      <hr />
+
+      <div style="width: 100%; text-align: center">
+        <button id="doneBtn">개설하기</button>
+      </div>
+    </div>
+
+    <!-- 푸터 -->
+    <div class="footer">
+      <div>Copyright 2021. HoneyBee All rights reserved.</div>
+    </div>
+  </body>
+</html>
