@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100&family=Poppins:wght@100;200;300;900&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.min.css"
+    />
+    <link rel="stylesheet" href="adminHeader.css" />
+    <link rel="stylesheet" href="adminNotice.css" />
+    <title>Document</title>
+  </head>
+  <script>
+    //서브 메뉴 hidden 스위치 이벤트
+    function show(clickId1, clickId2, clickId3, clickId4) {
+      const id1 = document.getElementById(clickId1);
+      const id2 = document.getElementById(clickId2);
+      const id3 = document.getElementById(clickId3);
+      const id4 = document.getElementById(clickId4);
+
+      id1.hidden == true ? (id1.hidden = false) : (id1.hidden = true);
+      id2.hidden = true;
+      id3.hidden = true;
+      id4.hidden = true;
+    }
+    function offShow(clickId1, clickId2, clickId3, clickId4) {
+      const id1 = document.getElementById(clickId1);
+      const id2 = document.getElementById(clickId2);
+      const id3 = document.getElementById(clickId3);
+      const id4 = document.getElementById(clickId4);
+
+      id1.hidden == false;
+      id2.hidden = false;
+      id3.hidden = false;
+      id4.hidden = false;
+    }
+  </script>
+  <body>
+    <!--헤더 네비 시작-->
+    <div class="header">
+      <!-- 로고 -->
+      <div style="width: 10%; height: 100%">
+        <a id="logo" href="index.html">Honey Bee</a>
+      </div>
+
+      <!--새알림, 이름, 로그아웃-->
+      <div id="right">
+        <div id="name">남붕어</div>
+        <div id="else">님, 어서오세요.</div>
+        <button id="logOut" onclick="location.href='adminLogin.html'">
+          Logout
+        </button>
+      </div>
+    </div>
+
+    <nav>
+      <!--메뉴 바-->
+      <ul>
+        <a onclick="show('sub1', 'sub2', 'sub3', 'sub4')">회원 관리</a>
+        <ul id="sub1" hidden>
+          <a id="subMenu" href="adminMemList.html">회원 목록</a>
+          <a id="subMenu" href="adminMemManage.html">회원 권한 설정</a>
+        </ul>
+        <a onclick="show('sub2', 'sub1', 'sub3', 'sub4')">게시판 관리</a>
+        <ul id="sub2" hidden>
+          <a id="subMenu" href="adminMeet.html">모임게시판</a>
+          <a id="subMenu" href="adminFree.html">자유게시판</a>
+        </ul>
+        <a onclick="show('sub3', 'sub1', 'sub2', 'sub4')">고객센터 관리</a>
+        <ul id="sub3" hidden>
+          <a id="subMenu" href="adminNotice.html">공지사항</a>
+          <a id="subMenu" href="adminNoticeRegister.html">공지사항 등록</a>
+          <a id="subMenu" href="adminOftenQnaRegister.html"
+            >자주묻는 질문 등록</a
+          >
+          <a id="subMenu">문의</a>
+          <a id="subMenu">신고</a>
+        </ul>
+        <a>통계분석</a>
+        <a onclick="show('sub4', 'sub1', 'sub2', 'sub3')">관리자 목록</a>
+        <ul id="sub4" hidden>
+          <a id="subMenu" href="adminAuthList.html">관리자 목록</a>
+          <a id="subMenu" href="adminAuthRequest.html">관리자 권한 설정</a>
+        </ul>
+      </ul>
+    </nav>
+    <!--헤더 네비 끝-->
+
+    <!-- 페이지 몸통 시작-->
+    <div id="pageBody">
+      <div class="title">자유게시판 관리</div>
+
+      <!--검색, 저장 창-->
+      <div class="sideBar" style="justify-content: space-between">
+        <div style="display: inline-block; width: 92%">
+          <input placeholder="검색어를 입력해주세요" />
+          <button class="search">검색</button>
+        </div>
+        <button class="remove">삭제</button>
+      </div>
+
+      <!--표 타이틀-->
+      <div class="tableTitle">
+        <div class="num">No</div>
+        <div class="contentTitle">제목</div>
+        <div class="writer">작성자</div>
+        <div class="date">작성일자</div>
+        <div class="count">조회수</div>
+      </div>
+
+      <div class="table">
+        <!--표 내용-->
+        <div class="tableContent">
+          <div class="num">916</div>
+          <div class="contentTitle">
+            남붕어 로제떡볶이 못먹어본거 실화냐 가슴이 웅장해진다.
+          </div>
+          <div class="writer">북붕어</div>
+          <div class="date">2021-05-02</div>
+          <div class="count">9841895712</div>
+        </div>
+        <div class="tableContent">
+          <div class="num">916</div>
+          <div class="contentTitle">
+            남붕어 로제떡볶이 못먹어본거 실화냐 가슴이 웅장해진다.
+          </div>
+          <div class="writer">북붕어</div>
+          <div class="date">2021-05-02</div>
+          <div class="count">9841895712</div>
+        </div>
+        <div class="tableContent">
+          <div class="num">916</div>
+          <div class="contentTitle">
+            남붕어 로제떡볶이 못먹어본거 실화냐 가슴이 웅장해진다.
+          </div>
+          <div class="writer">북붕어</div>
+          <div class="date">2021-05-02</div>
+          <div class="count">9841895712</div>
+        </div>
+        <div class="tableContent">
+          <div class="num">916</div>
+          <div class="contentTitle">
+            남붕어 로제떡볶이 못먹어본거 실화냐 가슴이 웅장해진다.
+          </div>
+          <div class="writer">북붕어</div>
+          <div class="date">2021-05-02</div>
+          <div class="count">9841895712</div>
+        </div>
+        <div class="tableContent">
+          <div class="num">916</div>
+          <div class="contentTitle">
+            남붕어 로제떡볶이 못먹어본거 실화냐 가슴이 웅장해진다.
+          </div>
+          <div class="writer">북붕어</div>
+          <div class="date">2021-05-02</div>
+          <div class="count">9841895712</div>
+        </div>
+        <div class="tableContent">
+          <div class="num">916</div>
+          <div class="contentTitle">
+            남붕어 로제떡볶이 못먹어본거 실화냐 가슴이 웅장해진다.
+          </div>
+          <div class="writer">북붕어</div>
+          <div class="date">2021-05-02</div>
+          <div class="count">9841895712</div>
+        </div>
+        <div class="tableContent">
+          <div class="num">916</div>
+          <div class="contentTitle">
+            남붕어 로제떡볶이 못먹어본거 실화냐 가슴이 웅장해진다.
+          </div>
+          <div class="writer">북붕어</div>
+          <div class="date">2021-05-02</div>
+          <div class="count">9841895712</div>
+        </div>
+        <div class="tableContent">
+          <div class="num">916</div>
+          <div class="contentTitle">
+            남붕어 로제떡볶이 못먹어본거 실화냐 가슴이 웅장해진다.
+          </div>
+          <div class="writer">북붕어</div>
+          <div class="date">2021-05-02</div>
+          <div class="count">9841895712</div>
+        </div>
+        <div class="tableContent">
+          <div class="num">916</div>
+          <div class="contentTitle">
+            남붕어 로제떡볶이 못먹어본거 실화냐 가슴이 웅장해진다.
+          </div>
+          <div class="writer">북붕어</div>
+          <div class="date">2021-05-02</div>
+          <div class="count">9841895712</div>
+        </div>
+        <div class="tableContent">
+          <div class="num">916</div>
+          <div class="contentTitle">
+            남붕어 로제떡볶이 못먹어본거 실화냐 가슴이 웅장해진다.
+          </div>
+          <div class="writer">북붕어</div>
+          <div class="date">2021-05-02</div>
+          <div class="count">9841895712</div>
+        </div>
+        <div class="tableContent">
+          <div class="num">916</div>
+          <div class="contentTitle">
+            남붕어 로제떡볶이 못먹어본거 실화냐 가슴이 웅장해진다.
+          </div>
+          <div class="writer">북붕어</div>
+          <div class="date">2021-05-02</div>
+          <div class="count">9841895712</div>
+        </div>
+        <div class="tableContent">
+          <div class="num">916</div>
+          <div class="contentTitle">
+            남붕어 로제떡볶이 못먹어본거 실화냐 가슴이 웅장해진다.
+          </div>
+          <div class="writer">북붕어</div>
+          <div class="date">2021-05-02</div>
+          <div class="count">9841895712</div>
+        </div>
+        <div class="tableContent">
+          <div class="num">916</div>
+          <div class="contentTitle">
+            남붕어 로제떡볶이 못먹어본거 실화냐 가슴이 웅장해진다.
+          </div>
+          <div class="writer">북붕어</div>
+          <div class="date">2021-05-02</div>
+          <div class="count">9841895712</div>
+        </div>
+        <div class="tableContent">
+          <div class="num">916</div>
+          <div class="contentTitle">
+            남붕어 로제떡볶이 못먹어본거 실화냐 가슴이 웅장해진다.
+          </div>
+          <div class="writer">북붕어</div>
+          <div class="date">2021-05-02</div>
+          <div class="count">9841895712</div>
+        </div>
+        <div class="tableContent">
+          <div class="num">916</div>
+          <div class="contentTitle">
+            남붕어 로제떡볶이 못먹어본거 실화냐 가슴이 웅장해진다.
+          </div>
+          <div class="writer">북붕어</div>
+          <div class="date">2021-05-02</div>
+          <div class="count">9841895712</div>
+        </div>
+        <div class="tableContent">
+          <div class="num">916</div>
+          <div class="contentTitle">
+            남붕어 로제떡볶이 못먹어본거 실화냐 가슴이 웅장해진다.
+          </div>
+          <div class="writer">북붕어</div>
+          <div class="date">2021-05-02</div>
+          <div class="count">9841895712</div>
+        </div>
+        <div class="tableContent">
+          <div class="num">916</div>
+          <div class="contentTitle">
+            남붕어 로제떡볶이 못먹어본거 실화냐 가슴이 웅장해진다.
+          </div>
+          <div class="writer">북붕어</div>
+          <div class="date">2021-05-02</div>
+          <div class="count">9841895712</div>
+        </div>
+        <div class="tableContent">
+          <div class="num">916</div>
+          <div class="contentTitle">
+            남붕어 로제떡볶이 못먹어본거 실화냐 가슴이 웅장해진다.
+          </div>
+          <div class="writer">북붕어</div>
+          <div class="date">2021-05-02</div>
+          <div class="count">9841895712</div>
+        </div>
+        <div class="tableContent">
+          <div class="num">916</div>
+          <div class="contentTitle">
+            남붕어 로제떡볶이 못먹어본거 실화냐 가슴이 웅장해진다.
+          </div>
+          <div class="writer">북붕어</div>
+          <div class="date">2021-05-02</div>
+          <div class="count">9841895712</div>
+        </div>
+        <div class="tableContent">
+          <div class="num">916</div>
+          <div class="contentTitle">
+            남붕어 로제떡볶이 못먹어본거 실화냐 가슴이 웅장해진다.
+          </div>
+          <div class="writer">북붕어</div>
+          <div class="date">2021-05-02</div>
+          <div class="count">9841895712</div>
+        </div>
+        <div class="tableContent">
+          <div class="num">916</div>
+          <div class="contentTitle">
+            남붕어 로제떡볶이 못먹어본거 실화냐 가슴이 웅장해진다.
+          </div>
+          <div class="writer">북붕어</div>
+          <div class="date">2021-05-02</div>
+          <div class="count">9841895712</div>
+        </div>
+        <div class="tableContent">
+          <div class="num">916</div>
+          <div class="contentTitle">
+            남붕어 로제떡볶이 못먹어본거 실화냐 가슴이 웅장해진다.
+          </div>
+          <div class="writer">북붕어</div>
+          <div class="date">2021-05-02</div>
+          <div class="count">9841895712</div>
+        </div>
+        <div class="tableContent">
+          <div class="num">916</div>
+          <div class="contentTitle">
+            남붕어 로제떡볶이 못먹어본거 실화냐 가슴이 웅장해진다.
+          </div>
+          <div class="writer">북붕어</div>
+          <div class="date">2021-05-02</div>
+          <div class="count">9841895712</div>
+        </div>
+        <div class="tableContent">
+          <div class="num">916</div>
+          <div class="contentTitle">
+            남붕어 로제떡볶이 못먹어본거 실화냐 가슴이 웅장해진다.
+          </div>
+          <div class="writer">북붕어</div>
+          <div class="date">2021-05-02</div>
+          <div class="count">9841895712</div>
+        </div>
+        <div class="tableContent">
+          <div class="num">916</div>
+          <div class="contentTitle">
+            남붕어 로제떡볶이 못먹어본거 실화냐 가슴이 웅장해진다.
+          </div>
+          <div class="writer">북붕어</div>
+          <div class="date">2021-05-02</div>
+          <div class="count">9841895712</div>
+        </div>
+        <div class="tableContent">
+          <div class="num">916</div>
+          <div class="contentTitle">
+            남붕어 로제떡볶이 못먹어본거 실화냐 가슴이 웅장해진다.
+          </div>
+          <div class="writer">북붕어</div>
+          <div class="date">2021-05-02</div>
+          <div class="count">9841895712</div>
+        </div>
+        <div class="tableContent">
+          <div class="num">916</div>
+          <div class="contentTitle">
+            남붕어 로제떡볶이 못먹어본거 실화냐 가슴이 웅장해진다.
+          </div>
+          <div class="writer">북붕어</div>
+          <div class="date">2021-05-02</div>
+          <div class="count">9841895712</div>
+        </div>
+        <div class="tableContent">
+          <div class="num">916</div>
+          <div class="contentTitle">
+            남붕어 로제떡볶이 못먹어본거 실화냐 가슴이 웅장해진다.
+          </div>
+          <div class="writer">북붕어</div>
+          <div class="date">2021-05-02</div>
+          <div class="count">9841895712</div>
+        </div>
+        <div class="tableContent">
+          <div class="num">916</div>
+          <div class="contentTitle">
+            남붕어 로제떡볶이 못먹어본거 실화냐 가슴이 웅장해진다.
+          </div>
+          <div class="writer">북붕어</div>
+          <div class="date">2021-05-02</div>
+          <div class="count">9841895712</div>
+        </div>
+        <div class="tableContent">
+          <div class="num">916</div>
+          <div class="contentTitle">
+            남붕어 로제떡볶이 못먹어본거 실화냐 가슴이 웅장해진다.
+          </div>
+          <div class="writer">북붕어</div>
+          <div class="date">2021-05-02</div>
+          <div class="count">9841895712</div>
+        </div>
+        <div class="tableContent">
+          <div class="num">916</div>
+          <div class="contentTitle">
+            남붕어 로제떡볶이 못먹어본거 실화냐 가슴이 웅장해진다.
+          </div>
+          <div class="writer">북붕어</div>
+          <div class="date">2021-05-02</div>
+          <div class="count">9841895712</div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

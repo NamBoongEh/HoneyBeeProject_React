@@ -1,0 +1,133 @@
+html,
+body {
+  width: 100%;
+  height: 100%;
+  display: block;
+  margin: 0;
+  padding: 0;
+  cursor: default;
+}
+
+.containerMenu {
+  font-size: 24px;
+  display: flex;
+  line-height: 3rem;
+  text-align: center;
+  margin: 0.5% 0 4%;
+}
+
+.menu {
+  width: 16%;
+  font-size: 1.3vw;
+  margin: 0 17%;
+  border-bottom: 3px solid black;
+}
+.menu:hover {
+  cursor: pointer;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  background-color: #04005e;
+  transition: 1s;
+}
+
+.sideBar {
+  display: flex;
+  margin-bottom: 1%;
+}
+
+input {
+  font-size: 1vw;
+  height: 1.5vw;
+  width: 60%;
+  border: none;
+  border-bottom: 3px solid #04005e;
+  margin-left: 1%;
+}
+input:focus {
+  outline: none;
+  border-bottom: 3px solid #ff2079;
+  transition: 0.3s;
+}
+
+.search,
+.save {
+  font-size: 1vw;
+  height: 1.8vw;
+  border: none;
+  border-radius: 5px;
+  background-color: #ff2079;
+  color: white;
+  cursor: pointer;
+  vertical-align: middle;
+  padding: 0 3%;
+}
+
+.save {
+  background-color: #440bd4;
+  padding: 0 1%;
+}
+
+.tableTitle {
+  display: flex;
+  text-align: center;
+  font-size: 0.9vw;
+  line-height: 2.5rem;
+  width: 99%;
+}
+.tableTitle > div {
+  position: sticky;
+  width: 13%;
+  letter-spacing: 2px;
+  background-color: #04004e;
+  color: white;
+  border-right: 1px solid white;
+  border-left: 1px solid white;
+}
+.tableTitle > .checkbox {
+  width: 5%;
+}
+.tableTitle > .num {
+  width: 5%;
+}
+
+.table {
+  width: 100%;
+  height: 500px;
+  overflow-y: scroll;
+}
+
+.row {
+  display: flex;
+  text-align: center;
+  font-size: 0.9vw;
+  line-height: 2.5rem;
+  width: 100%;
+}
+.row > div {
+  width: 13%;
+  border: 1px solid #04005e;
+  border-top: none;
+}
+.row > .num {
+  font-weight: bold;
+  width: 5%;
+}
+.row > .checkbox {
+  width: 5%;
+}
+
+.check {
+  vertical-align: middle;
+  width: 20%;
+}
+
+select {
+  border: none;
+  width: 100%;
+  font-size: 0.9vw;
+  line-height: 2.5rem;
+}
+select:focus {
+  outline: none;
+}

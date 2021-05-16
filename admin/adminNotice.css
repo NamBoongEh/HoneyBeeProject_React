@@ -1,0 +1,141 @@
+.title {
+  font-size: 2vw;
+  font-weight: bold;
+  margin: 0 0 3rem 0;
+  font-size: 35px;
+}
+
+.containerMenu {
+  font-size: 24px;
+  display: flex;
+  width: 100%;
+  line-height: 3rem;
+  text-align: center;
+  margin: 0.5% 0 2%;
+}
+
+.menu {
+  width: 16%;
+  font-size: 1.3vw;
+  margin: 0 17%;
+  border-bottom: 3px solid black;
+}
+.menu:hover {
+  cursor: pointer;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  background-color: #04005e;
+  transition: 1s;
+}
+
+.sideBar {
+  width: 100%;
+  margin-bottom: 1%;
+}
+
+input {
+  font-size: 20px;
+  border: none;
+  border-bottom: 3px solid #04005e;
+  margin-left: 1%;
+}
+input:focus {
+  outline: none;
+  border-bottom: 3px solid #ff2079;
+  transition: 0.3s;
+}
+
+.search,
+.remove {
+  font-size: 20px;
+  border: none;
+  border-radius: 5px;
+  background-color: #ff2079;
+  color: white;
+  cursor: pointer;
+  vertical-align: middle;
+  padding: 0.2% 1%;
+}
+.remove {
+  background-color: #440bd4;
+  margin-right: 1%;
+}
+
+.tableTitle {
+  display: flex;
+  text-align: center;
+  font-size: 0.9vw;
+  line-height: 2.5rem;
+  margin: 2% 1% 0 0;
+  width: 99%;
+}
+.tableTitle > div {
+  position: sticky;
+  width: 10%;
+  background-color: #04004e;
+  letter-spacing: 2px;
+  color: white;
+  border-right: 1px solid white;
+  border-left: 1px solid white;
+}
+.tableTitle > .num {
+  width: 8%;
+}
+.tableTitle > .count {
+  width: 8%;
+}
+.tableTitle > .contentTitle {
+  width: 64%;
+}
+
+.table {
+  width: 100%;
+  height: 580px;
+  overflow-y: scroll;
+}
+
+.tableContent {
+  display: flex;
+  text-align: center;
+  font-size: 0.9vw;
+  line-height: 2.5rem;
+}
+
+.tableContent > div {
+  width: 10%;
+  border: 1px solid #04005e;
+  border-top: none;
+}
+.tableContent > .num {
+  width: 8%;
+}
+.tableContent > .count {
+  width: 8%;
+}
+.tableContent > .contentTitle {
+  width: 64%;
+}
+.tableContent > .contentTitle:hover {
+  font-weight: bold;
+  cursor: pointer;
+}
+.tableContent > .writer:hover {
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.check {
+  vertical-align: middle;
+  width: 20%;
+}
+
+select {
+  border: none;
+  width: 100%;
+  font-size: 0.9vw;
+  line-height: 2.5rem;
+}
+select:focus {
+  outline: none;
+}

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100&family=Poppins:wght@100;200;300;900&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.min.css"
+    />
+    <link rel="stylesheet" href="adminLogin.css" />
+    <title>Document</title>
+  </head>
+
+  <body>
+    <!-- 왼쪽 화면(빈 화면, 허니비 이름 보여주는 정도)-->
+    <div class="containerLeft">
+      <h4 class="title">꿀같은 나만의 달콤한 모임</h4>
+      <h1 class="HoneyBee">Honey Bee</h1>
+    </div>
+
+    <!-- 오른쪽 화면(아이디, 비번 입력 하는 곳)-->
+    <div class="containerRight">
+      <form class="loginBox" action="loginAction" method="post">
+        <input class="id" type="text" name="id" placeholder="ID" />
+        <br />
+        <input class="pw" type="password" name="pw" placeholder="PW" />
+        <br />
+
+        <div class="remember">
+          <input type="checkbox" id="remId" />
+          <label for="remId"> Remember ID </label>
+        </div>
+
+        <input class="login" type="submit" value="LOGIN" />
+      </form>
+    </div>
+  </body>
+</html>

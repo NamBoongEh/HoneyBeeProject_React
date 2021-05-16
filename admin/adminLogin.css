@@ -1,0 +1,95 @@
+html,
+body {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  display: flex;
+  cursor: default;
+  font-family: "Noto Sans KR";
+}
+
+.containerLeft {
+  width: 25%;
+  background-color: #04005e;
+  color: white;
+  text-align: right;
+  padding: 1% 1% 0 0;
+  line-height: 0.5rem;
+  animation: changeColor 15s ease-in-out infinite;
+}
+
+@keyframes changeColor {
+  form {
+    background-color: #04005e;
+  }
+  to {
+    background-color: #e92efb;
+  }
+  25% {
+    background-color: #440bd4;
+  }
+  50% {
+    background-color: #ff2079;
+  }
+  100% {
+    background-color: #04005e;
+  }
+}
+
+.HoneyBee {
+  font-size: 3vw;
+  font-weight: 600;
+  font-family: "Poppins";
+}
+
+.title {
+  font-size: 1.05vw;
+}
+
+.containerRight {
+  width: 75%;
+}
+
+.id,
+.pw {
+  width: 300px;
+  height: 40px;
+  margin-bottom: 12px;
+  font-size: large;
+  border: none;
+  border-bottom: 4px solid black;
+  font-family: "Poppins";
+}
+.id,
+.pw:focus {
+  color: #ff2079;
+  outline: none;
+  border-bottom: 4px solid black;
+}
+
+.loginBox {
+  position: absolute;
+  left: 75%;
+  top: 50%;
+}
+
+.remember {
+  margin: 10px 0;
+}
+
+.login {
+  width: 300px;
+  height: 50px;
+  background-color: #04005e;
+  color: white;
+  border-radius: 5px;
+  border: none;
+  font-size: 24px;
+  letter-spacing: 10px;
+}
+.login:hover {
+  cursor: pointer;
+  background-color: #ff2079;
+  letter-spacing: 20px;
+  transition: 0.5s;
+}
