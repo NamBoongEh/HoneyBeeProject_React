@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@900&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.min.css"
+    />
+    <style>
+      .header {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        margin: 25px 10px 25px 10px;
+      }
+
+      .header > .icons {
+        display: flex;
+        font-size: 20px;
+        align-items: center;
+        margin-right: 30px;
+      }
+
+      .header > .links {
+        display: flex;
+        font-size: 20px;
+        align-items: center;
+        margin-right: 10px;
+        text-decoration: none;
+        color: black;
+      }
+
+      .logo {
+        font-family: 'Poppins', sans-serif;
+        font-weight: 900;
+        font-size: 40px;
+        color: rgb(255, 210, 0);
+        text-decoration: none;
+        margin-left: 30px;
+      }
+
+      .links > * {
+        margin-right: 20px;
+        letter-spacing: 1px;
+        text-decoration: none;
+        color: black;
+        cursor: pointer;
+      }
+
+      .icons > * {
+        margin-right: 28px;
+        text-decoration: none;
+        color: black;
+      }
+
+      .links > *:hover {
+        color: rgb(255, 210, 0);
+      }
+
+      .icons > *:hover {
+        color: rgb(255, 210, 0);
+      }
+
+      li {
+        list-style: none;
+        text-align: center;
+        padding-top: 10px;
+      }
+
+      li > * :hover {
+        color: rgb(255, 210, 0);
+      }
+
+      a {
+        text-decoration: none;
+        color: black;
+      }
+
+      #menu {
+        width: 150px;
+        /* background-color: rgb(245, 244, 244); */
+        transform: translate(562px, -41px);
+        display: none;
+      }
+
+      #meet:hover ~ #menu {
+        display: block;
+      }
+    </style>
+  </head>
+  <script>
+    hoverMenu(){
+        alert('ㅎㅇㅎㅇ');
+    }
+  </script>
+
+  <body>
+    <div class="header">
+      <a href="/" class="logo">Honey Bee</a>
+      <div class="links">
+        <div id="meet">
+          <i
+            class="fas fa-align-justify"
+            style="margin-right: 5px; font-size: medium"
+          ></i
+          >Meet
+        </div>
+        <a href="/">Board</a>
+        <a href="/">QnA</a>
+        <a href="/">Notice</a>
+      </div>
+      <div class="icons">
+        <a href="/" style="text-align: center">
+          <i class="fas fa-sign-in-alt"></i><br />
+          <div style="font-size: 12px">Login</div>
+        </a>
+        <a href="/" style="text-align: center">
+          <i class="fas fa-user"></i><br />
+          <div style="font-size: 11px">MyPage</div>
+        </a>
+        <a href="/" style="text-align: center">
+          <i class="fas fa-comment"></i><br />
+          <div style="font-size: 11px">CS</div>
+        </a>
+      </div>
+    </div>
+    <div id="menu">
+      <ul>
+        <li>
+          <kor><a href="#">전체보기</a></kor>
+        </li>
+        <li>
+          <kor><a href="#">스포츠</a></kor>
+        </li>
+        <li>
+          <kor><a href="#">자기계발</a></kor>
+        </li>
+        <li>
+          <kor><a href="#">독서</a></kor>
+        </li>
+        <li>
+          <kor><a href="#">게임</a></kor>
+        </li>
+        <li>
+          <kor><a href="#">여행</a></kor>
+        </li>
+        <li>
+          <kor><a href="#">문화</a></kor>
+        </li>
+        <li>
+          <kor><a href="#">봉사활동</a></kor>
+        </li>
+        <li>
+          <kor><a href="#">패션/뷰티</a></kor>
+        </li>
+        <li>
+          <kor><a href="#">반려동물</a></kor>
+        </li>
+        <li>
+          <kor><a href="#">원데이클래스</a></kor>
+        </li>
+      </ul>
+    </div>
+  </body>
+</html>

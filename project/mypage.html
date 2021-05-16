@@ -20,7 +20,7 @@
     //닉네임 변경 이벤트
     // 1. 변경 박스 보였다 안보였다 이벤트
     function setShow() {
-      const id = document.getElementById("nameBoxEvent");
+      const id = document.getElementById('nameBoxEvent');
 
       console.log(id.hidden);
 
@@ -29,9 +29,9 @@
 
     // 2. 닉네임 변경 이벤트
     function setChange() {
-      const id = document.getElementById("newId").value;
-      document.getElementById("pastId").innerText = id + " 님";
-      document.getElementById("pastId").style.fontFamily = "Noto Sans KR";
+      const id = document.getElementById('newId').value;
+      document.getElementById('pastId').innerText = id + ' 님';
+      document.getElementById('pastId').style.fontFamily = 'Noto Sans KR';
 
       setShow();
     }
@@ -40,27 +40,27 @@
     function toggleChange(name) {
       const id = document.getElementById(name);
 
-      if (id.id == "on") {
+      if (id.id == 'on') {
         id.hidden = true;
-        document.getElementById("off").hidden = false;
-        document.getElementById("offEmail").hidden = false;
+        document.getElementById('off').hidden = false;
+        document.getElementById('offEmail').hidden = false;
       } else {
         id.hidden = true;
-        document.getElementById("on").hidden = false;
-        document.getElementById("onEmail").hidden = false;
+        document.getElementById('on').hidden = false;
+        document.getElementById('onEmail').hidden = false;
       }
     }
 
     function toggleChange2(name) {
       const id = document.getElementById(name);
-      if (id.id == "on2") {
+      if (id.id == 'on2') {
         id.hidden = true;
-        document.getElementById("off2").hidden = false;
-        document.getElementById("offPhone").hidden = false;
+        document.getElementById('off2').hidden = false;
+        document.getElementById('offPhone').hidden = false;
       } else {
         id.hidden = true;
-        document.getElementById("on2").hidden = false;
-        document.getElementById("onPhone").hidden = false;
+        document.getElementById('on2').hidden = false;
+        document.getElementById('onPhone').hidden = false;
       }
     }
   </script>
@@ -101,7 +101,7 @@
     <div class="header2">
       <!-- content -->
       <div class="content">
-        <div class="myPageHeader" style="width: auto; margin: 0 200px;">
+        <div class="myPageHeader" style="width: auto; margin: 0 200px">
           <div class="forAlign">
             <a class="myPage" href="#"><span class="line">MyPage</span></a>
           </div>
@@ -241,6 +241,7 @@
                   class="fas fa-toggle-off"
                   onclick="toggleChange2('off2')"
                 ></i>
+                <!-- **Todo 비공개 일 때 아이콘 색(회색=비공개)으로 변화 주기-->
                 <span id="offPhone">비공개</span>
               </div>
             </div>
@@ -258,6 +259,7 @@
       <div class="subTitle"><kor>회원정보</kor></div>
       <div class="box2">
         <div class="containerTitle"><kor>성별</kor></div>
+        <!-- **Todo 성별 빠져야 한다고합니다. 개인정보의 위험성. 합숙 때 이야기 나왔다고 함.-->
         <div class="containerContent" style="display: flex">
           <div style="margin-right: 2.8%">
             <input type="radio" id="man" name="radioSex" />

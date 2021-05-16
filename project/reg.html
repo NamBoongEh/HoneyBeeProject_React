@@ -17,7 +17,6 @@
     <link rel="stylesheet" href="reg.css" />
     <title>Document</title>
   </head>
-
   <body>
     <!-- 헤더 -->
     <div class="header">
@@ -82,7 +81,7 @@
             <contentBox50 style="padding-left: 2%">모집인원</contentBox50>
           </contentBox>
           <contentBox>
-            <contentContentBox50>
+            <contentContentBox50 class="test" style="padding-bottom: 0">
               <select>
                 <option>카테고리 선택</option>
                 <option>카테고리 선택</option>
@@ -92,8 +91,23 @@
                 <option>카테고리 선택</option>
               </select>
             </contentContentBox50>
-            <contentContentBox50>
+            <contentContentBox50 style="padding-bottom: 0">
               <input />
+            </contentContentBox50>
+          </contentBox>
+          <contentBox>
+            <contentContentBox50 style="margin: 0; padding: 0">
+            </contentContentBox50>
+            <contentContentBox50
+              style="
+                margin: 0 0 0 5%;
+                padding-bottom: 7.5px;
+                height: 1rem;
+                color: red;
+                font-size: 15px;
+              "
+            >
+              최대 4자리 숫자까지 입력이 가능합니다.
             </contentContentBox50>
           </contentBox>
 
@@ -121,15 +135,17 @@
           </box2>
 
           <box2>
-            <contentContentBox33 style="width: 45%"
-              ><input
-            /></contentContentBox33>
+            <contentContentBox33 style="width: 45%; display: flex"
+              ><input placeholder="날짜" />
+              <input placeholder="시간" />
+            </contentContentBox33>
             <contentContentBox34 style="width: 10%; text-align: center"
               >~</contentContentBox34
             >
-            <contentContentBox33 style="width: 45%"
-              ><input
-            /></contentContentBox33>
+            <contentContentBox33 style="width: 45%; display: flex"
+              ><input placeholder="날짜" />
+              <input placeholder="시간" />
+            </contentContentBox33>
           </box2>
 
           <!-- 모임 시작~종료 -->
@@ -144,15 +160,17 @@
           </box2>
 
           <box2>
-            <contentContentBox33 style="width: 45%"
-              ><input
-            /></contentContentBox33>
+            <contentContentBox33 style="width: 45%; display: flex"
+              ><input placeholder="날짜" />
+              <input placeholder="시간" />
+            </contentContentBox33>
             <contentContentBox34 style="width: 10%; text-align: center"
               >~</contentContentBox34
             >
-            <contentContentBox33 style="width: 45%"
-              ><input
-            /></contentContentBox33>
+            <contentContentBox33 style="width: 45%; display: flex"
+              ><input placeholder="날짜" />
+              <input placeholder="시간" />
+            </contentContentBox33>
           </box2>
 
           <!-- 비용, 온오프, 링크 -->
@@ -189,13 +207,13 @@
         <!--오른쪽 카테고리-->
         <box style="width: 40%">
           <contentBox style="margin: 30% 0 10%">
-            <contentBox25 style="padding-left: 5%;">도로명주소</contentBox25>
+            <contentBox25 style="padding-left: 5%">도로명주소</contentBox25>
             <contentBox75>
               <input />
             </contentBox75>
           </contentBox>
           <contentBox>
-            <contentBox25 style="padding-left: 5%; ">상세주소</contentBox25>
+            <contentBox25 style="padding-left: 5%">상세주소</contentBox25>
             <contentBox75>
               <input />
             </contentBox75>
